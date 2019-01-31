@@ -61,7 +61,5 @@
               Unit Price:
               =number_to_currency inventory_item.price
             %p.card-text  
-              Quantity:
-              = inventory_item.quantity 
             = button_to 'Add to cart', order_line_items_path(inventory_item_id: inventory_item), remote: true, class: 'btn button btn-primary'
 //= link_to image_tag(instrument.image_url(:thumb)), instrument
