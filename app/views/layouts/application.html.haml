@@ -1,0 +1,127 @@
+!!!
+%html
+  %head
+    %meta(content="text/html; charset=UTF-8" http-equiv="Content-Type")/
+    %title ECommerceApp
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    %header
+      .container 
+        %nav.navbar.navbar-expand-lg.navbar-light.fixed-top(style = "background-color: white  ;")
+          .container
+            %a.navbar-brand#HomeTopPhone(href="#") Phone
+            %button.navbar-toggler(aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" data-target="#navbarText" data-toggle="collapse" type="button")
+              %span.navbar-toggler-icon
+            %div.p-2.flex-fill.bd-highlight.d-flex.justify-content-end
+              = link_to '', @order, :class => "button btn btn-outline-primary my-2 my-sm-0 i fa fa-shopping-cart", :style => "height: 38px; padding-top: 10px; margin-right: 10px"
+            .button.btn#cart
+                                     
+            - if user_signed_in?
+              %span.navbar-text(style = "padding-right: 10px;")
+                = link_to 'Account', edit_user_registration_path
+              %span.navbar-text(style = "padding-right: 10px;")
+                = link_to "Log Out", destroy_user_session_path, method: :delete
+            - else                
+              %span.navbar-text(style = "padding-right: 10px;")
+                = link_to "Log in", new_user_session_path               
+              %span.navbar-text
+                = link_to "Sign Up"            
+      .container
+        %nav.navbar.navbar-expand-lg.navbar-light.d-flex.bd-highlight(style = "background-color: white; padding: 6px;")          
+          %a.navbar-brand.p-2.flex-fill.bd-highlight#checkid(href="#") App
+      .container
+        %nav.navbar.navbar-expand-lg.navbar-light.d-flex.bd-highlight(style = "background-color: white; padding: 6px;")
+          %a.navbar-brand.p-2.flex-fill.bd-highlight#checkid(href="#") App
+          %form.form-inline.my-2.my-lg-0.p-2.flex-fill.bd-highlight.d-flex.justify-content-center
+            %input.form-control.mr-sm-2#SearchText(aria-label="Search" placeholder="Search" type="search")
+            %button.btn.btn-outline-primary.my-2.my-sm-0#SearchButton(type="submit") Search
+  
+      .container
+        %nav.navbar.navbar-expand-lg.navbar-light.d-flex.bd-highlight.justify-content-begin(style = "background-color: white;")
+          %a.navbar-brand(href=home_path) Home            
+          %a.navbar-brand(href=categories_path) Category
+          %a.navbar-brand(href=articles_path) Articles
+
+    .container
+      = yield
+
+    %footer(style = "margin-top: 50px;")
+      .container.d-flex.bd-highlight
+        .p-2.flex-fill.bd-highlight
+          .single_footer.author_information
+            %h4 Store Information
+            %dl
+              %dd
+                %i.fa.fa-home
+                16 Purvis Street #2-00
+              %dd
+                %i.fa.fa-phone
+                (+1)111-111-111
+              %dd 
+                %a(href="#")
+                  %i.fa.fa-envelope-square
+                  www.yoose.com
+        .p-2.flex-fill.bd-highlight
+          .single_footer
+            %h4 Information
+            %dl
+              %dd
+                %a(href="#")
+                  %i.fa
+                  Our Blog
+              %dd
+                %a(href="#")
+                  %i.fa
+                  About Our Shop
+              %dd
+                %a(href="#")
+                  %i.fa
+                  Secure Shopping
+              %dd
+                %a(href="#")
+                  %i.fa
+                  Delivery infomation
+              %dd
+                %a(href="#")
+                  %i.fa
+                  Store Locations
+        .p-2.flex-fill.bd-highlight
+          .single_footer
+            %h4 My account
+            %dl
+              %dd
+                %a(href="#")
+                  %i.fa
+                  My orders
+              %dd
+                %a(href="#")
+                  %i.fa
+                  About Us
+              %dd
+                %a(href="#")
+                  %i.fa
+                  Contact
+              %dd
+                %a(href="#")
+                  %i.fa
+                  Shopping cart
+              %dd
+                %a(href="#")
+                  %i.fa
+                  Checkout
+        .p-2.flex-fill.bd-highlight
+          .single_footer
+            %h4 instagram
+            .instagram_img
+              #instafeed
+      .container
+        .row
+          .col-lg-6.col-md-6.col-sm-6
+            .widget_copyright
+              %p
+                copyright © 2018
+          .col-lg-6.col-md-6.col-sm-6
+            .payment

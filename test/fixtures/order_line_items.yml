@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  inventory_item: one
+  order: one
+  order_item_qty: 1
+  total_price: 1.5
+  order_line_item_price: 1.5
+
+two:
+  inventory_item: two
+  order: two
+  order_item_qty: 1
+  total_price: 1.5
+  order_line_item_price: 1.5

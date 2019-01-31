@@ -1,0 +1,29 @@
+- if user_signed_in? && current_user.admin
+  %p#notice= notice
+  %h1 Inventory Items
+  %table
+    %thead
+      %tr
+        %th Inv item category
+        %th Model
+        %th Name
+        %th Price
+        %th Description
+        %th Warehoused on
+        %th(colspan="3")
+    %tbody
+      - @inventory_items.each do |inventory_item|
+        %tr
+          %td= inventory_item.inventory_item_category_id
+          %td= inventory_item.inventory_model_id
+          %td= inventory_item.name
+          %td= inventory_item.price
+          %td= inventory_item.description
+          %td= inventory_item.warehoused_on
+          %td= link_to 'Show', inventory_item
+          %td= link_to 'Edit', edit_inventory_item_path(inventory_item)
+          %td= link_to 'Destroy', inventory_item, method: :delete, data: { confirm: 'Are you sure?' }
+  %br/
+  = link_to 'New Inventory Item', new_inventory_item_path
+-else
+  = link_to home_path

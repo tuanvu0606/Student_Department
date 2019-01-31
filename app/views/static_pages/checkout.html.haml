@@ -1,0 +1,24 @@
+%section.section
+  .card(style = "margin: 20px 0px;")
+    .card-header	
+      - @line_items = @order.order_line_items
+      .card-body
+        - @line_items.each do |line_item|
+          .row              
+            .card.text-center.col-lg-4.col-md-6(style = "margin: 5px 0px;")          
+              = link_to image_tag(line_item.inventory_item.image_url(:inventory_item)), line_item.inventory_item, :class => "img card-img-top"
+              .cart-body
+                %h5.card-title 
+                  =line_item.inventory_item.name
+                %h5
+                  Price:
+                  =number_to_currency line_item.fixed_item_price
+            .float-right.mx-auto    
+              Quantity:
+              =line_item.order_item_qty     
+            .float-right.mx-auto                  
+              Price:
+              =number_to_currency line_item.total_fixed_price
+%h4.title.is-4
+  %span.f5.has-text-grey Total price:
+  = number_to_currency(@order.total_price)                      

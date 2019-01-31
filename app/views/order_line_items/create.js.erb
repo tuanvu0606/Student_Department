@@ -1,0 +1,1 @@
+$('#cart').html("<%= @order.order_line_items.sum(:order_item_qty) %>");

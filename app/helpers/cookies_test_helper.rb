@@ -1,0 +1,2 @@
+module CookiesTestHelper
+end

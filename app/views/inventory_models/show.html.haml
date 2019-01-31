@@ -1,0 +1,34 @@
+- if user_signed_in? && current_user.admin
+  %p#notice= notice
+  %p
+    %strong Model name:
+    = @inventory_model.inventory_model_name
+  %p
+    %strong Quantity:
+    = @inventory_model.quantity
+  %p
+    %strong Quantity:
+    = @inventory_model.sold_quantity  
+  = link_to 'Edit', edit_inventory_model_path(@inventory_model)
+  |
+  = link_to 'Back', inventory_models_path
+- else
+  .card(style = "margin: 20px 0px;")
+    .card-header
+      %strong 
+        Model name:  
+        = @inventory_model.inventory_model_name
+        - @inventory_items = @inventory_model.inventory_items
+    .card-body
+      .row        
+
+        - @inventory_items.each do |inventory_item|
+          .card.text-center.col-lg-4.col-md-6(style = "margin: 5px 0px;")          
+            = link_to image_tag(inventory_item.image_url(:inventory_item)), inventory_item, :class => "img card-img-top"
+            .card-body       
+              %h5.card-title 
+                =inventory_item.name
+              %p.card-text
+                Unit Price:
+                =number_to_currency inventory_item.price 
+              = button_to 'Add to cart', order_line_items_path(inventory_item_id: inventory_item), class: 'btn button btn-primary'

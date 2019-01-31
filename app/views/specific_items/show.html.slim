@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Inventory item:
+  = @specific_item.inventory_item
+p
+  strong Inventory item:
+  = @specific_item.inventory_item_id
+p
+  strong Serial number:
+  = @specific_item.serial_number
+
+=> link_to 'Edit', edit_specific_item_path(@specific_item)
+'|
+=< link_to 'Back', specific_items_path

@@ -1,0 +1,67 @@
+.row
+  .col-lg-3.col-md-12(style = "margin: 10px 0px;")
+    %ul.list-group
+      %li.list-group-item(style = "background-color: #1E90FF; color: white;") Categories
+      - @inventory_item_categories.each do |inventory_item_category| 
+        %li.list-group-item
+          = link_to inventory_item_category.category_name, inventory_item_category
+      
+  .col-lg-6.col-md-12(style = "margin: 10px 0px;")
+    #carouselExampleIndicators.carousel.slide(data-ride="carousel")
+      %ol.carousel-indicators
+        %li.active(data-slide-to="0" data-target="#carouselExampleIndicators")
+        %li(data-slide-to="1" data-target="#carouselExampleIndicators")
+        %li(data-slide-to="2" data-target="#carouselExampleIndicators")
+      .carousel-inner
+        .carousel-item.active
+          %img.d-block.w-100
+            = image_tag 'sport_2.jpg'
+        .carousel-item
+          %img.d-block.w-100
+            = image_tag 'nike-men.jpg'
+        .carousel-item
+          %img.d-block.w-100
+            = image_tag 'sport_2.jpg'
+      %a.carousel-control-prev(data-slide="prev" href="#carouselExampleIndicators" role="button")
+        %span.carousel-control-prev-icon(aria-hidden="true")
+        %span.sr-only Previous
+      %a.carousel-control-next(data-slide="next" href="#carouselExampleIndicators" role="button")
+        %span.carousel-control-next-icon(aria-hidden="true")
+        %span.sr-only Next
+  .col-lg-3.col-md-12(style = "margin: 10px 0px;")
+    .card.text-center
+      .card-header
+        Best Seller
+      .card-body
+        .card          
+          = link_to image_tag(@best_seller.image_url(:best_seller)), @best_seller, :class => "img card-img-top"          
+          .card-body
+            %h5.card-title 
+              =@best_seller.name
+            %p.card-text
+              Sold:
+              =@best_seller.sold_quantity
+            = link_to "Details", @best_seller, :class => "a btn btn-primary"   
+
+.card(style = "margin: 20px 0px;")
+  .card-header
+    Featured Products
+    = paginate @static_pages
+    = page_entries_info @static_pages
+  .card-body
+    .row
+      - @static_pages.each do |inventory_item| 
+        .card.text-center.col-lg-4.col-md-6(style = "margin: 5px 0px;")          
+          //- binding.pru
+          = link_to image_tag(inventory_item.image_url(:inventory_item)), inventory_item, :class => "img card-img-top"          
+          .card-body       
+            %h5.card-title 
+              =inventory_item.name
+            %p.card-text
+              Unit Price:
+              =number_to_currency inventory_item.price
+            %p.card-text  
+              Quantity:
+              = inventory_item.quantity 
+            = button_to 'Add to cart', order_line_items_path(inventory_item_id: inventory_item), remote: true, class: 'btn button btn-primary'
+//= link_to image_tag(instrument.image_url(:thumb)), instrument

@@ -1,0 +1,23 @@
+h1 Listing specific_items
+
+table
+  thead
+    tr
+      th Inventory item.name
+      th Serial number
+      th
+      th
+      th
+
+  tbody
+    - @specific_items.each do |specific_item|
+      tr
+        td = specific_item.inventory_item.name
+        td = specific_item.serial_number
+        td = link_to 'Show', specific_item
+        td = link_to 'Edit', edit_specific_item_path(specific_item)
+        td = link_to 'Destroy', specific_item, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Specific item', new_specific_item_path

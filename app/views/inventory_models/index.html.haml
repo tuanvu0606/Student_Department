@@ -1,0 +1,44 @@
+- if user_signed_in? && current_user.admin
+  %p#notice= notice
+  %h1 Inventory Models
+  %table
+    %thead
+      %tr
+        %th Model name
+        %th Quantity
+        %th Sold Quantity
+        %th image
+        %th(colspan="3")
+    %tbody
+      - @inventory_models.each do |inventory_model|
+        %tr
+          %td= inventory_model.inventory_model_name
+          %td= inventory_model.quantity
+          %td= inventory_model.sold_quantity
+          %td= inventory_model.image          
+          %td= link_to 'Show', inventory_model
+          %td= link_to 'Edit', edit_inventory_model_path(inventory_model)
+          %td= link_to 'Destroy', inventory_model, method: :delete, data: { confirm: 'Are you sure?' }
+  %br/
+  = link_to 'New Inventory Model', new_inventory_model_path 
+- else
+  .card(style = "margin: 20px 0px;")
+    .card-header
+      Featured Products
+      //= will_paginate @clients, renderer: WillPaginate::ActionView::BootstrapLinkRenderer
+    .card-body
+      .row
+        - @inventory_models.each do |inventory_model| 
+          .card.text-center.col-lg-4.col-md-6(style = "margin: 5px 0px;")          
+            //- binding.pru
+            = link_to image_tag(inventory_model.image_url(:inventory_item)), inventory_model, :class => "img card-img-top"          
+            .card-body       
+              %h5.card-title 
+                =inventory_model.inventory_model_name
+              %p.card-text
+                Quantity:
+                =inventory_model.quantity
+              %p.card-text
+                Sold:
+                =inventory_model.sold_quantity  
+            = link_to "Details", inventory_model, :class => "a btn btn-primary"

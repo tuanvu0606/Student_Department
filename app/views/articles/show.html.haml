@@ -1,0 +1,43 @@
+- if user_signed_in? && current_user.admin
+  %p#notice= notice
+  %p
+    %strong Name:
+    = @article.name
+  %p
+    %strong Description:
+    = @article.description
+  %p
+    %strong Content:
+    = @article.content
+  = link_to 'Edit', edit_article_path(@article)
+  |
+  = link_to 'Back', articles_path
+  %br
+  = link_to 'New Article', new_article_path
+- else       
+  .container
+    .row
+      %ul.list-group.col-lg-2
+        %li.list-group-item Recent posts
+        - @articles_in_order.each do |article|
+          %li.list-group-item
+            =link_to article.name, article
+      .card.text-center.col-lg-10(style ="margin-top:10px;")
+        .card-header
+          Featured
+        = link_to image_tag(@article.image_url(:articles)), @article, :class => "img card-img-top"          
+        .card-body          
+          %h5.card-title 
+            =@article.name
+          %p.card-text 
+            =@article.description
+          %p.card-text 
+            =@article.content  
+          //%a.btn.btn-primary
+          //  = link_to 'Details', article
+          //= link_to 'Details', @article, :class => "a btn btn-primary"
+        .card-footer.text-muted
+          Updated at:
+          =@article.updated_at
+  
+    
