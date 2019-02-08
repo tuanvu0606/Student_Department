@@ -12,6 +12,7 @@
         %th Warehoused on
         %th(colspan="3")
     %tbody
+      / - binding.pry
       - @inventory_items.each do |inventory_item|
         %tr
           %td= inventory_item.inventory_item_category_id
@@ -26,4 +27,27 @@
   %br/
   = link_to 'New Inventory Item', new_inventory_item_path
 -else
-  = link_to home_path
+  %p#notice= notice
+  %h1 Inventory Items
+  %table
+    %thead
+      %tr
+        %th Inv item category
+        %th Model
+        %th Name
+        %th Price
+        %th Description
+        / %th Warehoused on
+        %th(colspan="3")
+    %tbody
+      / - binding.pry
+      - @inventory_items.each do |inventory_item|
+        %tr
+          %td= inventory_item.inventory_item_category_id
+          %td= inventory_item.inventory_model_id
+          %td= inventory_item.name
+          %td= inventory_item.price
+          %td= inventory_item.description
+          / %td= inventory_item.warehoused_on
+
+  

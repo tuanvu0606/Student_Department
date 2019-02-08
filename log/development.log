@@ -14865,3 +14865,2420 @@ Processing by StaticPagesController#home as HTML
 Completed 200 OK in 874ms (Views: 698.6ms | ActiveRecord: 11.0ms)
 
 
+Started GET "/specific_items" for 116.100.161.105 at 2019-02-08 05:26:14 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by SpecificItemsController#index as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering specific_items/index.html.erb within layouts/application
+  Rendered datagrid/_range_filter.html.erb (0.4ms)
+  Rendered datagrid/_form.html.erb (4.5ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "specific_items"[0m
+  ↳ app/views/specific_items/index.html.erb:3
+  Rendered datagrid/_order_for.html.erb (0.7ms)
+  Rendered datagrid/_order_for.html.erb (0.3ms)
+  Rendered datagrid/_order_for.html.erb (0.2ms)
+  Rendered datagrid/_head.html.erb (3.8ms)
+  [1m[36mSpecificItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "specific_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/datagrid/_table.html.erb:13
+  [1m[36mSpecificItem Load (0.2ms)[0m  [1m[34mSELECT  "specific_items".* FROM "specific_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/datagrid/_table.html.erb:14
+  Rendered datagrid/_row.html.erb (0.7ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_table.html.erb (28.5ms)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "specific_items"[0m
+  ↳ app/views/specific_items/index.html.erb:5
+  Rendered specific_items/index.html.erb within layouts/application (61.2ms)
+Completed 200 OK in 597ms (Views: 554.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 116.100.161.105 at 2019-02-08 05:43:31 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (48.0ms)
+Completed 200 OK in 224ms (Views: 173.8ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/" for 116.100.161.105 at 2019-02-08 06:22:28 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (406.0ms)
+Completed 500 Internal Server Error in 488ms (ActiveRecord: 4.0ms)
+
+
+  
+SyntaxError (/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:41: syntax error, unexpected keyword_end
+...aml::Helpers.html_escape((( end
+...                            ^~~
+/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:42: syntax error, unexpected keyword_end, expecting ')'
+...t.buffer << ("\n".freeze);; end;; _hamlout.buffer << ((::Ham...
+...                            ^~~
+/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:128: syntax error, unexpected keyword_ensure, expecting ')'
+...:Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer....
+...                         ^~~~~~
+/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:128: syntax error, unexpected keyword_end, expecting ')'
+...uffer.upper if @haml_buffer;end;
+...                            ^~~
+/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:131: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/layouts/application.html.haml:41: syntax error, unexpected keyword_end
+app/views/layouts/application.html.haml:42: syntax error, unexpected keyword_end, expecting ')'
+app/views/layouts/application.html.haml:128: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/layouts/application.html.haml:128: syntax error, unexpected keyword_end, expecting ')'
+app/views/layouts/application.html.haml:131: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/" for 116.100.161.105 at 2019-02-08 06:23:41 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (52.0ms)
+Completed 500 Internal Server Error in 3451ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `superherouse_path' for #<#<Class:0x00007f3e8069e5b8>:0x00007f3e80cd7a38>):
+    35:       .container
+    36:         %nav.navbar.navbar-expand-lg.navbar-light.d-flex.bd-highlight(style = "background-color: white; padding: 6px;")
+    37:           %a.navbar-brand.p-2.flex-fill.bd-highlight#checkid(href="#") App
+    38:           = form_tag(superherouse_path, method: :get) do
+    39:             = text_field_tag(:search, params[:search])
+    40:             = submit_tag ("Search")
+    41: 
+  
+app/views/layouts/application.html.haml:38:in `_app_views_layouts_application_html_haml__2288894131554221606_69953210091640'
+Started GET "/" for 116.100.161.105 at 2019-02-08 06:24:06 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (71.6ms)
+Completed 200 OK in 254ms (Views: 245.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/inventory_items?utf8=%E2%9C%93&search=&commit=Search" for 116.100.161.105 at 2019-02-08 06:24:09 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "commit"=>"Search"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering inventory_items/index.html.haml within layouts/application
+  [1m[36mInventoryItem Load (0.3ms)[0m  [1m[34mSELECT "inventory_items".* FROM "inventory_items" ORDER BY created_at desc[0m
+  ↳ app/views/inventory_items/index.html.haml:15
+  Rendered inventory_items/index.html.haml within layouts/application (11.1ms)
+Completed 200 OK in 150ms (Views: 144.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 116.100.161.105 at 2019-02-08 06:26:02 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (44.2ms)
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 1.7ms)
+
+
+  
+SyntaxError (/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:38: syntax error, unexpected =>, expecting keyword_end
+...s_path, method: :get), :html => {:class => "form form-inline...
+...                             ^~
+/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:38: syntax error, unexpected keyword_do, expecting keyword_end
+...lex justify-content-center"} do
+...                             ^~
+/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:128: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/layouts/application.html.haml:38: syntax error, unexpected =>, expecting keyword_end
+app/views/layouts/application.html.haml:38: syntax error, unexpected keyword_do, expecting keyword_end
+app/views/layouts/application.html.haml:128: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/" for 116.100.161.105 at 2019-02-08 06:26:22 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (42.1ms)
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 1.1ms)
+
+
+  
+SyntaxError (/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:38: syntax error, unexpected =>
+...s_path, method: :get), class => "form form-inline my-2 my-lg...
+...                             ^~
+/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:38: syntax error, unexpected keyword_do_block, expecting keyword_end
+...flex justify-content-center" do
+...                             ^~
+/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:128: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/layouts/application.html.haml:38: syntax error, unexpected =>
+app/views/layouts/application.html.haml:38: syntax error, unexpected keyword_do_block, expecting keyword_end
+app/views/layouts/application.html.haml:128: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/" for 116.100.161.105 at 2019-02-08 06:26:43 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (42.8ms)
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 1.2ms)
+
+
+  
+SyntaxError (/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:38: syntax error, unexpected =>
+...aml_temp =  form_tag , class => "form form-inline my-2 my-lg...
+...                             ^~
+/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:38: syntax error, unexpected ',', expecting keyword_end
+...d-flex justify-content-center", (inventory_items_path, metho...
+...                              ^
+/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:38: syntax error, unexpected tLABEL, expecting ')'
+... (inventory_items_path, method: :get) do
+...                        ^~~~~~~
+/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:38: syntax error, unexpected keyword_do, expecting keyword_end
+...ry_items_path, method: :get) do
+...                             ^~
+/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:128: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/layouts/application.html.haml:38: syntax error, unexpected =>
+app/views/layouts/application.html.haml:38: syntax error, unexpected ',', expecting keyword_end
+app/views/layouts/application.html.haml:38: syntax error, unexpected tLABEL, expecting ')'
+app/views/layouts/application.html.haml:38: syntax error, unexpected keyword_do, expecting keyword_end
+app/views/layouts/application.html.haml:128: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/" for 116.100.161.105 at 2019-02-08 06:33:26 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (41.6ms)
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 2.2ms)
+
+
+  
+SyntaxError (/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:39: syntax error, unexpected ',', expecting ')'
+..._tag(:search, params[:search]), class: "input form-control m...
+...                              ^):
+  
+app/views/layouts/application.html.haml:39: syntax error, unexpected ',', expecting ')'
+Started GET "/" for 116.100.161.105 at 2019-02-08 06:34:08 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (43.7ms)
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 1.2ms)
+
+
+  
+SyntaxError (/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:39: syntax error, unexpected ',', expecting ')'
+...pe((( text_field_tag, (:search, params[:search]), class: "in...
+...                              ^
+/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:39: syntax error, unexpected ',', expecting &. or :: or '[' or '.'
+...ag, (:search, params[:search]), class: "input form-control m...
+...                              ^):
+  
+app/views/layouts/application.html.haml:39: syntax error, unexpected ',', expecting ')'
+app/views/layouts/application.html.haml:39: syntax error, unexpected ',', expecting &. or :: or '[' or '.'
+Started GET "/" for 116.100.161.105 at 2019-02-08 06:34:18 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (43.8ms)
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 1.1ms)
+
+
+  
+SyntaxError (/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:39: syntax error, unexpected ',', expecting ')'
+...ape((( text_field_tag (:search, params[:search]), class: "in...
+...                              ^
+/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:39: syntax error, unexpected ',', expecting ')'
+...tag (:search, params[:search]), class: "input form-control m...
+...                              ^
+/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:40: syntax error, unexpected ')', expecting keyword_end
+)).to_s);).to_s);; _hamlout.buffer << ("\n".f...
+               ^
+/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:128: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/layouts/application.html.haml:39: syntax error, unexpected ',', expecting ')'
+app/views/layouts/application.html.haml:39: syntax error, unexpected ',', expecting ')'
+app/views/layouts/application.html.haml:40: syntax error, unexpected ')', expecting keyword_end
+app/views/layouts/application.html.haml:128: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/" for 116.100.161.105 at 2019-02-08 06:34:33 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (41.8ms)
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 1.2ms)
+
+
+  
+SyntaxError (/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:39: syntax error, unexpected ',', expecting ')'
+...ape((( text_field_tag (:search, params[:search]), class: "fo...
+...                              ^
+/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:39: syntax error, unexpected ',', expecting ')'
+...tag (:search, params[:search]), class: "form-control"
+...                              ^
+/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:40: syntax error, unexpected ')', expecting keyword_end
+)).to_s);).to_s);; _hamlout.buffer << ("\n".f...
+               ^
+/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:128: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/layouts/application.html.haml:39: syntax error, unexpected ',', expecting ')'
+app/views/layouts/application.html.haml:39: syntax error, unexpected ',', expecting ')'
+app/views/layouts/application.html.haml:40: syntax error, unexpected ')', expecting keyword_end
+app/views/layouts/application.html.haml:128: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/" for 116.100.161.105 at 2019-02-08 06:34:34 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (42.4ms)
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 1.1ms)
+
+
+  
+SyntaxError (/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:39: syntax error, unexpected ',', expecting ')'
+...ape((( text_field_tag (:search, params[:search]), class: "fo...
+...                              ^
+/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:39: syntax error, unexpected ',', expecting ')'
+...tag (:search, params[:search]), class: "form-control"
+...                              ^
+/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:40: syntax error, unexpected ')', expecting keyword_end
+)).to_s);).to_s);; _hamlout.buffer << ("\n".f...
+               ^
+/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:128: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/layouts/application.html.haml:39: syntax error, unexpected ',', expecting ')'
+app/views/layouts/application.html.haml:39: syntax error, unexpected ',', expecting ')'
+app/views/layouts/application.html.haml:40: syntax error, unexpected ')', expecting keyword_end
+app/views/layouts/application.html.haml:128: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/" for 116.100.161.105 at 2019-02-08 06:35:01 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (84.8ms)
+Completed 500 Internal Server Error in 139ms (ActiveRecord: 2.0ms)
+
+
+  
+SyntaxError (/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:39: syntax error, unexpected ',', expecting ')'
+...ape((( text_field_tag (:search, params[:search])
+...                              ^
+/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:40: syntax error, unexpected ')', expecting keyword_end
+)).to_s);).to_s);; _hamlout.buffer << ("\n".f...
+               ^
+/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:128: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/layouts/application.html.haml:39: syntax error, unexpected ',', expecting ')'
+app/views/layouts/application.html.haml:40: syntax error, unexpected ')', expecting keyword_end
+app/views/layouts/application.html.haml:128: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/" for 116.100.161.105 at 2019-02-08 06:35:02 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (45.5ms)
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 1.3ms)
+
+
+  
+SyntaxError (/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:39: syntax error, unexpected ',', expecting ')'
+...ape((( text_field_tag (:search, params[:search])
+...                              ^
+/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:40: syntax error, unexpected ')', expecting keyword_end
+)).to_s);).to_s);; _hamlout.buffer << ("\n".f...
+               ^
+/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:128: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/layouts/application.html.haml:39: syntax error, unexpected ',', expecting ')'
+app/views/layouts/application.html.haml:40: syntax error, unexpected ')', expecting keyword_end
+app/views/layouts/application.html.haml:128: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/" for 116.100.161.105 at 2019-02-08 06:35:14 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (43.2ms)
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 1.2ms)
+
+
+  
+SyntaxError (/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:38: syntax error, unexpected tLABEL, expecting '='
+... (inventory_items_path, method: :get) do
+...                        ^~~~~~~
+/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:128: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/layouts/application.html.haml:38: syntax error, unexpected tLABEL, expecting '='
+app/views/layouts/application.html.haml:128: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/" for 116.100.161.105 at 2019-02-08 06:35:15 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.1ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.3ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (40.9ms)
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 1.2ms)
+
+
+  
+SyntaxError (/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:38: syntax error, unexpected tLABEL, expecting '='
+... (inventory_items_path, method: :get) do
+...                        ^~~~~~~
+/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:128: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/layouts/application.html.haml:38: syntax error, unexpected tLABEL, expecting '='
+app/views/layouts/application.html.haml:128: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/" for 116.100.161.105 at 2019-02-08 06:35:30 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (46.6ms)
+Completed 200 OK in 171ms (Views: 165.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 116.100.161.105 at 2019-02-08 06:35:41 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (41.3ms)
+Completed 200 OK in 169ms (Views: 163.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/inventory_items?utf8=%E2%9C%93&search=a&commit=Search" for 116.100.161.105 at 2019-02-08 06:35:44 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"a", "commit"=>"Search"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering inventory_items/index.html.haml within layouts/application
+  [1m[36mInventoryItem Load (0.3ms)[0m  [1m[34mSELECT "inventory_items".* FROM "inventory_items" ORDER BY created_at desc[0m
+  ↳ app/views/inventory_items/index.html.haml:15
+  Rendered inventory_items/index.html.haml within layouts/application (9.9ms)
+Completed 200 OK in 136ms (Views: 132.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 116.100.161.105 at 2019-02-08 06:36:07 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (41.5ms)
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 1.2ms)
+
+
+  
+SyntaxError (/home/ec2-user/e-commerce_app/e-commerce-app/app/views/layouts/application.html.haml:39: syntax error, unexpected ',', expecting ')'
+..._tag(:search, params[:search]), class: "form-control"
+...                              ^):
+  
+app/views/layouts/application.html.haml:39: syntax error, unexpected ',', expecting ')'
+Started GET "/" for 116.100.161.105 at 2019-02-08 06:36:12 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.3ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (56.4ms)
+Completed 200 OK in 278ms (Views: 271.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 116.100.161.105 at 2019-02-08 06:40:07 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (44.9ms)
+Completed 200 OK in 183ms (Views: 176.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 116.100.161.105 at 2019-02-08 06:44:43 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.1ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (41.9ms)
+Completed 200 OK in 171ms (Views: 165.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 116.100.161.105 at 2019-02-08 06:46:11 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.1ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (41.5ms)
+Completed 200 OK in 256ms (Views: 249.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/inventory_items?utf8=%E2%9C%93&search=&commit=Search" for 116.100.161.105 at 2019-02-08 06:46:14 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "commit"=>"Search"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering inventory_items/index.html.haml within layouts/application
+  [1m[36mInventoryItem Load (0.3ms)[0m  [1m[34mSELECT "inventory_items".* FROM "inventory_items" ORDER BY created_at desc[0m
+  ↳ app/views/inventory_items/index.html.haml:15
+  Rendered inventory_items/index.html.haml within layouts/application (20.0ms)
+Completed 200 OK in 164ms (Views: 158.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/articles" for 116.100.161.105 at 2019-02-08 06:50:34 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering articles/index.html.haml within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.haml:12
+  Rendered articles/index.html.haml within layouts/application (22.5ms)
+Completed 200 OK in 140ms (Views: 134.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/home" for 116.100.161.105 at 2019-02-08 06:50:36 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (50.3ms)
+Completed 200 OK in 168ms (Views: 161.8ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/users/sign_out" for 116.100.161.105 at 2019-02-08 06:50:37 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"+ousZuqYym84vWjM6ZcfifEngUNW0VYFUbnov9pAURIT+k9x8uNkBBkmKE2Kgs0iDA1N3pweBFmy+rcrJP2VyA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_created_at", nil], ["updated_at", "2019-02-08 06:50:37.154634"], ["id", 2]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://ec2-52-221-217-179.ap-southeast-1.compute.amazonaws.com:4001/
+Completed 302 Found in 14ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/" for 116.100.161.105 at 2019-02-08 06:50:37 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (40.2ms)
+Completed 200 OK in 156ms (Views: 148.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/inventory_items?utf8=%E2%9C%93&search=a&commit=Search" for 116.100.161.105 at 2019-02-08 06:50:39 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"a", "commit"=>"Search"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering inventory_items/index.html.haml within layouts/application
+  Rendered inventory_items/index.html.haml within layouts/application (3.7ms)
+Completed 200 OK in 128ms (Views: 125.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventory_items?utf8=%E2%9C%93&search=a&commit=Search" for 116.100.161.105 at 2019-02-08 07:08:42 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"a", "commit"=>"Search"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering inventory_items/index.html.haml within layouts/application
+  Rendered inventory_items/index.html.haml within layouts/application (3.6ms)
+Completed 200 OK in 126ms (Views: 122.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for 116.100.161.105 at 2019-02-08 07:08:44 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering /usr/local/rvm/gems/ruby-2.5.3/gems/devise-4.5.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/local/rvm/gems/ruby-2.5.3/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.5.3/gems/devise-4.5.0/app/views/devise/sessions/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 151ms (Views: 137.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users/sign_in" for 116.100.161.105 at 2019-02-08 07:08:50 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MuCPPoZoYfSkJNACLXYfoSqdvAFDSNFJmcJkN/5TBjuj5B1ZvwRWtZ5z8jzz9Hk3+V3vTtTcPQgJdZRxV338UQ==", "user"=>{"email"=>"tuan@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tuan@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mAhoy::Visit Load (0.2ms)[0m  [1m[34mSELECT  "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "cfe5372f-8193-4f30-8c0e-3d7e843be1ba"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_created_at", "2019-02-08 07:08:50.570064"], ["updated_at", "2019-02-08 07:08:50.570736"], ["id", 2]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:19
+Redirected to http://ec2-52-221-217-179.ap-southeast-1.compute.amazonaws.com:4001/
+Completed 302 Found in 250ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/" for 116.100.161.105 at 2019-02-08 07:08:50 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (43.2ms)
+Completed 200 OK in 169ms (Views: 160.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/inventory_items?utf8=%E2%9C%93&search=&commit=Search" for 116.100.161.105 at 2019-02-08 07:08:53 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "commit"=>"Search"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering inventory_items/index.html.haml within layouts/application
+  [1m[36mInventoryItem Load (0.3ms)[0m  [1m[34mSELECT "inventory_items".* FROM "inventory_items" ORDER BY created_at desc[0m
+  ↳ app/views/inventory_items/index.html.haml:15
+  Rendered inventory_items/index.html.haml within layouts/application (9.6ms)
+Completed 200 OK in 141ms (Views: 137.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/inventory_items?utf8=%E2%9C%93&search=a&commit=Search" for 116.100.161.105 at 2019-02-08 07:36:01 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"a", "commit"=>"Search"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering inventory_items/index.html.haml within layouts/application
+  [1m[36mInventoryItem Load (0.4ms)[0m  [1m[34mSELECT "inventory_items".* FROM "inventory_items" ORDER BY created_at desc[0m
+  ↳ app/views/inventory_items/index.html.haml:15
+  Rendered inventory_items/index.html.haml within layouts/application (21.1ms)
+Completed 200 OK in 178ms (Views: 147.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/home" for 116.100.161.105 at 2019-02-08 07:36:10 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (63.2ms)
+Completed 200 OK in 199ms (Views: 177.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/inventory_items?utf8=%E2%9C%93&search=&commit=Search" for 116.100.161.105 at 2019-02-08 07:40:26 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "commit"=>"Search"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering inventory_items/index.html.haml within layouts/application
+  [1m[36mInventoryItem Load (0.3ms)[0m  [1m[34mSELECT "inventory_items".* FROM "inventory_items" ORDER BY created_at desc[0m
+  ↳ app/views/inventory_items/index.html.haml:15
+  Rendered inventory_items/index.html.haml within layouts/application (9.9ms)
+Completed 200 OK in 134ms (Views: 130.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/specific_items" for 116.100.161.105 at 2019-02-08 08:36:48 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SpecificItemsController#index as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering specific_items/index.html.erb within layouts/application
+  Rendered datagrid/_range_filter.html.erb (0.4ms)
+  Rendered datagrid/_form.html.erb (4.1ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "specific_items"[0m
+  ↳ app/views/specific_items/index.html.erb:3
+  Rendered datagrid/_order_for.html.erb (0.7ms)
+  Rendered datagrid/_order_for.html.erb (0.3ms)
+  Rendered datagrid/_order_for.html.erb (0.3ms)
+  Rendered datagrid/_head.html.erb (3.8ms)
+  [1m[36mSpecificItem Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "specific_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/datagrid/_table.html.erb:13
+  [1m[36mSpecificItem Load (0.2ms)[0m  [1m[34mSELECT  "specific_items".* FROM "specific_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/datagrid/_table.html.erb:14
+  Rendered datagrid/_row.html.erb (0.8ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_table.html.erb (27.8ms)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "specific_items"[0m
+  ↳ app/views/specific_items/index.html.erb:5
+  Rendered specific_items/index.html.erb within layouts/application (59.4ms)
+Completed 200 OK in 208ms (Views: 173.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/home" for 116.100.161.105 at 2019-02-08 08:36:50 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (50.7ms)
+Completed 200 OK in 223ms (Views: 186.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/home" for 116.100.161.105 at 2019-02-08 08:42:50 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (51.1ms)
+Completed 200 OK in 239ms (Views: 184.1ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/specific_items?utf8=%E2%9C%93&inventory_item=1" for 116.100.161.105 at 2019-02-08 08:42:53 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SpecificItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "inventory_item"=>"1"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering specific_items/index.html.erb within layouts/application
+  Rendered datagrid/_range_filter.html.erb (0.5ms)
+  Rendered datagrid/_form.html.erb (3.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "specific_items"[0m
+  ↳ app/views/specific_items/index.html.erb:3
+  Rendered datagrid/_order_for.html.erb (0.8ms)
+  Rendered datagrid/_order_for.html.erb (0.3ms)
+  Rendered datagrid/_order_for.html.erb (0.3ms)
+  Rendered datagrid/_head.html.erb (4.1ms)
+  [1m[36mSpecificItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "specific_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/datagrid/_table.html.erb:13
+  [1m[36mSpecificItem Load (0.2ms)[0m  [1m[34mSELECT  "specific_items".* FROM "specific_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/datagrid/_table.html.erb:14
+  Rendered datagrid/_row.html.erb (0.8ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.3ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_table.html.erb (30.4ms)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "specific_items"[0m
+  ↳ app/views/specific_items/index.html.erb:5
+  Rendered specific_items/index.html.erb within layouts/application (62.8ms)
+Completed 200 OK in 220ms (Views: 210.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/home" for 116.100.161.105 at 2019-02-08 08:42:57 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (41.5ms)
+Completed 200 OK in 163ms (Views: 156.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/specific_items?utf8=%E2%9C%93&inventory_item=3" for 116.100.161.105 at 2019-02-08 08:42:59 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SpecificItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "inventory_item"=>"3"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering specific_items/index.html.erb within layouts/application
+  Rendered datagrid/_range_filter.html.erb (0.5ms)
+  Rendered datagrid/_form.html.erb (2.9ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "specific_items"[0m
+  ↳ app/views/specific_items/index.html.erb:3
+  Rendered datagrid/_order_for.html.erb (0.7ms)
+  Rendered datagrid/_order_for.html.erb (0.3ms)
+  Rendered datagrid/_order_for.html.erb (0.3ms)
+  Rendered datagrid/_head.html.erb (4.1ms)
+  [1m[36mSpecificItem Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "specific_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/datagrid/_table.html.erb:13
+  [1m[36mSpecificItem Load (0.2ms)[0m  [1m[34mSELECT  "specific_items".* FROM "specific_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/datagrid/_table.html.erb:14
+  Rendered datagrid/_row.html.erb (0.7ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_table.html.erb (25.1ms)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "specific_items"[0m
+  ↳ app/views/specific_items/index.html.erb:5
+  Rendered specific_items/index.html.erb within layouts/application (54.9ms)
+Completed 200 OK in 190ms (Views: 184.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/specific_items?utf8=%E2%9C%93&inventory_item=2" for 116.100.161.105 at 2019-02-08 08:43:05 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SpecificItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "inventory_item"=>"2"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering specific_items/index.html.erb within layouts/application
+  Rendered datagrid/_range_filter.html.erb (0.5ms)
+  Rendered datagrid/_form.html.erb (2.8ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "specific_items"[0m
+  ↳ app/views/specific_items/index.html.erb:3
+  Rendered datagrid/_order_for.html.erb (0.7ms)
+  Rendered datagrid/_order_for.html.erb (0.3ms)
+  Rendered datagrid/_order_for.html.erb (0.3ms)
+  Rendered datagrid/_head.html.erb (4.0ms)
+  [1m[36mSpecificItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "specific_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/datagrid/_table.html.erb:13
+  [1m[36mSpecificItem Load (0.2ms)[0m  [1m[34mSELECT  "specific_items".* FROM "specific_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/datagrid/_table.html.erb:14
+  Rendered datagrid/_row.html.erb (0.7ms)
+  Rendered datagrid/_row.html.erb (0.3ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.4ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_table.html.erb (24.7ms)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "specific_items"[0m
+  ↳ app/views/specific_items/index.html.erb:5
+  Rendered specific_items/index.html.erb within layouts/application (54.8ms)
+Completed 200 OK in 196ms (Views: 190.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/home" for 116.100.161.105 at 2019-02-08 08:43:07 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (42.6ms)
+Completed 200 OK in 171ms (Views: 164.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/home" for 116.100.161.105 at 2019-02-08 08:43:15 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (48.2ms)
+Completed 200 OK in 229ms (Views: 173.3ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/specific_items?utf8=%E2%9C%93&inventory_item=1" for 116.100.161.105 at 2019-02-08 08:43:17 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SpecificItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "inventory_item"=>"1"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering specific_items/index.html.erb within layouts/application
+  Rendered datagrid/_range_filter.html.erb (0.5ms)
+  Rendered datagrid/_form.html.erb (3.1ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "specific_items"[0m
+  ↳ app/views/specific_items/index.html.erb:3
+  Rendered datagrid/_order_for.html.erb (0.8ms)
+  Rendered datagrid/_order_for.html.erb (0.3ms)
+  Rendered datagrid/_order_for.html.erb (0.3ms)
+  Rendered datagrid/_head.html.erb (4.0ms)
+  [1m[36mSpecificItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "specific_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/datagrid/_table.html.erb:13
+  [1m[36mSpecificItem Load (0.2ms)[0m  [1m[34mSELECT  "specific_items".* FROM "specific_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/datagrid/_table.html.erb:14
+  Rendered datagrid/_row.html.erb (0.8ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.3ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_table.html.erb (30.0ms)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "specific_items"[0m
+  ↳ app/views/specific_items/index.html.erb:5
+  Rendered specific_items/index.html.erb within layouts/application (62.7ms)
+Completed 200 OK in 197ms (Views: 188.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/specific_items?utf8=%E2%9C%93&inventory_item=1" for 116.100.161.105 at 2019-02-08 08:43:32 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SpecificItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "inventory_item"=>"1"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering specific_items/index.html.erb within layouts/application
+  Rendered datagrid/_range_filter.html.erb (0.5ms)
+  Rendered datagrid/_form.html.erb (4.0ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "specific_items"[0m
+  ↳ app/views/specific_items/index.html.erb:3
+  Rendered datagrid/_order_for.html.erb (0.7ms)
+  Rendered datagrid/_order_for.html.erb (0.3ms)
+  Rendered datagrid/_order_for.html.erb (0.3ms)
+  Rendered datagrid/_head.html.erb (3.9ms)
+  [1m[36mSpecificItem Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "specific_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/datagrid/_table.html.erb:13
+  [1m[36mSpecificItem Load (0.2ms)[0m  [1m[34mSELECT  "specific_items".* FROM "specific_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/datagrid/_table.html.erb:14
+  Rendered datagrid/_row.html.erb (0.7ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_table.html.erb (28.0ms)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "specific_items"[0m
+  ↳ app/views/specific_items/index.html.erb:5
+  Rendered specific_items/index.html.erb within layouts/application (62.2ms)
+Completed 200 OK in 220ms (Views: 193.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/specific_items?utf8=%E2%9C%93&inventory_item=1" for 116.100.161.105 at 2019-02-08 08:43:34 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SpecificItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "inventory_item"=>"1"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering specific_items/index.html.erb within layouts/application
+  Rendered datagrid/_range_filter.html.erb (0.5ms)
+  Rendered datagrid/_form.html.erb (3.1ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "specific_items"[0m
+  ↳ app/views/specific_items/index.html.erb:3
+  Rendered datagrid/_order_for.html.erb (0.8ms)
+  Rendered datagrid/_order_for.html.erb (0.3ms)
+  Rendered datagrid/_order_for.html.erb (0.3ms)
+  Rendered datagrid/_head.html.erb (4.3ms)
+  [1m[36mSpecificItem Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "specific_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/datagrid/_table.html.erb:13
+  [1m[36mSpecificItem Load (0.2ms)[0m  [1m[34mSELECT  "specific_items".* FROM "specific_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/datagrid/_table.html.erb:14
+  Rendered datagrid/_row.html.erb (0.8ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.3ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_table.html.erb (26.0ms)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "specific_items"[0m
+  ↳ app/views/specific_items/index.html.erb:5
+  Rendered specific_items/index.html.erb within layouts/application (58.3ms)
+Completed 200 OK in 305ms (Views: 299.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/home" for 116.100.161.105 at 2019-02-08 08:43:36 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (52.1ms)
+Completed 200 OK in 224ms (Views: 179.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/specific_items?utf8=%E2%9C%93&inventory_item=1" for 116.100.161.105 at 2019-02-08 08:43:41 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SpecificItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "inventory_item"=>"1"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering specific_items/index.html.erb within layouts/application
+  Rendered datagrid/_range_filter.html.erb (0.5ms)
+  Rendered datagrid/_form.html.erb (3.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "specific_items"[0m
+  ↳ app/views/specific_items/index.html.erb:3
+  Rendered datagrid/_order_for.html.erb (0.9ms)
+  Rendered datagrid/_order_for.html.erb (0.3ms)
+  Rendered datagrid/_order_for.html.erb (0.3ms)
+  Rendered datagrid/_head.html.erb (4.2ms)
+  [1m[36mSpecificItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "specific_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/datagrid/_table.html.erb:13
+  [1m[36mSpecificItem Load (0.2ms)[0m  [1m[34mSELECT  "specific_items".* FROM "specific_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/datagrid/_table.html.erb:14
+  Rendered datagrid/_row.html.erb (0.8ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.3ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.3ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_table.html.erb (26.1ms)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "specific_items"[0m
+  ↳ app/views/specific_items/index.html.erb:5
+  Rendered specific_items/index.html.erb within layouts/application (57.7ms)
+Completed 200 OK in 200ms (Views: 194.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/home" for 116.100.161.105 at 2019-02-08 08:50:30 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (58.1ms)
+Completed 200 OK in 182ms (Views: 172.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/home" for 116.100.161.105 at 2019-02-08 08:50:32 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (1.4ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (43.9ms)
+Completed 200 OK in 183ms (Views: 172.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/home" for 116.100.161.105 at 2019-02-08 08:57:54 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (46.4ms)
+Completed 200 OK in 218ms (Views: 167.9ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/specific_items?utf8=%E2%9C%93&inventory_item=1" for 116.100.161.105 at 2019-02-08 08:57:56 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SpecificItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "inventory_item"=>"1"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering specific_items/index.html.erb within layouts/application
+  Rendered specific_items/index.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `model_name' for nil:NilClass):
+    1: <%= datagrid_form_for @grid, :method => :get, :url => specific_items_path %>
+    2: 
+    3: <%= paginate(@grid.assets) %>
+    4: <%= datagrid_table @grid %>
+  
+app/views/specific_items/index.html.erb:1:in `_app_views_specific_items_index_html_erb___2038421897119408081_69953225390940'
+Started GET "/specific_items?utf8=%E2%9C%93&inventory_item=1" for 116.100.161.105 at 2019-02-08 09:00:59 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SpecificItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "inventory_item"=>"1"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering specific_items/index.html.erb within layouts/application
+  Rendered datagrid/_range_filter.html.erb (0.4ms)
+  Rendered datagrid/_form.html.erb (4.0ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "specific_items"[0m
+  ↳ app/views/specific_items/index.html.erb:3
+  Rendered datagrid/_order_for.html.erb (0.7ms)
+  Rendered datagrid/_order_for.html.erb (0.3ms)
+  Rendered datagrid/_order_for.html.erb (0.4ms)
+  Rendered datagrid/_head.html.erb (3.9ms)
+  [1m[36mSpecificItem Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "specific_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/datagrid/_table.html.erb:13
+  [1m[36mSpecificItem Load (0.2ms)[0m  [1m[34mSELECT  "specific_items".* FROM "specific_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/datagrid/_table.html.erb:14
+  Rendered datagrid/_row.html.erb (0.6ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.1ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_table.html.erb (28.4ms)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "specific_items"[0m
+  ↳ app/views/specific_items/index.html.erb:5
+  Rendered specific_items/index.html.erb within layouts/application (59.7ms)
+Completed 500 Internal Server Error in 198ms (ActiveRecord: 2.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"inventory_items"}, missing required keys: [:id]):
+    35:       .container
+    36:         %nav.navbar.navbar-expand-lg.navbar-light.d-flex.bd-highlight(style = "background-color: white; padding: 6px;")
+    37:           %a.navbar-brand.p-2.flex-fill.bd-highlight#checkid(href="#") App
+    38:           = form_tag(inventory_item_path, method: :get, class: "form form-inline my-lg-0 p-2 flex-fill bd-highlight d-flex justify-content-center") do
+    39:             Inventory Item #{text_field_tag(:inventory_item, params[:inventory_item], class: "input form-control mr-sm-2")}
+    40:             = submit_tag ("Search"), class: "btn btn-default btn-primary", name: nil
+    41: 
+  
+app/views/layouts/application.html.haml:38:in `_app_views_layouts_application_html_haml__2288894131554221606_69953234196020'
+Started GET "/specific_items?utf8=%E2%9C%93&inventory_item=1" for 116.100.161.105 at 2019-02-08 09:01:12 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SpecificItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "inventory_item"=>"1"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering specific_items/index.html.erb within layouts/application
+  Rendered datagrid/_range_filter.html.erb (0.4ms)
+  Rendered datagrid/_form.html.erb (2.9ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "specific_items"[0m
+  ↳ app/views/specific_items/index.html.erb:3
+  Rendered datagrid/_order_for.html.erb (0.7ms)
+  Rendered datagrid/_order_for.html.erb (0.3ms)
+  Rendered datagrid/_order_for.html.erb (0.3ms)
+  Rendered datagrid/_head.html.erb (4.0ms)
+  [1m[36mSpecificItem Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "specific_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/datagrid/_table.html.erb:13
+  [1m[36mSpecificItem Load (0.2ms)[0m  [1m[34mSELECT  "specific_items".* FROM "specific_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/datagrid/_table.html.erb:14
+  Rendered datagrid/_row.html.erb (0.7ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_row.html.erb (0.2ms)
+  Rendered datagrid/_table.html.erb (25.5ms)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "specific_items"[0m
+  ↳ app/views/specific_items/index.html.erb:5
+  Rendered specific_items/index.html.erb within layouts/application (56.2ms)
+Completed 200 OK in 182ms (Views: 177.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/home" for 116.100.161.105 at 2019-02-08 09:01:15 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (46.9ms)
+Completed 200 OK in 211ms (Views: 176.6ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/inventory_items?utf8=%E2%9C%93&inventory_item=1" for 116.100.161.105 at 2019-02-08 09:01:17 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "inventory_item"=>"1"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering inventory_items/index.html.haml within layouts/application
+  Rendered inventory_items/index.html.haml within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    12:         %th Warehoused on
+    13:         %th(colspan="3")
+    14:     %tbody
+    15:       - @inventory_items.each do |inventory_item|
+    16:         %tr
+    17:           %td= inventory_item.inventory_item_category_id
+    18:           %td= inventory_item.inventory_model_id
+  
+app/views/inventory_items/index.html.haml:15:in `_app_views_inventory_items_index_html_haml___1518031088083311048_69953233926720'
+Started GET "/inventory_items?utf8=%E2%9C%93&inventory_item=nike" for 116.100.161.105 at 2019-02-08 09:01:40 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "inventory_item"=>"nike"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering inventory_items/index.html.haml within layouts/application
+  Rendered inventory_items/index.html.haml within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    12:         %th Warehoused on
+    13:         %th(colspan="3")
+    14:     %tbody
+    15:       - @inventory_items.each do |inventory_item|
+    16:         %tr
+    17:           %td= inventory_item.inventory_item_category_id
+    18:           %td= inventory_item.inventory_model_id
+  
+app/views/inventory_items/index.html.haml:15:in `_app_views_inventory_items_index_html_haml___1518031088083311048_69953231037200'
+Started GET "/inventory_items?utf8=%E2%9C%93&inventory_item=nike" for 116.100.161.105 at 2019-02-08 09:02:34 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "inventory_item"=>"nike"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mInventoryItem Load (0.4ms)[0m  [1m[34mSELECT "inventory_items".* FROM "inventory_items" WHERE (name LIKE '%nike%')[0m
+  ↳ app/controllers/inventory_items_controller.rb:16
+Completed 500 Internal Server Error in 8903267ms (ActiveRecord: 2.5ms)
+
+
+  
+Errno::EIO (Input/output error @ io_writev - <STDOUT>):
+  
+app/controllers/inventory_items_controller.rb:16:in `index'
+Started GET "/home" for 116.100.161.105 at 2019-02-08 14:10:12 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mAhoy::Visit Create (0.7ms)[0m  [1m[32mINSERT INTO "ahoy_visits" ("visit_token", "visitor_token", "user_id", "ip", "user_agent", "referrer", "referring_domain", "landing_page", "browser", "os", "device_type", "started_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["visit_token", "e8fb887c-4d46-42dc-ba54-942c4ef636d3"], ["visitor_token", "f7d7ad6b-8340-427f-9ff6-660458555769"], ["user_id", 2], ["ip", "116.100.161.105"], ["user_agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"], ["referrer", "http://ec2-52-221-217-179.ap-southeast-1.compute.amazonaws.com:4001/home"], ["referring_domain", "ec2-52-221-217-179.ap-southeast-1.compute.amazonaws.com"], ["landing_page", "http://ec2-52-221-217-179.ap-southeast-1.compute.amazonaws.com:4001/home"], ["browser", "Chrome"], ["os", "Windows"], ["device_type", "Desktop"], ["started_at", "2019-02-08 14:10:12.430203"]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] Enqueued Ahoy::GeocodeV2Job (Job ID: 2bfc3769-eb42-4aca-befc-df75a7643740) to Async(ahoy) with arguments: "e8fb887c-4d46-42dc-ba54-942c4ef636d3", "116.100.161.105"
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+[ActiveJob] [Ahoy::GeocodeV2Job] [2bfc3769-eb42-4aca-befc-df75a7643740] Performing Ahoy::GeocodeV2Job (Job ID: 2bfc3769-eb42-4aca-befc-df75a7643740) from Async(ahoy) with arguments: "e8fb887c-4d46-42dc-ba54-942c4ef636d3", "116.100.161.105"
+[ActiveJob] [Ahoy::GeocodeV2Job] [2bfc3769-eb42-4aca-befc-df75a7643740]   [1m[36mAhoy::Visit Load (0.2ms)[0m  [1m[34mSELECT  "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "e8fb887c-4d46-42dc-ba54-942c4ef636d3"], ["LIMIT", 1]]
+[ActiveJob] [Ahoy::GeocodeV2Job] [2bfc3769-eb42-4aca-befc-df75a7643740]   ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [Ahoy::GeocodeV2Job] [2bfc3769-eb42-4aca-befc-df75a7643740]   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [Ahoy::GeocodeV2Job] [2bfc3769-eb42-4aca-befc-df75a7643740]   ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [Ahoy::GeocodeV2Job] [2bfc3769-eb42-4aca-befc-df75a7643740]   [1m[36mAhoy::Visit Update (0.3ms)[0m  [1m[33mUPDATE "ahoy_visits" SET "country" = ?, "region" = ?, "city" = ? WHERE "ahoy_visits"."id" = ?[0m  [["country", "VN"], ["region", "Ho Chi Minh"], ["city", "Ho Chi Minh City"], ["id", 4]]
+[ActiveJob] [Ahoy::GeocodeV2Job] [2bfc3769-eb42-4aca-befc-df75a7643740]   ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [Ahoy::GeocodeV2Job] [2bfc3769-eb42-4aca-befc-df75a7643740]   [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [Ahoy::GeocodeV2Job] [2bfc3769-eb42-4aca-befc-df75a7643740]   ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [Ahoy::GeocodeV2Job] [2bfc3769-eb42-4aca-befc-df75a7643740] Performed Ahoy::GeocodeV2Job (Job ID: 2bfc3769-eb42-4aca-befc-df75a7643740) from Async(ahoy) in 216.76ms
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (602.0ms)
+Completed 200 OK in 1203ms (Views: 805.4ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/inventory_items?utf8=%E2%9C%93&inventory_item=" for 116.100.161.105 at 2019-02-08 14:10:15 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "inventory_item"=>""}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mInventoryItem Load (0.4ms)[0m  [1m[34mSELECT "inventory_items".* FROM "inventory_items" WHERE (name LIKE '%%')[0m
+  ↳ app/controllers/inventory_items_controller.rb:16
+  Rendering inventory_items/index.html.haml within layouts/application
+  Rendered inventory_items/index.html.haml within layouts/application (5.3ms)
+Completed 500 Internal Server Error in 20033ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    12:         %th Warehoused on
+    13:         %th(colspan="3")
+    14:     %tbody
+    15:       - @inventory_items.each do |inventory_item|
+    16:         %tr
+    17:           %td= inventory_item.inventory_item_category_id
+    18:           %td= inventory_item.inventory_model_id
+  
+app/views/inventory_items/index.html.haml:15:in `_app_views_inventory_items_index_html_haml___951831658332180716_70326088166540'
+Started GET "/inventory_items?utf8=%E2%9C%93&inventory_item=" for 116.100.161.105 at 2019-02-08 14:11:47 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "inventory_item"=>""}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering inventory_items/index.html.haml within layouts/application
+  Rendered inventory_items/index.html.haml within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 4203ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    12:         %th Warehoused on
+    13:         %th(colspan="3")
+    14:     %tbody
+    15:       - @inventory_items.each do |inventory_item|
+    16:         %tr
+    17:           %td= inventory_item.inventory_item_category_id
+    18:           %td= inventory_item.inventory_model_id
+  
+app/views/inventory_items/index.html.haml:15:in `_app_views_inventory_items_index_html_haml___951831658332180716_70325997845800'
+Started GET "/inventory_items?utf8=%E2%9C%93&inventory_item=" for 116.100.161.105 at 2019-02-08 14:12:08 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "inventory_item"=>""}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mInventoryItem Load (0.4ms)[0m  [1m[34mSELECT "inventory_items".* FROM "inventory_items" WHERE (name LIKE '%%')[0m
+  ↳ app/controllers/inventory_items_controller.rb:16
+  Rendering inventory_items/index.html.haml within layouts/application
+  Rendered inventory_items/index.html.haml within layouts/application (6485.0ms)
+Completed 200 OK in 18591ms (Views: 6689.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/home" for 116.100.161.105 at 2019-02-08 14:12:53 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (61.3ms)
+Completed 200 OK in 242ms (Views: 180.7ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/inventory_items?utf8=%E2%9C%93&inventory_item=1" for 116.100.161.105 at 2019-02-08 14:12:55 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "inventory_item"=>"1"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering inventory_items/index.html.haml within layouts/application
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT "inventory_items".* FROM "inventory_items" WHERE (name LIKE '%1%')[0m
+  ↳ app/views/inventory_items/index.html.haml:16
+  Rendered inventory_items/index.html.haml within layouts/application (5.5ms)
+Completed 200 OK in 126ms (Views: 120.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 116.100.161.105 at 2019-02-08 14:13:01 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (48.4ms)
+Completed 200 OK in 341ms (Views: 324.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/inventory_items?utf8=%E2%9C%93&inventory_item=2" for 116.100.161.105 at 2019-02-08 14:13:03 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "inventory_item"=>"2"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering inventory_items/index.html.haml within layouts/application
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT "inventory_items".* FROM "inventory_items" WHERE (name LIKE '%2%')[0m
+  ↳ app/views/inventory_items/index.html.haml:16
+  Rendered inventory_items/index.html.haml within layouts/application (6.0ms)
+Completed 200 OK in 143ms (Views: 138.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 116.100.161.105 at 2019-02-08 14:13:06 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.1ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (41.6ms)
+Completed 200 OK in 175ms (Views: 168.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/inventory_items?utf8=%E2%9C%93&inventory_item=Nike" for 116.100.161.105 at 2019-02-08 14:13:09 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "inventory_item"=>"Nike"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering inventory_items/index.html.haml within layouts/application
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT "inventory_items".* FROM "inventory_items" WHERE (name LIKE '%Nike%')[0m
+  ↳ app/views/inventory_items/index.html.haml:16
+  Rendered inventory_items/index.html.haml within layouts/application (7.0ms)
+Completed 200 OK in 141ms (Views: 137.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 116.100.161.105 at 2019-02-08 14:13:12 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (45.3ms)
+Completed 200 OK in 291ms (Views: 284.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/inventory_items?utf8=%E2%9C%93&inventory_item=Mikasdsa" for 116.100.161.105 at 2019-02-08 14:13:16 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "inventory_item"=>"Mikasdsa"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering inventory_items/index.html.haml within layouts/application
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT "inventory_items".* FROM "inventory_items" WHERE (name LIKE '%Mikasdsa%')[0m
+  ↳ app/views/inventory_items/index.html.haml:16
+  Rendered inventory_items/index.html.haml within layouts/application (4.3ms)
+Completed 200 OK in 150ms (Views: 146.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/home" for 116.100.161.105 at 2019-02-08 14:13:18 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (43.9ms)
+Completed 200 OK in 178ms (Views: 171.6ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/users/sign_out" for 116.100.161.105 at 2019-02-08 14:13:21 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UoBOOuXdi7ctVd+lQzuqxLRItkv1NuUh8idTQmZb3A0h7wJshh7wvS6CYcTYTWcqFby5xy1S5FX75I+YgRD8nQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_created_at", nil], ["updated_at", "2019-02-08 14:13:21.152745"], ["id", 2]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (8.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://ec2-52-221-217-179.ap-southeast-1.compute.amazonaws.com:4001/
+Completed 302 Found in 16ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/" for 116.100.161.105 at 2019-02-08 14:13:21 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (43.6ms)
+Completed 200 OK in 188ms (Views: 178.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/inventory_items?utf8=%E2%9C%93&inventory_item=sd" for 116.100.161.105 at 2019-02-08 14:13:24 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "inventory_item"=>"sd"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering inventory_items/index.html.haml within layouts/application
+  Rendered inventory_items/index.html.haml within layouts/application (3.9ms)
+Completed 200 OK in 142ms (Views: 138.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventory_items?utf8=%E2%9C%93&inventory_item=sd" for 116.100.161.105 at 2019-02-08 14:25:16 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "inventory_item"=>"sd"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering inventory_items/index.html.haml within layouts/application
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT "inventory_items".* FROM "inventory_items" WHERE (name LIKE '%sd%')[0m
+  ↳ app/views/inventory_items/index.html.haml:44
+  Rendered inventory_items/index.html.haml within layouts/application (6.0ms)
+Completed 200 OK in 137ms (Views: 132.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/inventory_items?utf8=%E2%9C%93&inventory_item=nike" for 116.100.161.105 at 2019-02-08 14:25:22 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "inventory_item"=>"nike"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering inventory_items/index.html.haml within layouts/application
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT "inventory_items".* FROM "inventory_items" WHERE (name LIKE '%nike%')[0m
+  ↳ app/views/inventory_items/index.html.haml:44
+  Rendered inventory_items/index.html.haml within layouts/application (6.9ms)
+Completed 200 OK in 253ms (Views: 249.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/inventory_items?utf8=%E2%9C%93&inventory_item=H" for 116.100.161.105 at 2019-02-08 14:25:28 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "inventory_item"=>"H"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering inventory_items/index.html.haml within layouts/application
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT "inventory_items".* FROM "inventory_items" WHERE (name LIKE '%H%')[0m
+  ↳ app/views/inventory_items/index.html.haml:44
+  Rendered inventory_items/index.html.haml within layouts/application (8.2ms)
+Completed 200 OK in 142ms (Views: 138.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/inventory_items?utf8=%E2%9C%93&inventory_item=H%26M" for 116.100.161.105 at 2019-02-08 14:25:34 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "inventory_item"=>"H&M"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering inventory_items/index.html.haml within layouts/application
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT "inventory_items".* FROM "inventory_items" WHERE (name LIKE '%H&M%')[0m
+  ↳ app/views/inventory_items/index.html.haml:44
+  Rendered inventory_items/index.html.haml within layouts/application (6.6ms)
+Completed 200 OK in 138ms (Views: 134.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/inventory_items?utf8=%E2%9C%93&inventory_item=AD" for 116.100.161.105 at 2019-02-08 14:25:42 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "inventory_item"=>"AD"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering inventory_items/index.html.haml within layouts/application
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT "inventory_items".* FROM "inventory_items" WHERE (name LIKE '%AD%')[0m
+  ↳ app/views/inventory_items/index.html.haml:44
+  Rendered inventory_items/index.html.haml within layouts/application (6.3ms)
+Completed 200 OK in 137ms (Views: 133.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/inventory_items?utf8=%E2%9C%93&inventory_item=AD" for 116.100.161.105 at 2019-02-08 14:25:52 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "inventory_item"=>"AD"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering inventory_items/index.html.haml within layouts/application
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT "inventory_items".* FROM "inventory_items" WHERE (name LIKE '%AD%')[0m
+  ↳ app/views/inventory_items/index.html.haml:44
+  Rendered inventory_items/index.html.haml within layouts/application (5.9ms)
+Completed 200 OK in 136ms (Views: 132.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/inventory_items?utf8=%E2%9C%93&inventory_item=AD" for 116.100.161.105 at 2019-02-08 14:25:55 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "inventory_item"=>"AD"}
+  [1m[36mOrder Load (1.9ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering inventory_items/index.html.haml within layouts/application
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT "inventory_items".* FROM "inventory_items" WHERE (name LIKE '%AD%')[0m
+  ↳ app/views/inventory_items/index.html.haml:44
+  Rendered inventory_items/index.html.haml within layouts/application (5.7ms)
+Completed 200 OK in 149ms (Views: 142.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/inventory_items?utf8=%E2%9C%93&inventory_item=AD" for 116.100.161.105 at 2019-02-08 14:25:59 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "inventory_item"=>"AD"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering inventory_items/index.html.haml within layouts/application
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT "inventory_items".* FROM "inventory_items" WHERE (name LIKE '%AD%')[0m
+  ↳ app/views/inventory_items/index.html.haml:44
+  Rendered inventory_items/index.html.haml within layouts/application (6.1ms)
+Completed 200 OK in 151ms (Views: 147.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/home" for 116.100.161.105 at 2019-02-08 14:26:01 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (92.9ms)
+Completed 200 OK in 296ms (Views: 286.3ms | ActiveRecord: 1.7ms)
+
+

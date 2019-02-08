@@ -7,7 +7,13 @@ class InventoryItemsController < ApplicationController
   # GET /inventory_items
   # GET /inventory_items.json
   def index
-    @inventory_items = InventoryItem.all.order("created_at desc")
+
+    if params[:inventory_item]
+      @inventory_items = InventoryItem.where('name LIKE ?', "%#{params[:inventory_item]}%")
+    else
+      @inventory_items = InventoryItem.all
+    end
+    # binding.pry
   end
 
   # GET /inventory_items/1
@@ -83,6 +89,6 @@ class InventoryItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def inventory_item_params
-      params.require(:inventory_item).permit(:name, :price, :description, :warehoused_on, :inventory_item_category_id, :inventory_model_id, :image)
+      params.require(:inventory_item).permit(:name, :price, :description, :warehoused_on, :inventory_item_category_id, :inventory_model_id, :image, :search, :inventory_item)
     end
 end

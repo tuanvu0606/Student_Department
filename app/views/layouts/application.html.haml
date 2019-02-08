@@ -35,10 +35,10 @@
       .container
         %nav.navbar.navbar-expand-lg.navbar-light.d-flex.bd-highlight(style = "background-color: white; padding: 6px;")
           %a.navbar-brand.p-2.flex-fill.bd-highlight#checkid(href="#") App
-          %form.form-inline.my-2.my-lg-0.p-2.flex-fill.bd-highlight.d-flex.justify-content-center
-            %input.form-control.mr-sm-2#SearchText(aria-label="Search" placeholder="Search" type="search")
-            %button.btn.btn-outline-primary.my-2.my-sm-0#SearchButton(type="submit") Search
-  
+          = form_tag(inventory_items_path, method: :get, class: "form form-inline my-lg-0 p-2 flex-fill bd-highlight d-flex justify-content-center") do
+            Inventory Item #{text_field_tag(:inventory_item, params[:inventory_item], class: "input form-control mr-sm-2")}
+            = submit_tag ("Search"), class: "btn btn-default btn-primary", name: nil
+
       .container
         %nav.navbar.navbar-expand-lg.navbar-light.d-flex.bd-highlight.justify-content-begin(style = "background-color: white;")
           %a.navbar-brand(href=home_path) Home            

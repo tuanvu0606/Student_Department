@@ -1,4 +1,5 @@
 class SpecificItemsController < ApplicationController
+  helper_method :some_method
   before_action :set_specific_item, only: [:show, :edit, :update, :destroy]
   #after_action :increase_inventory_item
   before_action :authenticate_user!
@@ -87,7 +88,7 @@ private
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def specific_item_params
-      params.require(:specific_item).permit(:inventory_item_id, :serial_number)
+      params.require(:specific_item).permit(:inventory_item_id, :serial_number, :inventory_item)
     end
 
     def increase_inventory_item(specific_item)
