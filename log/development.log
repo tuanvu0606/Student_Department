@@ -14700,3 +14700,168 @@ Completed 200 OK in 26ms (Views: 6.9ms | ActiveRecord: 9.7ms)
   ↳ db/seeds.rb:18
   [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
   ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/bin/rails:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "thai@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/bin/rails:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "thai@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/bin/rails:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mInventoryItemCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "inventory_item_categories" ("category_name", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?)[0m  [["category_name", "Adidas"], ["created_at", "2019-02-08 05:19:23.745895"], ["updated_at", "2019-02-08 05:19:23.745895"], ["image", "\"download.png\""]]
+  ↳ db/seeds.rb:12
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mInventoryItemCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "inventory_item_categories" ("category_name", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?)[0m  [["category_name", "Nike"], ["created_at", "2019-02-08 05:19:23.937037"], ["updated_at", "2019-02-08 05:19:23.937037"], ["image", "\"nike_logo.png\""]]
+  ↳ db/seeds.rb:12
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mInventoryItemCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "inventory_item_categories" ("category_name", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?)[0m  [["category_name", "H&M"], ["created_at", "2019-02-08 05:19:24.384377"], ["updated_at", "2019-02-08 05:19:24.384377"], ["image", "\"HM-Share-Image.jpg\""]]
+  ↳ db/seeds.rb:12
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mInventoryItem Create (0.4ms)[0m  [1m[32mINSERT INTO "inventory_items" ("name", "price", "description", "created_at", "updated_at", "inventory_item_category_id", "inventory_model_id", "image", "quantity", "sold_quantity") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Nike 1"], ["price", 700.0], ["description", "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna."], ["created_at", "2019-02-08 05:19:24.611056"], ["updated_at", "2019-02-08 05:19:24.611056"], ["inventory_item_category_id", 1], ["inventory_model_id", 2], ["image", "\"nike-men.jpg\""], ["quantity", 0], ["sold_quantity", 0]]
+  ↳ db/seeds.rb:26
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mInventoryItem Create (0.4ms)[0m  [1m[32mINSERT INTO "inventory_items" ("name", "price", "description", "created_at", "updated_at", "inventory_item_category_id", "inventory_model_id", "image", "quantity", "sold_quantity") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Nike 2"], ["price", 200.0], ["description", "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna."], ["created_at", "2019-02-08 05:19:24.824894"], ["updated_at", "2019-02-08 05:19:24.824894"], ["inventory_item_category_id", 2], ["inventory_model_id", 2], ["image", "\"nike-men.jpg\""], ["quantity", 0], ["sold_quantity", 0]]
+  ↳ db/seeds.rb:26
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mInventoryItem Create (0.3ms)[0m  [1m[32mINSERT INTO "inventory_items" ("name", "price", "description", "created_at", "updated_at", "inventory_item_category_id", "inventory_model_id", "image", "quantity", "sold_quantity") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Nike 3"], ["price", 2200.0], ["description", "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna."], ["created_at", "2019-02-08 05:19:25.036257"], ["updated_at", "2019-02-08 05:19:25.036257"], ["inventory_item_category_id", 2], ["inventory_model_id", 2], ["image", "\"nike-men.jpg\""], ["quantity", 0], ["sold_quantity", 0]]
+  ↳ db/seeds.rb:26
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mInventoryItem Create (0.3ms)[0m  [1m[32mINSERT INTO "inventory_items" ("name", "price", "description", "created_at", "updated_at", "inventory_item_category_id", "inventory_model_id", "image", "quantity", "sold_quantity") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Nike 4"], ["price", 400.0], ["description", "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna."], ["created_at", "2019-02-08 05:19:25.247337"], ["updated_at", "2019-02-08 05:19:25.247337"], ["inventory_item_category_id", 2], ["inventory_model_id", 2], ["image", "\"nike-men.jpg\""], ["quantity", 0], ["sold_quantity", 0]]
+  ↳ db/seeds.rb:26
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mInventoryItem Create (0.3ms)[0m  [1m[32mINSERT INTO "inventory_items" ("name", "price", "description", "created_at", "updated_at", "inventory_item_category_id", "inventory_model_id", "image", "quantity", "sold_quantity") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Nike 5"], ["price", 500.0], ["description", "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna."], ["created_at", "2019-02-08 05:19:25.459813"], ["updated_at", "2019-02-08 05:19:25.459813"], ["inventory_item_category_id", 2], ["inventory_model_id", 2], ["image", "\"nike-men.jpg\""], ["quantity", 0], ["sold_quantity", 0]]
+  ↳ db/seeds.rb:26
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mInventoryItem Create (0.3ms)[0m  [1m[32mINSERT INTO "inventory_items" ("name", "price", "description", "created_at", "updated_at", "inventory_item_category_id", "inventory_model_id", "image", "quantity", "sold_quantity") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Nike 6"], ["price", 600.0], ["description", "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna."], ["created_at", "2019-02-08 05:19:25.669598"], ["updated_at", "2019-02-08 05:19:25.669598"], ["inventory_item_category_id", 2], ["inventory_model_id", 2], ["image", "\"nike-men.jpg\""], ["quantity", 0], ["sold_quantity", 0]]
+  ↳ db/seeds.rb:26
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mInventoryItem Create (0.3ms)[0m  [1m[32mINSERT INTO "inventory_items" ("name", "price", "description", "created_at", "updated_at", "inventory_item_category_id", "inventory_model_id", "image", "quantity", "sold_quantity") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Adidas 1"], ["price", 300.0], ["description", "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna."], ["created_at", "2019-02-08 05:19:25.789160"], ["updated_at", "2019-02-08 05:19:25.789160"], ["inventory_item_category_id", 1], ["inventory_model_id", 2], ["image", "\"adidas_3.jpg\""], ["quantity", 0], ["sold_quantity", 0]]
+  ↳ db/seeds.rb:26
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mInventoryItem Create (0.3ms)[0m  [1m[32mINSERT INTO "inventory_items" ("name", "price", "description", "created_at", "updated_at", "inventory_item_category_id", "inventory_model_id", "image", "quantity", "sold_quantity") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Adidas 2"], ["price", 1200.0], ["description", "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna."], ["created_at", "2019-02-08 05:19:25.909013"], ["updated_at", "2019-02-08 05:19:25.909013"], ["inventory_item_category_id", 1], ["inventory_model_id", 2], ["image", "\"adidas_3.jpg\""], ["quantity", 0], ["sold_quantity", 0]]
+  ↳ db/seeds.rb:26
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mInventoryItem Create (0.3ms)[0m  [1m[32mINSERT INTO "inventory_items" ("name", "price", "description", "created_at", "updated_at", "inventory_item_category_id", "inventory_model_id", "image", "quantity", "sold_quantity") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Adidas 3"], ["price", 300.0], ["description", "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna."], ["created_at", "2019-02-08 05:19:26.030087"], ["updated_at", "2019-02-08 05:19:26.030087"], ["inventory_item_category_id", 1], ["inventory_model_id", 2], ["image", "\"adidas_3.jpg\""], ["quantity", 0], ["sold_quantity", 0]]
+  ↳ db/seeds.rb:26
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mInventoryItem Create (0.4ms)[0m  [1m[32mINSERT INTO "inventory_items" ("name", "price", "description", "created_at", "updated_at", "inventory_item_category_id", "inventory_model_id", "image", "quantity", "sold_quantity") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "H&M 1"], ["price", 100.0], ["description", "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna."], ["created_at", "2019-02-08 05:19:26.370938"], ["updated_at", "2019-02-08 05:19:26.370938"], ["inventory_item_category_id", 3], ["inventory_model_id", 2], ["image", "\"HM-Shirts-for-Men_01.jpg\""], ["quantity", 0], ["sold_quantity", 0]]
+  ↳ db/seeds.rb:26
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mInventoryItem Create (0.3ms)[0m  [1m[32mINSERT INTO "inventory_items" ("name", "price", "description", "created_at", "updated_at", "inventory_item_category_id", "inventory_model_id", "image", "quantity", "sold_quantity") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "H&M 2"], ["price", 100.0], ["description", "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna."], ["created_at", "2019-02-08 05:19:26.710922"], ["updated_at", "2019-02-08 05:19:26.710922"], ["inventory_item_category_id", 3], ["inventory_model_id", 2], ["image", "\"HM-Shirts-for-Men_01.jpg\""], ["quantity", 0], ["sold_quantity", 0]]
+  ↳ db/seeds.rb:26
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mInventoryItem Create (0.4ms)[0m  [1m[32mINSERT INTO "inventory_items" ("name", "price", "description", "created_at", "updated_at", "inventory_item_category_id", "inventory_model_id", "image", "quantity", "sold_quantity") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "H&M 3"], ["price", 120.0], ["description", "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna."], ["created_at", "2019-02-08 05:19:27.048651"], ["updated_at", "2019-02-08 05:19:27.048651"], ["inventory_item_category_id", 3], ["inventory_model_id", 2], ["image", "\"HM-Shirts-for-Men_01.jpg\""], ["quantity", 0], ["sold_quantity", 0]]
+  ↳ db/seeds.rb:26
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mInventoryItem Create (0.3ms)[0m  [1m[32mINSERT INTO "inventory_items" ("name", "price", "description", "created_at", "updated_at", "inventory_item_category_id", "inventory_model_id", "image", "quantity", "sold_quantity") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "H&M 4"], ["price", 400.0], ["description", "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna."], ["created_at", "2019-02-08 05:19:27.390728"], ["updated_at", "2019-02-08 05:19:27.390728"], ["inventory_item_category_id", 3], ["inventory_model_id", 2], ["image", "\"HM-Shirts-for-Men_01.jpg\""], ["quantity", 0], ["sold_quantity", 0]]
+  ↳ db/seeds.rb:26
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:158
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:158
+  [1m[36mSpecificItem Create (0.4ms)[0m  [1m[32mINSERT INTO "specific_items" ("inventory_item_id", "serial_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["inventory_item_id", 1], ["serial_number", "a"], ["created_at", "2019-02-08 05:19:27.409028"], ["updated_at", "2019-02-08 05:19:27.409028"]]
+  ↳ db/seeds.rb:158
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:158
+Started GET "/" for 116.100.161.105 at 2019-02-08 05:19:49 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mAhoy::Visit Create (0.4ms)[0m  [1m[32mINSERT INTO "ahoy_visits" ("visit_token", "visitor_token", "user_id", "ip", "user_agent", "landing_page", "browser", "os", "device_type", "started_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["visit_token", "cfe5372f-8193-4f30-8c0e-3d7e843be1ba"], ["visitor_token", "f7d7ad6b-8340-427f-9ff6-660458555769"], ["user_id", 2], ["ip", "116.100.161.105"], ["user_agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"], ["landing_page", "http://ec2-52-221-217-179.ap-southeast-1.compute.amazonaws.com:4001/"], ["browser", "Chrome"], ["os", "Windows"], ["device_type", "Desktop"], ["started_at", "2019-02-08 05:19:49.315188"]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] Enqueued Ahoy::GeocodeV2Job (Job ID: 0202decc-8c9d-46b8-a36e-47531e916020) to Async(ahoy) with arguments: "cfe5372f-8193-4f30-8c0e-3d7e843be1ba", "116.100.161.105"
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+[ActiveJob] [Ahoy::GeocodeV2Job] [0202decc-8c9d-46b8-a36e-47531e916020] Performing Ahoy::GeocodeV2Job (Job ID: 0202decc-8c9d-46b8-a36e-47531e916020) from Async(ahoy) with arguments: "cfe5372f-8193-4f30-8c0e-3d7e843be1ba", "116.100.161.105"
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+[ActiveJob] [Ahoy::GeocodeV2Job] [0202decc-8c9d-46b8-a36e-47531e916020]   [1m[36mAhoy::Visit Load (0.2ms)[0m  [1m[34mSELECT  "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "cfe5372f-8193-4f30-8c0e-3d7e843be1ba"], ["LIMIT", 1]]
+[ActiveJob] [Ahoy::GeocodeV2Job] [0202decc-8c9d-46b8-a36e-47531e916020]   ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [Ahoy::GeocodeV2Job] [0202decc-8c9d-46b8-a36e-47531e916020]   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [Ahoy::GeocodeV2Job] [0202decc-8c9d-46b8-a36e-47531e916020]   ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [Ahoy::GeocodeV2Job] [0202decc-8c9d-46b8-a36e-47531e916020]   [1m[36mAhoy::Visit Update (0.3ms)[0m  [1m[33mUPDATE "ahoy_visits" SET "country" = ?, "region" = ?, "city" = ? WHERE "ahoy_visits"."id" = ?[0m  [["country", "VN"], ["region", "Ho Chi Minh"], ["city", "Ho Chi Minh City"], ["id", 3]]
+[ActiveJob] [Ahoy::GeocodeV2Job] [0202decc-8c9d-46b8-a36e-47531e916020]   ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [Ahoy::GeocodeV2Job] [0202decc-8c9d-46b8-a36e-47531e916020]   [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [Ahoy::GeocodeV2Job] [0202decc-8c9d-46b8-a36e-47531e916020]   ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [Ahoy::GeocodeV2Job] [0202decc-8c9d-46b8-a36e-47531e916020] Performed Ahoy::GeocodeV2Job (Job ID: 0202decc-8c9d-46b8-a36e-47531e916020) from Async(ahoy) in 422.07ms
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (501.2ms)
+Completed 200 OK in 874ms (Views: 698.6ms | ActiveRecord: 11.0ms)
+
+

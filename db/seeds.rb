@@ -8,24 +8,6 @@
 #movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 
 
-user = User.new(
-  name: "thai",
-  admin: false,
-  email: "thai@gmail.com",
-  password: "123456",
-  password_confirmation: "123456"
-)
-user.save!
-
-user = User.new(
-  name: "tuan",
-  admin: true,
-  email: "tuan@gmail.com",
-  password: "123456",
-  password_confirmation: "123456"
-)
-user.save!
-
 
 InventoryItemCategory.create!([{
   category_name: "Adidas",
