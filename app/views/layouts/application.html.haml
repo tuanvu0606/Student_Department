@@ -36,7 +36,7 @@
         %nav.navbar.navbar-expand-lg.navbar-light.d-flex.bd-highlight(style = "background-color: white; padding: 6px;")
           %a.navbar-brand.p-2.flex-fill.bd-highlight#checkid(href="#") App
           = form_tag(inventory_items_path, method: :get, class: "form form-inline my-lg-0 p-2 flex-fill bd-highlight d-flex justify-content-center") do
-            Inventory Item #{text_field_tag(:inventory_item, params[:inventory_item], class: "input form-control mr-sm-2")}
+            = text_field_tag(:inventory_item, params[:inventory_item], class: "input form-control mr-sm-2")
             = submit_tag ("Search"), class: "btn btn-default btn-primary", name: nil
 
       .container
@@ -72,22 +72,6 @@
                 %a(href="#")
                   %i.fa
                   Our Blog
-              %dd
-                %a(href="#")
-                  %i.fa
-                  About Our Shop
-              %dd
-                %a(href="#")
-                  %i.fa
-                  Secure Shopping
-              %dd
-                %a(href="#")
-                  %i.fa
-                  Delivery infomation
-              %dd
-                %a(href="#")
-                  %i.fa
-                  Store Locations
         .p-2.flex-fill.bd-highlight
           .single_footer
             %h4 My account
@@ -95,23 +79,7 @@
               %dd
                 %a(href="#")
                   %i.fa
-                  My orders
-              %dd
-                %a(href="#")
-                  %i.fa
-                  About Us
-              %dd
-                %a(href="#")
-                  %i.fa
-                  Contact
-              %dd
-                %a(href="#")
-                  %i.fa
-                  Shopping cart
-              %dd
-                %a(href="#")
-                  %i.fa
-                  Checkout
+                  = link_to 'Shopping cart', @order                  
         .p-2.flex-fill.bd-highlight
           .single_footer
             %h4 instagram

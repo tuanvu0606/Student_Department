@@ -45,7 +45,7 @@
 
 .card(style = "margin: 20px 0px;")
   .card-header
-    Featured Products
+    = link_to 'Featured Products', inventory_items_path
     = paginate @static_pages
     = page_entries_info @static_pages
   .card-body

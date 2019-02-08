@@ -2,7 +2,7 @@ class OrderLineItemsController < ApplicationController
   include CurrentOrder
   before_action :set_order_line_item, only: [:show, :edit, :update, :destroy]
   before_action :set_order, only: [:create]
-  before_action :authenticate_user!, except: [:show] 
+  before_action :authenticate_user!, except: [:show,:create] 
 
   # GET /order_line_items
   # GET /order_line_items.json

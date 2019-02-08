@@ -9,9 +9,9 @@ class InventoryItemsController < ApplicationController
   def index
 
     if params[:inventory_item]
-      @inventory_items = InventoryItem.where('name LIKE ?', "%#{params[:inventory_item]}%")
+      @inventory_items = InventoryItem.where('name LIKE ?', "%#{params[:inventory_item]}%").page(params[:page]).per(9)
     else
-      @inventory_items = InventoryItem.all
+      @inventory_items = InventoryItem.page(params[:page]).per(9)
     end
     # binding.pry
   end
