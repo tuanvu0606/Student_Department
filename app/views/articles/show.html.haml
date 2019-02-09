@@ -22,7 +22,7 @@
         - @articles_in_order.each do |article|
           %li.list-group-item
             =link_to article.name, article
-      .card.text-center.col-lg-10(style ="margin-top:10px;")
+      .card.text-center.col-lg-10
         .card-header
           Featured
         = link_to image_tag(@article.image_url(:articles)), @article, :class => "img card-img-top"          

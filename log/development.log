@@ -19452,3 +19452,1615 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 223ms (Views: 217.3ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/home" for 116.100.161.105 at 2019-02-09 07:38:47 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#home as HTML
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mAhoy::Visit Create (0.4ms)[0m  [1m[32mINSERT INTO "ahoy_visits" ("visit_token", "visitor_token", "ip", "user_agent", "landing_page", "browser", "os", "device_type", "started_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["visit_token", "8acae1c2-6aaf-4ad3-8946-261b699d53aa"], ["visitor_token", "f7d7ad6b-8340-427f-9ff6-660458555769"], ["ip", "116.100.161.105"], ["user_agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"], ["landing_page", "http://ec2-52-221-217-179.ap-southeast-1.compute.amazonaws.com:4001/home"], ["browser", "Chrome"], ["os", "Windows"], ["device_type", "Desktop"], ["started_at", "2019-02-09 07:38:47.541176"]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] Enqueued Ahoy::GeocodeV2Job (Job ID: 9f1968bf-9444-4312-8458-aec8e5d4169c) to Async(ahoy) with arguments: "8acae1c2-6aaf-4ad3-8946-261b699d53aa", "116.100.161.105"
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+[ActiveJob] [Ahoy::GeocodeV2Job] [9f1968bf-9444-4312-8458-aec8e5d4169c] Performing Ahoy::GeocodeV2Job (Job ID: 9f1968bf-9444-4312-8458-aec8e5d4169c) from Async(ahoy) with arguments: "8acae1c2-6aaf-4ad3-8946-261b699d53aa", "116.100.161.105"
+[ActiveJob] [Ahoy::GeocodeV2Job] [9f1968bf-9444-4312-8458-aec8e5d4169c]   [1m[36mAhoy::Visit Load (0.2ms)[0m  [1m[34mSELECT  "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "8acae1c2-6aaf-4ad3-8946-261b699d53aa"], ["LIMIT", 1]]
+[ActiveJob] [Ahoy::GeocodeV2Job] [9f1968bf-9444-4312-8458-aec8e5d4169c]   ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [Ahoy::GeocodeV2Job] [9f1968bf-9444-4312-8458-aec8e5d4169c]   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [Ahoy::GeocodeV2Job] [9f1968bf-9444-4312-8458-aec8e5d4169c]   ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [Ahoy::GeocodeV2Job] [9f1968bf-9444-4312-8458-aec8e5d4169c]   [1m[36mAhoy::Visit Update (1.2ms)[0m  [1m[33mUPDATE "ahoy_visits" SET "country" = ?, "region" = ?, "city" = ? WHERE "ahoy_visits"."id" = ?[0m  [["country", "VN"], ["region", "Ho Chi Minh"], ["city", "Ho Chi Minh City"], ["id", 5]]
+[ActiveJob] [Ahoy::GeocodeV2Job] [9f1968bf-9444-4312-8458-aec8e5d4169c]   ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [Ahoy::GeocodeV2Job] [9f1968bf-9444-4312-8458-aec8e5d4169c]   [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [Ahoy::GeocodeV2Job] [9f1968bf-9444-4312-8458-aec8e5d4169c]   ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [Ahoy::GeocodeV2Job] [9f1968bf-9444-4312-8458-aec8e5d4169c] Performed Ahoy::GeocodeV2Job (Job ID: 9f1968bf-9444-4312-8458-aec8e5d4169c) from Async(ahoy) in 420.22ms
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (1.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (544.3ms)
+Completed 200 OK in 932ms (Views: 766.9ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/home" for 116.100.161.105 at 2019-02-09 07:39:59 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.1ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.3ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (49.5ms)
+Completed 200 OK in 203ms (Views: 197.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/categories" for 116.100.161.105 at 2019-02-09 07:40:00 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemCategoriesController#index as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering inventory_item_categories/index.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/inventory_item_categories/index.html.haml:24
+  Rendered inventory_item_categories/index.html.haml within layouts/application (9.3ms)
+Completed 200 OK in 140ms (Views: 136.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/articles" for 116.100.161.105 at 2019-02-09 07:40:02 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering articles/index.html.haml within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at desc[0m
+  ↳ app/views/articles/index.html.haml:28
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.haml:32
+  Rendered articles/index.html.haml within layouts/application (14.7ms)
+Completed 200 OK in 141ms (Views: 136.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/sign_in" for 116.100.161.105 at 2019-02-09 07:40:14 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering /usr/local/rvm/gems/ruby-2.5.3/gems/devise-4.5.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/local/rvm/gems/ruby-2.5.3/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.5.3/gems/devise-4.5.0/app/views/devise/sessions/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 148ms (Views: 135.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users/sign_in" for 116.100.161.105 at 2019-02-09 07:40:20 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SGo9gsq9iAo2dmTLvOCv+sSmmvapG5tKy1J+J/VfDHIEpMETF+x5E7fX8cm7dSufXi9Bi4XQgA5VPBO+2r1b2g==", "user"=>{"email"=>"tuan@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tuan@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mAhoy::Visit Load (0.4ms)[0m  [1m[34mSELECT  "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "8acae1c2-6aaf-4ad3-8946-261b699d53aa"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mAhoy::Visit Update (0.3ms)[0m  [1m[33mUPDATE "ahoy_visits" SET "user_id" = ? WHERE "ahoy_visits"."id" = ?[0m  [["user_id", 2], ["id", 5]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_created_at", "2019-02-09 07:40:20.603457"], ["updated_at", "2019-02-09 07:40:20.604040"], ["id", 2]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:19
+Redirected to http://ec2-52-221-217-179.ap-southeast-1.compute.amazonaws.com:4001/
+Completed 302 Found in 197ms (ActiveRecord: 9.9ms)
+
+
+Started GET "/" for 116.100.161.105 at 2019-02-09 07:40:20 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (48.6ms)
+Completed 200 OK in 200ms (Views: 193.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/articles" for 116.100.161.105 at 2019-02-09 07:40:22 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering articles/index.html.haml within layouts/application
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.haml:12
+  Rendered articles/index.html.haml within layouts/application (19.4ms)
+Completed 200 OK in 215ms (Views: 205.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/articles/new" for 116.100.161.105 at 2019-02-09 07:40:26 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (3.4ms)
+  Rendered articles/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 142ms (Views: 137.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/articles" for 116.100.161.105 at 2019-02-09 07:40:39 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"le8pC9UQlxr9qkN+f89OlHcZWrCBUFaX1P7c3H/aKtZJO2CrLRZLFoAq0xpG4G4Svtd4U7tTVxfVGAUCNjU2rA==", "article"=>{"name"=>"articles 3", "description"=>"About 166,000,000 results (0.58 seconds) \r\nSearch Results\r\nWeb results\r\nRails Image Re-sizing on View display? - Stack Overflow\r\nhttps://stackoverflow.com/questions/10458216/rails-image-re-sizing-on-view-display\r\n4 answers\r\nJul 29, 2016 - Like @Yosep said, there's nothing magical of rails going on here. <%= image_tag %> generates an <img> tag in the result html. if you pass a :size => '260x180' ...\r\nImage_tag in Ruby on Rails allows me to change the \"Size ...\tJun 22, 2017\r\nresizing an image within ruby to fit within a DIV\tMay 24, 2017\r\nResize image element using ERB and Rails\tApr 7, 2017\r\nBasic image resizing in Ruby on Rails\tNov 6, 2011\r\nMore results from stackoverflow.com\r\nRails image manipulation | Cloudinary\r\nhttps://cloudinary.com/documentation/rails_image_manipulation\r\nResize, crop and manipulate images, convert formats, apply image effects, add overlays, CDN delivery with Rails.\r\n‎Converting to another ... · ‎Applying image effects and ... · ‎Adding text and image ...", "content"=>"About 166,000,000 results (0.58 seconds) \r\nSearch Results\r\nWeb results\r\nRails Image Re-sizing on View display? - Stack Overflow\r\nhttps://stackoverflow.com/questions/10458216/rails-image-re-sizing-on-view-display\r\n4 answers\r\nJul 29, 2016 - Like @Yosep said, there's nothing magical of rails going on here. <%= image_tag %> generates an <img> tag in the result html. if you pass a :size => '260x180' ...\r\nImage_tag in Ruby on Rails allows me to change the \"Size ...\tJun 22, 2017\r\nresizing an image within ruby to fit within a DIV\tMay 24, 2017\r\nResize image element using ERB and Rails\tApr 7, 2017\r\nBasic image resizing in Ruby on Rails\tNov 6, 2011\r\nMore results from stackoverflow.com\r\nRails image manipulation | Cloudinary\r\nhttps://cloudinary.com/documentation/rails_image_manipulation\r\nResize, crop and manipulate images, convert formats, apply image effects, add overlays, CDN delivery with Rails.\r\n‎Converting to another ... · ‎Applying image effects and ... · ‎Adding text and image ...", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f6917e05790 @tempfile=#<Tempfile:/tmp/RackMultipart20190209-17657-9aybkv.png>, @original_filename="cat.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[image]\"; filename=\"cat.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Article"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:32
+  [1m[36mArticle Create (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("name", "description", "content", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "articles 3"], ["description", "About 166,000,000 results (0.58 seconds) \r\nSearch Results\r\nWeb results\r\nRails Image Re-sizing on View display? - Stack Overflow\r\nhttps://stackoverflow.com/questions/10458216/rails-image-re-sizing-on-view-display\r\n4 answers\r\nJul 29, 2016 - Like @Yosep said, there's nothing magical of rails going on here. <%= image_tag %> generates an <img> tag in the result html. if you pass a :size => '260x180' ...\r\nImage_tag in Ruby on Rails allows me to change the \"Size ...\tJun 22, 2017\r\nresizing an image within ruby to fit within a DIV\tMay 24, 2017\r\nResize image element using ERB and Rails\tApr 7, 2017\r\nBasic image resizing in Ruby on Rails\tNov 6, 2011\r\nMore results from stackoverflow.com\r\nRails image manipulation | Cloudinary\r\nhttps://cloudinary.com/documentation/rails_image_manipulation\r\nResize, crop and manipulate images, convert formats, apply image effects, add overlays, CDN delivery with Rails.\r\n‎Converting to another ... · ‎Applying image effects and ... · ‎Adding text and image ..."], ["content", "About 166,000,000 results (0.58 seconds) \r\nSearch Results\r\nWeb results\r\nRails Image Re-sizing on View display? - Stack Overflow\r\nhttps://stackoverflow.com/questions/10458216/rails-image-re-sizing-on-view-display\r\n4 answers\r\nJul 29, 2016 - Like @Yosep said, there's nothing magical of rails going on here. <%= image_tag %> generates an <img> tag in the result html. if you pass a :size => '260x180' ...\r\nImage_tag in Ruby on Rails allows me to change the \"Size ...\tJun 22, 2017\r\nresizing an image within ruby to fit within a DIV\tMay 24, 2017\r\nResize image element using ERB and Rails\tApr 7, 2017\r\nBasic image resizing in Ruby on Rails\tNov 6, 2011\r\nMore results from stackoverflow.com\r\nRails image manipulation | Cloudinary\r\nhttps://cloudinary.com/documentation/rails_image_manipulation\r\nResize, crop and manipulate images, convert formats, apply image effects, add overlays, CDN delivery with Rails.\r\n‎Converting to another ... · ‎Applying image effects and ... · ‎Adding text and image ..."], ["created_at", "2019-02-09 07:40:39.976146"], ["updated_at", "2019-02-09 07:40:39.976146"], ["image", "\"cat.png\""]]
+  ↳ app/controllers/articles_controller.rb:32
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:32
+Redirected to http://ec2-52-221-217-179.ap-southeast-1.compute.amazonaws.com:4001/articles/4
+Completed 302 Found in 417ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/articles/4" for 116.100.161.105 at 2019-02-09 07:40:40 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:69
+  Rendering articles/show.html.haml within layouts/application
+  Rendered articles/show.html.haml within layouts/application (5.5ms)
+Completed 200 OK in 136ms (Views: 131.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/home" for 116.100.161.105 at 2019-02-09 07:40:42 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.4ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (48.6ms)
+Completed 200 OK in 180ms (Views: 173.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/articles" for 116.100.161.105 at 2019-02-09 07:40:44 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering articles/index.html.haml within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.haml:12
+  Rendered articles/index.html.haml within layouts/application (8.3ms)
+Completed 200 OK in 143ms (Views: 138.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles" for 116.100.161.105 at 2019-02-09 07:40:45 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering articles/index.html.haml within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.haml:12
+  Rendered articles/index.html.haml within layouts/application (25.6ms)
+Completed 200 OK in 240ms (Views: 235.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles" for 116.100.161.105 at 2019-02-09 07:40:46 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering articles/index.html.haml within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.haml:12
+  Rendered articles/index.html.haml within layouts/application (8.1ms)
+Completed 200 OK in 139ms (Views: 135.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/categories" for 116.100.161.105 at 2019-02-09 07:40:46 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemCategoriesController#index as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering inventory_item_categories/index.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/inventory_item_categories/index.html.haml:10
+  Rendered inventory_item_categories/index.html.haml within layouts/application (6.8ms)
+Completed 200 OK in 138ms (Views: 134.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles" for 116.100.161.105 at 2019-02-09 07:40:48 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering articles/index.html.haml within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.haml:12
+  Rendered articles/index.html.haml within layouts/application (7.7ms)
+Completed 200 OK in 137ms (Views: 132.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles/new" for 116.100.161.105 at 2019-02-09 07:40:58 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (2.6ms)
+  Rendered articles/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 132ms (Views: 127.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/articles" for 116.100.161.105 at 2019-02-09 07:41:08 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vhYkeWQkhU1KKXdBTlS7D31GWhqND34fen1h8prDtz9iwm3ZnCJZQTep5yV3e5uJtIh4+bcMf597m7gs0yyrRQ==", "article"=>{"name"=>"qwewqe", "description"=>"About 166,000,000 results (0.58 seconds) \r\nSearch Results\r\nWeb results\r\nRails Image Re-sizing on View display? - Stack Overflow\r\nhttps://stackoverflow.com/questions/10458216/rails-image-re-sizing-on-view-display\r\n4 answers\r\nJul 29, 2016 - Like @Yosep said, there's nothing magical of rails going on here. <%= image_tag %> generates an <img> tag in the result html. if you pass a :size => '260x180' ...\r\nImage_tag in Ruby on Rails allows me to change the \"Size ...\tJun 22, 2017\r\nresizing an image within ruby to fit within a DIV\tMay 24, 2017\r\nResize image element using ERB and Rails\tApr 7, 2017\r\nBasic image resizing in Ruby on Rails\tNov 6, 2011\r\nMore results from stackoverflow.com\r\nRails image manipulation | Cloudinary\r\nhttps://cloudinary.com/documentation/rails_image_manipulation\r\nResize, crop and manipulate images, convert formats, apply image effects, add overlays, CDN delivery with Rails.\r\n‎Converting to another ... · ‎Applying image effects and ... · ‎Adding text and image ...", "content"=>"About 166,000,000 results (0.58 seconds) \r\nSearch Results\r\nWeb results\r\nRails Image Re-sizing on View display? - Stack Overflow\r\nhttps://stackoverflow.com/questions/10458216/rails-image-re-sizing-on-view-display\r\n4 answers\r\nJul 29, 2016 - Like @Yosep said, there's nothing magical of rails going on here. <%= image_tag %> generates an <img> tag in the result html. if you pass a :size => '260x180' ...\r\nImage_tag in Ruby on Rails allows me to change the \"Size ...\tJun 22, 2017\r\nresizing an image within ruby to fit within a DIV\tMay 24, 2017\r\nResize image element using ERB and Rails\tApr 7, 2017\r\nBasic image resizing in Ruby on Rails\tNov 6, 2011\r\nMore results from stackoverflow.com\r\nRails image manipulation | Cloudinary\r\nhttps://cloudinary.com/documentation/rails_image_manipulation\r\nResize, crop and manipulate images, convert formats, apply image effects, add overlays, CDN delivery with Rails.\r\n‎Converting to another ... · ‎Applying image effects and ... · ‎Adding text and image ...", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f69080da480 @tempfile=#<Tempfile:/tmp/RackMultipart20190209-17657-be5uva.jpg>, @original_filename="adidas_2.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"article[image]\"; filename=\"adidas_2.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Article"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:32
+  [1m[36mArticle Create (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("name", "description", "content", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "qwewqe"], ["description", "About 166,000,000 results (0.58 seconds) \r\nSearch Results\r\nWeb results\r\nRails Image Re-sizing on View display? - Stack Overflow\r\nhttps://stackoverflow.com/questions/10458216/rails-image-re-sizing-on-view-display\r\n4 answers\r\nJul 29, 2016 - Like @Yosep said, there's nothing magical of rails going on here. <%= image_tag %> generates an <img> tag in the result html. if you pass a :size => '260x180' ...\r\nImage_tag in Ruby on Rails allows me to change the \"Size ...\tJun 22, 2017\r\nresizing an image within ruby to fit within a DIV\tMay 24, 2017\r\nResize image element using ERB and Rails\tApr 7, 2017\r\nBasic image resizing in Ruby on Rails\tNov 6, 2011\r\nMore results from stackoverflow.com\r\nRails image manipulation | Cloudinary\r\nhttps://cloudinary.com/documentation/rails_image_manipulation\r\nResize, crop and manipulate images, convert formats, apply image effects, add overlays, CDN delivery with Rails.\r\n‎Converting to another ... · ‎Applying image effects and ... · ‎Adding text and image ..."], ["content", "About 166,000,000 results (0.58 seconds) \r\nSearch Results\r\nWeb results\r\nRails Image Re-sizing on View display? - Stack Overflow\r\nhttps://stackoverflow.com/questions/10458216/rails-image-re-sizing-on-view-display\r\n4 answers\r\nJul 29, 2016 - Like @Yosep said, there's nothing magical of rails going on here. <%= image_tag %> generates an <img> tag in the result html. if you pass a :size => '260x180' ...\r\nImage_tag in Ruby on Rails allows me to change the \"Size ...\tJun 22, 2017\r\nresizing an image within ruby to fit within a DIV\tMay 24, 2017\r\nResize image element using ERB and Rails\tApr 7, 2017\r\nBasic image resizing in Ruby on Rails\tNov 6, 2011\r\nMore results from stackoverflow.com\r\nRails image manipulation | Cloudinary\r\nhttps://cloudinary.com/documentation/rails_image_manipulation\r\nResize, crop and manipulate images, convert formats, apply image effects, add overlays, CDN delivery with Rails.\r\n‎Converting to another ... · ‎Applying image effects and ... · ‎Adding text and image ..."], ["created_at", "2019-02-09 07:41:09.044200"], ["updated_at", "2019-02-09 07:41:09.044200"], ["image", "\"adidas_2.jpg\""]]
+  ↳ app/controllers/articles_controller.rb:32
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:32
+Redirected to http://ec2-52-221-217-179.ap-southeast-1.compute.amazonaws.com:4001/articles/5
+Completed 302 Found in 264ms (ActiveRecord: 6.9ms)
+
+
+Started GET "/articles/5" for 116.100.161.105 at 2019-02-09 07:41:09 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:69
+  Rendering articles/show.html.haml within layouts/application
+  Rendered articles/show.html.haml within layouts/application (6.3ms)
+Completed 200 OK in 241ms (Views: 236.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles/new" for 116.100.161.105 at 2019-02-09 07:41:12 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (2.8ms)
+  Rendered articles/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 132ms (Views: 127.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/articles" for 116.100.161.105 at 2019-02-09 07:41:16 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5QFWjrXK8+Nbel3U0pEtNrV5cEoZXPb6CMBevfVelcI51R8uTcwv7yb6zbDrvg2wfLdSqSNf93oJJodjvLGJuA==", "article"=>{"name"=>"Football", "description"=>"About 166,000,000 results (0.58 seconds) \r\nSearch Results\r\nWeb results\r\nRails Image Re-sizing on View display? - Stack Overflow\r\nhttps://stackoverflow.com/questions/10458216/rails-image-re-sizing-on-view-display\r\n4 answers\r\nJul 29, 2016 - Like @Yosep said, there's nothing magical of rails going on here. <%= image_tag %> generates an <img> tag in the result html. if you pass a :size => '260x180' ...\r\nImage_tag in Ruby on Rails allows me to change the \"Size ...\tJun 22, 2017\r\nresizing an image within ruby to fit within a DIV\tMay 24, 2017\r\nResize image element using ERB and Rails\tApr 7, 2017\r\nBasic image resizing in Ruby on Rails\tNov 6, 2011\r\nMore results from stackoverflow.com\r\nRails image manipulation | Cloudinary\r\nhttps://cloudinary.com/documentation/rails_image_manipulation\r\nResize, crop and manipulate images, convert formats, apply image effects, add overlays, CDN delivery with Rails.\r\n‎Converting to another ... · ‎Applying image effects and ... · ‎Adding text and image ...", "content"=>"About 166,000,000 results (0.58 seconds) \r\nSearch Results\r\nWeb results\r\nRails Image Re-sizing on View display? - Stack Overflow\r\nhttps://stackoverflow.com/questions/10458216/rails-image-re-sizing-on-view-display\r\n4 answers\r\nJul 29, 2016 - Like @Yosep said, there's nothing magical of rails going on here. <%= image_tag %> generates an <img> tag in the result html. if you pass a :size => '260x180' ...\r\nImage_tag in Ruby on Rails allows me to change the \"Size ...\tJun 22, 2017\r\nresizing an image within ruby to fit within a DIV\tMay 24, 2017\r\nResize image element using ERB and Rails\tApr 7, 2017\r\nBasic image resizing in Ruby on Rails\tNov 6, 2011\r\nMore results from stackoverflow.com\r\nRails image manipulation | Cloudinary\r\nhttps://cloudinary.com/documentation/rails_image_manipulation\r\nResize, crop and manipulate images, convert formats, apply image effects, add overlays, CDN delivery with Rails.\r\n‎Converting to another ... · ‎Applying image effects and ... · ‎Adding text and image ..."}, "commit"=>"Create Article"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:32
+  [1m[36mArticle Create (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("name", "description", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Football"], ["description", "About 166,000,000 results (0.58 seconds) \r\nSearch Results\r\nWeb results\r\nRails Image Re-sizing on View display? - Stack Overflow\r\nhttps://stackoverflow.com/questions/10458216/rails-image-re-sizing-on-view-display\r\n4 answers\r\nJul 29, 2016 - Like @Yosep said, there's nothing magical of rails going on here. <%= image_tag %> generates an <img> tag in the result html. if you pass a :size => '260x180' ...\r\nImage_tag in Ruby on Rails allows me to change the \"Size ...\tJun 22, 2017\r\nresizing an image within ruby to fit within a DIV\tMay 24, 2017\r\nResize image element using ERB and Rails\tApr 7, 2017\r\nBasic image resizing in Ruby on Rails\tNov 6, 2011\r\nMore results from stackoverflow.com\r\nRails image manipulation | Cloudinary\r\nhttps://cloudinary.com/documentation/rails_image_manipulation\r\nResize, crop and manipulate images, convert formats, apply image effects, add overlays, CDN delivery with Rails.\r\n‎Converting to another ... · ‎Applying image effects and ... · ‎Adding text and image ..."], ["content", "About 166,000,000 results (0.58 seconds) \r\nSearch Results\r\nWeb results\r\nRails Image Re-sizing on View display? - Stack Overflow\r\nhttps://stackoverflow.com/questions/10458216/rails-image-re-sizing-on-view-display\r\n4 answers\r\nJul 29, 2016 - Like @Yosep said, there's nothing magical of rails going on here. <%= image_tag %> generates an <img> tag in the result html. if you pass a :size => '260x180' ...\r\nImage_tag in Ruby on Rails allows me to change the \"Size ...\tJun 22, 2017\r\nresizing an image within ruby to fit within a DIV\tMay 24, 2017\r\nResize image element using ERB and Rails\tApr 7, 2017\r\nBasic image resizing in Ruby on Rails\tNov 6, 2011\r\nMore results from stackoverflow.com\r\nRails image manipulation | Cloudinary\r\nhttps://cloudinary.com/documentation/rails_image_manipulation\r\nResize, crop and manipulate images, convert formats, apply image effects, add overlays, CDN delivery with Rails.\r\n‎Converting to another ... · ‎Applying image effects and ... · ‎Adding text and image ..."], ["created_at", "2019-02-09 07:41:16.763374"], ["updated_at", "2019-02-09 07:41:16.763374"]]
+  ↳ app/controllers/articles_controller.rb:32
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:32
+Redirected to http://ec2-52-221-217-179.ap-southeast-1.compute.amazonaws.com:4001/articles/6
+Completed 302 Found in 12ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/articles/6" for 116.100.161.105 at 2019-02-09 07:41:16 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:69
+  Rendering articles/show.html.haml within layouts/application
+  Rendered articles/show.html.haml within layouts/application (13.6ms)
+Completed 200 OK in 131ms (Views: 125.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/home" for 116.100.161.105 at 2019-02-09 07:41:18 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.1ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.3ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (58.5ms)
+Completed 200 OK in 181ms (Views: 173.2ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/users/sign_out" for 116.100.161.105 at 2019-02-09 07:41:20 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GsA0qrAx1j4Ueb7WhzNJ+xut3h+fucunl0bbrrJyaVKUjuTS8WrMP3NSy2yRTKuR6/6PGoayWE8xj5H5y97Eaw=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_created_at", nil], ["updated_at", "2019-02-09 07:41:20.453082"], ["id", 2]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://ec2-52-221-217-179.ap-southeast-1.compute.amazonaws.com:4001/
+Completed 302 Found in 12ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/" for 116.100.161.105 at 2019-02-09 07:41:20 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.3ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.3ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (59.4ms)
+Started DELETE "/users/sign_out" for 116.100.161.105 at 2019-02-09 07:41:20 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GsA0qrAx1j4Ueb7WhzNJ+xut3h+fucunl0bbrrJyaVKUjuTS8WrMP3NSy2yRTKuR6/6PGoayWE8xj5H5y97Eaw=="}
+Redirected to http://ec2-52-221-217-179.ap-southeast-1.compute.amazonaws.com:4001/
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 201ms (Views: 195.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 116.100.161.105 at 2019-02-09 07:41:20 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.1ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.3ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (50.8ms)
+Completed 200 OK in 285ms (Views: 279.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/articles" for 116.100.161.105 at 2019-02-09 07:41:22 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering articles/index.html.haml within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at desc[0m
+  ↳ app/views/articles/index.html.haml:28
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.haml:32
+  Rendered articles/index.html.haml within layouts/application (9.3ms)
+Completed 200 OK in 148ms (Views: 144.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles" for 116.100.161.105 at 2019-02-09 07:43:12 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering articles/index.html.haml within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/articles/index.html.haml:28
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.haml:32
+  Rendered articles/index.html.haml within layouts/application (15.2ms)
+Completed 200 OK in 155ms (Views: 141.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/articles" for 116.100.161.105 at 2019-02-09 07:47:56 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering articles/index.html.haml within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/articles/index.html.haml:28
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.haml:32
+  Rendered articles/index.html.haml within layouts/application (8.8ms)
+Completed 200 OK in 137ms (Views: 133.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles" for 116.100.161.105 at 2019-02-09 07:48:18 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering articles/index.html.haml within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/articles/index.html.haml:28
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.haml:32
+  Rendered articles/index.html.haml within layouts/application (8.7ms)
+Completed 200 OK in 121ms (Views: 117.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles" for 116.100.161.105 at 2019-02-09 07:48:21 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering articles/index.html.haml within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/articles/index.html.haml:28
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.haml:32
+  Rendered articles/index.html.haml within layouts/application (9.2ms)
+Completed 200 OK in 136ms (Views: 132.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles" for 116.100.161.105 at 2019-02-09 07:49:02 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering articles/index.html.haml within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/articles/index.html.haml:28
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.haml:32
+  Rendered articles/index.html.haml within layouts/application (9.2ms)
+Completed 200 OK in 122ms (Views: 118.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles" for 116.100.161.105 at 2019-02-09 07:53:42 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering articles/index.html.haml within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/articles/index.html.haml:28
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.haml:35
+  Rendered articles/index.html.haml within layouts/application (9.3ms)
+Completed 200 OK in 142ms (Views: 138.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles" for 116.100.161.105 at 2019-02-09 07:53:58 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering articles/index.html.haml within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/articles/index.html.haml:28
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.haml:36
+  Rendered articles/index.html.haml within layouts/application (9.3ms)
+Completed 200 OK in 126ms (Views: 122.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles" for 116.100.161.105 at 2019-02-09 07:58:33 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering articles/index.html.haml within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/articles/index.html.haml:28
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.haml:36
+  Rendered articles/index.html.haml within layouts/application (9.7ms)
+Completed 200 OK in 125ms (Views: 121.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/sign_in" for 116.100.161.105 at 2019-02-09 07:58:35 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering /usr/local/rvm/gems/ruby-2.5.3/gems/devise-4.5.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/local/rvm/gems/ruby-2.5.3/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.5.3/gems/devise-4.5.0/app/views/devise/sessions/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 155ms (Views: 142.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users/sign_in" for 116.100.161.105 at 2019-02-09 07:58:40 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FyOPsSY82CFiyqd4lY6QtEiSNSLt/wjr5dHdhrCXkJyxqe4cwj9FNzciWeFgjcCBXZDoNOkMdVcbgPu1F6Q1eQ==", "user"=>{"email"=>"tuan@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tuan@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mAhoy::Visit Load (0.3ms)[0m  [1m[34mSELECT  "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "8acae1c2-6aaf-4ad3-8946-261b699d53aa"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_created_at", "2019-02-09 07:58:40.628943"], ["updated_at", "2019-02-09 07:58:40.629538"], ["id", 2]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:19
+Redirected to http://ec2-52-221-217-179.ap-southeast-1.compute.amazonaws.com:4001/
+Completed 302 Found in 196ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/" for 116.100.161.105 at 2019-02-09 07:58:40 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.3ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (60.6ms)
+Completed 200 OK in 271ms (Views: 234.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/articles" for 116.100.161.105 at 2019-02-09 07:58:55 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering articles/index.html.haml within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.haml:12
+  Rendered articles/index.html.haml within layouts/application (12.1ms)
+Completed 200 OK in 173ms (Views: 167.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles/new" for 116.100.161.105 at 2019-02-09 07:58:59 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (2.8ms)
+  Rendered articles/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 124ms (Views: 119.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_in" for 116.100.161.105 at 2019-02-09 07:59:57 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://ec2-52-221-217-179.ap-southeast-1.compute.amazonaws.com:4001/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 116.100.161.105 at 2019-02-09 07:59:57 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.1ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (48.9ms)
+Completed 200 OK in 176ms (Views: 169.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/articles" for 116.100.161.105 at 2019-02-09 08:00:00 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering articles/index.html.haml within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.haml:12
+  Rendered articles/index.html.haml within layouts/application (21.0ms)
+Completed 200 OK in 140ms (Views: 135.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/articles" for 116.100.161.105 at 2019-02-09 08:00:06 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WV/k0C8l1n78UkhZbYAsLizQq7MU76Zsktqw3YH2tS3t4KwhW3KIYk9ydQYZeXR6NyBLtpGNXObumUr/2YjY3g==", "article"=>{"name"=>"articles 7", "description"=>"This is a good article. Follow the link for more information.\r\nLê Duẩn\r\nFrom Wikipedia, the free encyclopedia\r\nJump to navigationJump to search\r\nLê Duẩn\r\nLe Duan.png\r\nGeneral Secretary of the Central Committee of the Communist Party of Vietnam\r\nIn office\r\n10 September 1960 – 10 July 1986\r\nPreceded by\tHồ Chí Minh (acting)\r\nSucceeded by\tTrường Chinh\r\nSecretary of the Central Military Commission of the Communist Party\r\nIn office\r\n1977–1984\r\nPreceded by\tVõ Nguyên Giáp\r\nSucceeded by\tVăn Tiến Dũng\r\nMember of the Politburo\r\nIn office\r\n1957 – 10 July 1986\r\nMember of the Secretariat\r\nIn office\r\n1956 – 10 July 1986\r\nPersonal details\r\nBorn\tLê Văn Nhuận\r\n7 April 1907\r\nQuảng Trị Province, French Indochina\r\nDied\t10 July 1986 (aged 79)\r\nHanoi, Vietnam\r\nNationality\tVietnamese\r\nPolitical party\tFlag of the Communist Party of Vietnam.svg Communist Party of Vietnam\r\nLê Duẩn (Vietnamese: [lē zʷə̂n]; 7 April 1907 – 10 July 1986) was a Vietnamese communist politician. He rose in the party hierarchy in the late 1950s and became General Secretary of the Central Committee of the Communist Party of Vietnam (VCP) at the 3rd National Congress in 1960. He continued Hồ Chí Minh's policy of ruling through collective leadership. From the mid-1960s (when Hồ's health was failing) until his own death in 1986, he was the top decision-maker in Vietnam.\r\n\r\nHe was born into a lower-class family in Quảng Trị Province, in the southern part of French Indochina as Lê Văn Nhuận. Little is known about his family and childhood. He first came in contact with revolutionary thoughts in the 1920s through his work as a railway clerk. Lê Duẩn was a founding member of the Indochina Communist Party (the future Communist Party of Vietnam) in 1930. He was imprisoned in 1931 and released in 1937. From 1937 to 1939, he climbed the party ladder. He was rearrested in 1939, this time for fomenting an uprising in the South. Lê Duẩn was released from jail following the successful Communist-led August Revolution of August 1945.", "content"=>"This is a good article. Follow the link for more information.\r\nLê Duẩn\r\nFrom Wikipedia, the free encyclopedia\r\nJump to navigationJump to search\r\nLê Duẩn\r\nLe Duan.png\r\nGeneral Secretary of the Central Committee of the Communist Party of Vietnam\r\nIn office\r\n10 September 1960 – 10 July 1986\r\nPreceded by\tHồ Chí Minh (acting)\r\nSucceeded by\tTrường Chinh\r\nSecretary of the Central Military Commission of the Communist Party\r\nIn office\r\n1977–1984\r\nPreceded by\tVõ Nguyên Giáp\r\nSucceeded by\tVăn Tiến Dũng\r\nMember of the Politburo\r\nIn office\r\n1957 – 10 July 1986\r\nMember of the Secretariat\r\nIn office\r\n1956 – 10 July 1986\r\nPersonal details\r\nBorn\tLê Văn Nhuận\r\n7 April 1907\r\nQuảng Trị Province, French Indochina\r\nDied\t10 July 1986 (aged 79)\r\nHanoi, Vietnam\r\nNationality\tVietnamese\r\nPolitical party\tFlag of the Communist Party of Vietnam.svg Communist Party of Vietnam\r\nLê Duẩn (Vietnamese: [lē zʷə̂n]; 7 April 1907 – 10 July 1986) was a Vietnamese communist politician. He rose in the party hierarchy in the late 1950s and became General Secretary of the Central Committee of the Communist Party of Vietnam (VCP) at the 3rd National Congress in 1960. He continued Hồ Chí Minh's policy of ruling through collective leadership. From the mid-1960s (when Hồ's health was failing) until his own death in 1986, he was the top decision-maker in Vietnam.\r\n\r\nHe was born into a lower-class family in Quảng Trị Province, in the southern part of French Indochina as Lê Văn Nhuận. Little is known about his family and childhood. He first came in contact with revolutionary thoughts in the 1920s through his work as a railway clerk. Lê Duẩn was a founding member of the Indochina Communist Party (the future Communist Party of Vietnam) in 1930. He was imprisoned in 1931 and released in 1937. From 1937 to 1939, he climbed the party ladder. He was rearrested in 1939, this time for fomenting an uprising in the South. Lê Duẩn was released from jail following the successful Communist-led August Revolution of August 1945."}, "commit"=>"Create Article"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:32
+  [1m[36mArticle Create (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("name", "description", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "articles 7"], ["description", "This is a good article. Follow the link for more information.\r\nLê Duẩn\r\nFrom Wikipedia, the free encyclopedia\r\nJump to navigationJump to search\r\nLê Duẩn\r\nLe Duan.png\r\nGeneral Secretary of the Central Committee of the Communist Party of Vietnam\r\nIn office\r\n10 September 1960 – 10 July 1986\r\nPreceded by\tHồ Chí Minh (acting)\r\nSucceeded by\tTrường Chinh\r\nSecretary of the Central Military Commission of the Communist Party\r\nIn office\r\n1977–1984\r\nPreceded by\tVõ Nguyên Giáp\r\nSucceeded by\tVăn Tiến Dũng\r\nMember of the Politburo\r\nIn office\r\n1957 – 10 July 1986\r\nMember of the Secretariat\r\nIn office\r\n1956 – 10 July 1986\r\nPersonal details\r\nBorn\tLê Văn Nhuận\r\n7 April 1907\r\nQuảng Trị Province, French Indochina\r\nDied\t10 July 1986 (aged 79)\r\nHanoi, Vietnam\r\nNationality\tVietnamese\r\nPolitical party\tFlag of the Communist Party of Vietnam.svg Communist Party of Vietnam\r\nLê Duẩn (Vietnamese: [lē zʷə̂n]; 7 April 1907 – 10 July 1986) was a Vietnamese communist politician. He rose in the party hierarchy in the late 1950s and became General Secretary of the Central Committee of the Communist Party of Vietnam (VCP) at the 3rd National Congress in 1960. He continued Hồ Chí Minh's policy of ruling through collective leadership. From the mid-1960s (when Hồ's health was failing) until his own death in 1986, he was the top decision-maker in Vietnam.\r\n\r\nHe was born into a lower-class family in Quảng Trị Province, in the southern part of French Indochina as Lê Văn Nhuận. Little is known about his family and childhood. He first came in contact with revolutionary thoughts in the 1920s through his work as a railway clerk. Lê Duẩn was a founding member of the Indochina Communist Party (the future Communist Party of Vietnam) in 1930. He was imprisoned in 1931 and released in 1937. From 1937 to 1939, he climbed the party ladder. He was rearrested in 1939, this time for fomenting an uprising in the South. Lê Duẩn was released from jail following the successful Communist-led August Revolution of August 1945."], ["content", "This is a good article. Follow the link for more information.\r\nLê Duẩn\r\nFrom Wikipedia, the free encyclopedia\r\nJump to navigationJump to search\r\nLê Duẩn\r\nLe Duan.png\r\nGeneral Secretary of the Central Committee of the Communist Party of Vietnam\r\nIn office\r\n10 September 1960 – 10 July 1986\r\nPreceded by\tHồ Chí Minh (acting)\r\nSucceeded by\tTrường Chinh\r\nSecretary of the Central Military Commission of the Communist Party\r\nIn office\r\n1977–1984\r\nPreceded by\tVõ Nguyên Giáp\r\nSucceeded by\tVăn Tiến Dũng\r\nMember of the Politburo\r\nIn office\r\n1957 – 10 July 1986\r\nMember of the Secretariat\r\nIn office\r\n1956 – 10 July 1986\r\nPersonal details\r\nBorn\tLê Văn Nhuận\r\n7 April 1907\r\nQuảng Trị Province, French Indochina\r\nDied\t10 July 1986 (aged 79)\r\nHanoi, Vietnam\r\nNationality\tVietnamese\r\nPolitical party\tFlag of the Communist Party of Vietnam.svg Communist Party of Vietnam\r\nLê Duẩn (Vietnamese: [lē zʷə̂n]; 7 April 1907 – 10 July 1986) was a Vietnamese communist politician. He rose in the party hierarchy in the late 1950s and became General Secretary of the Central Committee of the Communist Party of Vietnam (VCP) at the 3rd National Congress in 1960. He continued Hồ Chí Minh's policy of ruling through collective leadership. From the mid-1960s (when Hồ's health was failing) until his own death in 1986, he was the top decision-maker in Vietnam.\r\n\r\nHe was born into a lower-class family in Quảng Trị Province, in the southern part of French Indochina as Lê Văn Nhuận. Little is known about his family and childhood. He first came in contact with revolutionary thoughts in the 1920s through his work as a railway clerk. Lê Duẩn was a founding member of the Indochina Communist Party (the future Communist Party of Vietnam) in 1930. He was imprisoned in 1931 and released in 1937. From 1937 to 1939, he climbed the party ladder. He was rearrested in 1939, this time for fomenting an uprising in the South. Lê Duẩn was released from jail following the successful Communist-led August Revolution of August 1945."], ["created_at", "2019-02-09 08:00:06.313174"], ["updated_at", "2019-02-09 08:00:06.313174"]]
+  ↳ app/controllers/articles_controller.rb:32
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:32
+Redirected to http://ec2-52-221-217-179.ap-southeast-1.compute.amazonaws.com:4001/articles/7
+Completed 302 Found in 13ms (ActiveRecord: 6.3ms)
+
+
+Started GET "/articles/7" for 116.100.161.105 at 2019-02-09 08:00:06 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:69
+  Rendering articles/show.html.haml within layouts/application
+  Rendered articles/show.html.haml within layouts/application (5.4ms)
+Completed 200 OK in 127ms (Views: 121.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles/new" for 116.100.161.105 at 2019-02-09 08:00:09 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (2.6ms)
+  Rendered articles/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 136ms (Views: 131.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/articles" for 116.100.161.105 at 2019-02-09 08:00:20 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2WrFONxL+ukR13ejB8TlUd0873QibLDa96txuHs9ZLlt1Y3JqByk9aL3SvxzPb0FxswPcacOSlCL6IuaI0MJSg==", "article"=>{"name"=>"articles 8", "description"=>"This is a good article. Follow the link for more information.\r\nLê Duẩn\r\nFrom Wikipedia, the free encyclopedia\r\nJump to navigationJump to search\r\nLê Duẩn\r\nLe Duan.png\r\nGeneral Secretary of the Central Committee of the Communist Party of Vietnam\r\nIn office\r\n10 September 1960 – 10 July 1986\r\nPreceded by\tHồ Chí Minh (acting)\r\nSucceeded by\tTrường Chinh\r\nSecretary of the Central Military Commission of the Communist Party\r\nIn office\r\n1977–1984\r\nPreceded by\tVõ Nguyên Giáp\r\nSucceeded by\tVăn Tiến Dũng\r\nMember of the Politburo\r\nIn office\r\n1957 – 10 July 1986\r\nMember of the Secretariat\r\nIn office\r\n1956 – 10 July 1986\r\nPersonal details\r\nBorn\tLê Văn Nhuận\r\n7 April 1907\r\nQuảng Trị Province, French Indochina\r\nDied\t10 July 1986 (aged 79)\r\nHanoi, Vietnam\r\nNationality\tVietnamese\r\nPolitical party\tFlag of the Communist Party of Vietnam.svg Communist Party of Vietnam\r\nLê Duẩn (Vietnamese: [lē zʷə̂n]; 7 April 1907 – 10 July 1986) was a Vietnamese communist politician. He rose in the party hierarchy in the late 1950s and became General Secretary of the Central Committee of the Communist Party of Vietnam (VCP) at the 3rd National Congress in 1960. He continued Hồ Chí Minh's policy of ruling through collective leadership. From the mid-1960s (when Hồ's health was failing) until his own death in 1986, he was the top decision-maker in Vietnam.\r\n\r\nHe was born into a lower-class family in Quảng Trị Province, in the southern part of French Indochina as Lê Văn Nhuận. Little is known about his family and childhood. He first came in contact with revolutionary thoughts in the 1920s through his work as a railway clerk. Lê Duẩn was a founding member of the Indochina Communist Party (the future Communist Party of Vietnam) in 1930. He was imprisoned in 1931 and released in 1937. From 1937 to 1939, he climbed the party ladder. He was rearrested in 1939, this time for fomenting an uprising in the South. Lê Duẩn was released from jail following the successful Communist-led August Revolution of August 1945.", "content"=>"This is a good article. Follow the link for more information.\r\nLê Duẩn\r\nFrom Wikipedia, the free encyclopedia\r\nJump to navigationJump to search\r\nLê Duẩn\r\nLe Duan.png\r\nGeneral Secretary of the Central Committee of the Communist Party of Vietnam\r\nIn office\r\n10 September 1960 – 10 July 1986\r\nPreceded by\tHồ Chí Minh (acting)\r\nSucceeded by\tTrường Chinh\r\nSecretary of the Central Military Commission of the Communist Party\r\nIn office\r\n1977–1984\r\nPreceded by\tVõ Nguyên Giáp\r\nSucceeded by\tVăn Tiến Dũng\r\nMember of the Politburo\r\nIn office\r\n1957 – 10 July 1986\r\nMember of the Secretariat\r\nIn office\r\n1956 – 10 July 1986\r\nPersonal details\r\nBorn\tLê Văn Nhuận\r\n7 April 1907\r\nQuảng Trị Province, French Indochina\r\nDied\t10 July 1986 (aged 79)\r\nHanoi, Vietnam\r\nNationality\tVietnamese\r\nPolitical party\tFlag of the Communist Party of Vietnam.svg Communist Party of Vietnam\r\nLê Duẩn (Vietnamese: [lē zʷə̂n]; 7 April 1907 – 10 July 1986) was a Vietnamese communist politician. He rose in the party hierarchy in the late 1950s and became General Secretary of the Central Committee of the Communist Party of Vietnam (VCP) at the 3rd National Congress in 1960. He continued Hồ Chí Minh's policy of ruling through collective leadership. From the mid-1960s (when Hồ's health was failing) until his own death in 1986, he was the top decision-maker in Vietnam.\r\n\r\nHe was born into a lower-class family in Quảng Trị Province, in the southern part of French Indochina as Lê Văn Nhuận. Little is known about his family and childhood. He first came in contact with revolutionary thoughts in the 1920s through his work as a railway clerk. Lê Duẩn was a founding member of the Indochina Communist Party (the future Communist Party of Vietnam) in 1930. He was imprisoned in 1931 and released in 1937. From 1937 to 1939, he climbed the party ladder. He was rearrested in 1939, this time for fomenting an uprising in the South. Lê Duẩn was released from jail following the successful Communist-led August Revolution of August 1945.", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f691d68efb0 @tempfile=#<Tempfile:/tmp/RackMultipart20190209-17657-e2opmr.jpg>, @original_filename="heic1509a.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"article[image]\"; filename=\"heic1509a.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Article"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:32
+  [1m[36mArticle Create (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("name", "description", "content", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "articles 8"], ["description", "This is a good article. Follow the link for more information.\r\nLê Duẩn\r\nFrom Wikipedia, the free encyclopedia\r\nJump to navigationJump to search\r\nLê Duẩn\r\nLe Duan.png\r\nGeneral Secretary of the Central Committee of the Communist Party of Vietnam\r\nIn office\r\n10 September 1960 – 10 July 1986\r\nPreceded by\tHồ Chí Minh (acting)\r\nSucceeded by\tTrường Chinh\r\nSecretary of the Central Military Commission of the Communist Party\r\nIn office\r\n1977–1984\r\nPreceded by\tVõ Nguyên Giáp\r\nSucceeded by\tVăn Tiến Dũng\r\nMember of the Politburo\r\nIn office\r\n1957 – 10 July 1986\r\nMember of the Secretariat\r\nIn office\r\n1956 – 10 July 1986\r\nPersonal details\r\nBorn\tLê Văn Nhuận\r\n7 April 1907\r\nQuảng Trị Province, French Indochina\r\nDied\t10 July 1986 (aged 79)\r\nHanoi, Vietnam\r\nNationality\tVietnamese\r\nPolitical party\tFlag of the Communist Party of Vietnam.svg Communist Party of Vietnam\r\nLê Duẩn (Vietnamese: [lē zʷə̂n]; 7 April 1907 – 10 July 1986) was a Vietnamese communist politician. He rose in the party hierarchy in the late 1950s and became General Secretary of the Central Committee of the Communist Party of Vietnam (VCP) at the 3rd National Congress in 1960. He continued Hồ Chí Minh's policy of ruling through collective leadership. From the mid-1960s (when Hồ's health was failing) until his own death in 1986, he was the top decision-maker in Vietnam.\r\n\r\nHe was born into a lower-class family in Quảng Trị Province, in the southern part of French Indochina as Lê Văn Nhuận. Little is known about his family and childhood. He first came in contact with revolutionary thoughts in the 1920s through his work as a railway clerk. Lê Duẩn was a founding member of the Indochina Communist Party (the future Communist Party of Vietnam) in 1930. He was imprisoned in 1931 and released in 1937. From 1937 to 1939, he climbed the party ladder. He was rearrested in 1939, this time for fomenting an uprising in the South. Lê Duẩn was released from jail following the successful Communist-led August Revolution of August 1945."], ["content", "This is a good article. Follow the link for more information.\r\nLê Duẩn\r\nFrom Wikipedia, the free encyclopedia\r\nJump to navigationJump to search\r\nLê Duẩn\r\nLe Duan.png\r\nGeneral Secretary of the Central Committee of the Communist Party of Vietnam\r\nIn office\r\n10 September 1960 – 10 July 1986\r\nPreceded by\tHồ Chí Minh (acting)\r\nSucceeded by\tTrường Chinh\r\nSecretary of the Central Military Commission of the Communist Party\r\nIn office\r\n1977–1984\r\nPreceded by\tVõ Nguyên Giáp\r\nSucceeded by\tVăn Tiến Dũng\r\nMember of the Politburo\r\nIn office\r\n1957 – 10 July 1986\r\nMember of the Secretariat\r\nIn office\r\n1956 – 10 July 1986\r\nPersonal details\r\nBorn\tLê Văn Nhuận\r\n7 April 1907\r\nQuảng Trị Province, French Indochina\r\nDied\t10 July 1986 (aged 79)\r\nHanoi, Vietnam\r\nNationality\tVietnamese\r\nPolitical party\tFlag of the Communist Party of Vietnam.svg Communist Party of Vietnam\r\nLê Duẩn (Vietnamese: [lē zʷə̂n]; 7 April 1907 – 10 July 1986) was a Vietnamese communist politician. He rose in the party hierarchy in the late 1950s and became General Secretary of the Central Committee of the Communist Party of Vietnam (VCP) at the 3rd National Congress in 1960. He continued Hồ Chí Minh's policy of ruling through collective leadership. From the mid-1960s (when Hồ's health was failing) until his own death in 1986, he was the top decision-maker in Vietnam.\r\n\r\nHe was born into a lower-class family in Quảng Trị Province, in the southern part of French Indochina as Lê Văn Nhuận. Little is known about his family and childhood. He first came in contact with revolutionary thoughts in the 1920s through his work as a railway clerk. Lê Duẩn was a founding member of the Indochina Communist Party (the future Communist Party of Vietnam) in 1930. He was imprisoned in 1931 and released in 1937. From 1937 to 1939, he climbed the party ladder. He was rearrested in 1939, this time for fomenting an uprising in the South. Lê Duẩn was released from jail following the successful Communist-led August Revolution of August 1945."], ["created_at", "2019-02-09 08:00:21.036472"], ["updated_at", "2019-02-09 08:00:21.036472"], ["image", "\"heic1509a.jpg\""]]
+  ↳ app/controllers/articles_controller.rb:32
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:32
+Redirected to http://ec2-52-221-217-179.ap-southeast-1.compute.amazonaws.com:4001/articles/8
+Completed 302 Found in 266ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/articles/8" for 116.100.161.105 at 2019-02-09 08:00:21 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:69
+  Rendering articles/show.html.haml within layouts/application
+  Rendered articles/show.html.haml within layouts/application (5.7ms)
+Completed 200 OK in 125ms (Views: 120.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles/new" for 116.100.161.105 at 2019-02-09 08:00:39 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (2.6ms)
+  Rendered articles/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 118ms (Views: 114.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/articles" for 116.100.161.105 at 2019-02-09 08:00:49 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0wfrrIgmpk6HToiALPn8fjp2JPNiop/ZzKeyn1gZ6M1nuKNd/HH4UjRutd9YAKQqIYbE9ufAZVOw5Ei9AGeFPg==", "article"=>{"name"=>"articles 9", "description"=>"This is a good article. Follow the link for more information.\r\nLê Duẩn\r\nFrom Wikipedia, the free encyclopedia\r\nJump to navigationJump to search\r\nLê Duẩn\r\nLe Duan.png\r\nGeneral Secretary of the Central Committee of the Communist Party of Vietnam\r\nIn office\r\n10 September 1960 – 10 July 1986\r\nPreceded by\tHồ Chí Minh (acting)\r\nSucceeded by\tTrường Chinh\r\nSecretary of the Central Military Commission of the Communist Party\r\nIn office\r\n1977–1984\r\nPreceded by\tVõ Nguyên Giáp\r\nSucceeded by\tVăn Tiến Dũng\r\nMember of the Politburo\r\nIn office\r\n1957 – 10 July 1986\r\nMember of the Secretariat\r\nIn office\r\n1956 – 10 July 1986\r\nPersonal details\r\nBorn\tLê Văn Nhuận\r\n7 April 1907\r\nQuảng Trị Province, French Indochina\r\nDied\t10 July 1986 (aged 79)\r\nHanoi, Vietnam\r\nNationality\tVietnamese\r\nPolitical party\tFlag of the Communist Party of Vietnam.svg Communist Party of Vietnam\r\nLê Duẩn (Vietnamese: [lē zʷə̂n]; 7 April 1907 – 10 July 1986) was a Vietnamese communist politician. He rose in the party hierarchy in the late 1950s and became General Secretary of the Central Committee of the Communist Party of Vietnam (VCP) at the 3rd National Congress in 1960. He continued Hồ Chí Minh's policy of ruling through collective leadership. From the mid-1960s (when Hồ's health was failing) until his own death in 1986, he was the top decision-maker in Vietnam.\r\n\r\nHe was born into a lower-class family in Quảng Trị Province, in the southern part of French Indochina as Lê Văn Nhuận. Little is known about his family and childhood. He first came in contact with revolutionary thoughts in the 1920s through his work as a railway clerk. Lê Duẩn was a founding member of the Indochina Communist Party (the future Communist Party of Vietnam) in 1930. He was imprisoned in 1931 and released in 1937. From 1937 to 1939, he climbed the party ladder. He was rearrested in 1939, this time for fomenting an uprising in the South. Lê Duẩn was released from jail following the successful Communist-led August Revolution of August 1945.", "content"=>"This is a good article. Follow the link for more information.\r\nLê Duẩn\r\nFrom Wikipedia, the free encyclopedia\r\nJump to navigationJump to search\r\nLê Duẩn\r\nLe Duan.png\r\nGeneral Secretary of the Central Committee of the Communist Party of Vietnam\r\nIn office\r\n10 September 1960 – 10 July 1986\r\nPreceded by\tHồ Chí Minh (acting)\r\nSucceeded by\tTrường Chinh\r\nSecretary of the Central Military Commission of the Communist Party\r\nIn office\r\n1977–1984\r\nPreceded by\tVõ Nguyên Giáp\r\nSucceeded by\tVăn Tiến Dũng\r\nMember of the Politburo\r\nIn office\r\n1957 – 10 July 1986\r\nMember of the Secretariat\r\nIn office\r\n1956 – 10 July 1986\r\nPersonal details\r\nBorn\tLê Văn Nhuận\r\n7 April 1907\r\nQuảng Trị Province, French Indochina\r\nDied\t10 July 1986 (aged 79)\r\nHanoi, Vietnam\r\nNationality\tVietnamese\r\nPolitical party\tFlag of the Communist Party of Vietnam.svg Communist Party of Vietnam\r\nLê Duẩn (Vietnamese: [lē zʷə̂n]; 7 April 1907 – 10 July 1986) was a Vietnamese communist politician. He rose in the party hierarchy in the late 1950s and became General Secretary of the Central Committee of the Communist Party of Vietnam (VCP) at the 3rd National Congress in 1960. He continued Hồ Chí Minh's policy of ruling through collective leadership. From the mid-1960s (when Hồ's health was failing) until his own death in 1986, he was the top decision-maker in Vietnam.\r\n\r\nHe was born into a lower-class family in Quảng Trị Province, in the southern part of French Indochina as Lê Văn Nhuận. Little is known about his family and childhood. He first came in contact with revolutionary thoughts in the 1920s through his work as a railway clerk. Lê Duẩn was a founding member of the Indochina Communist Party (the future Communist Party of Vietnam) in 1930. He was imprisoned in 1931 and released in 1937. From 1937 to 1939, he climbed the party ladder. He was rearrested in 1939, this time for fomenting an uprising in the South. Lê Duẩn was released from jail following the successful Communist-led August Revolution of August 1945.", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f6916b7db18 @tempfile=#<Tempfile:/tmp/RackMultipart20190209-17657-q92enz.jpg>, @original_filename="adidas.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"article[image]\"; filename=\"adidas.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Article"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:32
+  [1m[36mArticle Create (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("name", "description", "content", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "articles 9"], ["description", "This is a good article. Follow the link for more information.\r\nLê Duẩn\r\nFrom Wikipedia, the free encyclopedia\r\nJump to navigationJump to search\r\nLê Duẩn\r\nLe Duan.png\r\nGeneral Secretary of the Central Committee of the Communist Party of Vietnam\r\nIn office\r\n10 September 1960 – 10 July 1986\r\nPreceded by\tHồ Chí Minh (acting)\r\nSucceeded by\tTrường Chinh\r\nSecretary of the Central Military Commission of the Communist Party\r\nIn office\r\n1977–1984\r\nPreceded by\tVõ Nguyên Giáp\r\nSucceeded by\tVăn Tiến Dũng\r\nMember of the Politburo\r\nIn office\r\n1957 – 10 July 1986\r\nMember of the Secretariat\r\nIn office\r\n1956 – 10 July 1986\r\nPersonal details\r\nBorn\tLê Văn Nhuận\r\n7 April 1907\r\nQuảng Trị Province, French Indochina\r\nDied\t10 July 1986 (aged 79)\r\nHanoi, Vietnam\r\nNationality\tVietnamese\r\nPolitical party\tFlag of the Communist Party of Vietnam.svg Communist Party of Vietnam\r\nLê Duẩn (Vietnamese: [lē zʷə̂n]; 7 April 1907 – 10 July 1986) was a Vietnamese communist politician. He rose in the party hierarchy in the late 1950s and became General Secretary of the Central Committee of the Communist Party of Vietnam (VCP) at the 3rd National Congress in 1960. He continued Hồ Chí Minh's policy of ruling through collective leadership. From the mid-1960s (when Hồ's health was failing) until his own death in 1986, he was the top decision-maker in Vietnam.\r\n\r\nHe was born into a lower-class family in Quảng Trị Province, in the southern part of French Indochina as Lê Văn Nhuận. Little is known about his family and childhood. He first came in contact with revolutionary thoughts in the 1920s through his work as a railway clerk. Lê Duẩn was a founding member of the Indochina Communist Party (the future Communist Party of Vietnam) in 1930. He was imprisoned in 1931 and released in 1937. From 1937 to 1939, he climbed the party ladder. He was rearrested in 1939, this time for fomenting an uprising in the South. Lê Duẩn was released from jail following the successful Communist-led August Revolution of August 1945."], ["content", "This is a good article. Follow the link for more information.\r\nLê Duẩn\r\nFrom Wikipedia, the free encyclopedia\r\nJump to navigationJump to search\r\nLê Duẩn\r\nLe Duan.png\r\nGeneral Secretary of the Central Committee of the Communist Party of Vietnam\r\nIn office\r\n10 September 1960 – 10 July 1986\r\nPreceded by\tHồ Chí Minh (acting)\r\nSucceeded by\tTrường Chinh\r\nSecretary of the Central Military Commission of the Communist Party\r\nIn office\r\n1977–1984\r\nPreceded by\tVõ Nguyên Giáp\r\nSucceeded by\tVăn Tiến Dũng\r\nMember of the Politburo\r\nIn office\r\n1957 – 10 July 1986\r\nMember of the Secretariat\r\nIn office\r\n1956 – 10 July 1986\r\nPersonal details\r\nBorn\tLê Văn Nhuận\r\n7 April 1907\r\nQuảng Trị Province, French Indochina\r\nDied\t10 July 1986 (aged 79)\r\nHanoi, Vietnam\r\nNationality\tVietnamese\r\nPolitical party\tFlag of the Communist Party of Vietnam.svg Communist Party of Vietnam\r\nLê Duẩn (Vietnamese: [lē zʷə̂n]; 7 April 1907 – 10 July 1986) was a Vietnamese communist politician. He rose in the party hierarchy in the late 1950s and became General Secretary of the Central Committee of the Communist Party of Vietnam (VCP) at the 3rd National Congress in 1960. He continued Hồ Chí Minh's policy of ruling through collective leadership. From the mid-1960s (when Hồ's health was failing) until his own death in 1986, he was the top decision-maker in Vietnam.\r\n\r\nHe was born into a lower-class family in Quảng Trị Province, in the southern part of French Indochina as Lê Văn Nhuận. Little is known about his family and childhood. He first came in contact with revolutionary thoughts in the 1920s through his work as a railway clerk. Lê Duẩn was a founding member of the Indochina Communist Party (the future Communist Party of Vietnam) in 1930. He was imprisoned in 1931 and released in 1937. From 1937 to 1939, he climbed the party ladder. He was rearrested in 1939, this time for fomenting an uprising in the South. Lê Duẩn was released from jail following the successful Communist-led August Revolution of August 1945."], ["created_at", "2019-02-09 08:00:49.435822"], ["updated_at", "2019-02-09 08:00:49.435822"], ["image", "\"adidas.jpg\""]]
+  ↳ app/controllers/articles_controller.rb:32
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:32
+Redirected to http://ec2-52-221-217-179.ap-southeast-1.compute.amazonaws.com:4001/articles/9
+Completed 302 Found in 128ms (ActiveRecord: 6.2ms)
+
+
+Started GET "/articles/9" for 116.100.161.105 at 2019-02-09 08:00:49 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:69
+  Rendering articles/show.html.haml within layouts/application
+  Rendered articles/show.html.haml within layouts/application (5.9ms)
+Completed 200 OK in 140ms (Views: 135.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles/new" for 116.100.161.105 at 2019-02-09 08:00:52 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (2.9ms)
+  Rendered articles/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 124ms (Views: 119.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/articles" for 116.100.161.105 at 2019-02-09 08:01:11 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KtySqQC2jUvI4387S3Un8z2BK27YJkxcJmg0AwueytmeY9pYdOHTV3vDQmQ/jH+nJnHLa11EttZaK84hU+CnKg==", "article"=>{"name"=>"articles 10", "description"=>"He became the Party's First Secretary in 1960, officially becoming the main personality in the party after Hồ Chí Minh. After Hồ's death, Lê Duẩn took over the leadership of North Vietnam. When South Vietnam was reunited with North Vietnam in 1976 and the party was restructured, Lê Duẩn became General Secretary of the Party. He endorsed the Vietnamese invasion of Cambodia of December 1978, aiming to overthrow the Chinese-backed Khmer Rouge terror regime. This heavily impacted relations between Vietnam and China, with Vietnam responding with the deportation of ethnic Chinese and China carrying out a heavy-loss punitive expedition against Vietnam in 1979. From then on, Vietnam maintained a closer alliance with the Soviet Union and joined Comecon in 1978. Lê remained General Secretary until his death in 1986. He died in Hanoi; his successor was initially Trường Chinh. Lê Duản was also known as Lê Dung, and was known in public as \"anh Ba\" (third brother).\r\n\r\nThroughout the Vietnam War of 1955 to 1975, Lê Duẩn took an aggressive posture. He saw attack as the key to victory. When the North finally won the war in 1975, Lê Duẩn and his associates were overly optimistic about the future. The Second Five-Year Plan (1976–1980) failed and left the Vietnamese economy in crisis. Vietnam became internationally isolated during Lê Duẩn's rule. In 1979, the country had invaded Kampuchea and ousted Pol Pot, fought a war with China and became dependent on Soviet economic aid. Lê Duẩn died in July 1986 and was succeeded by Trường Chinh.", "content"=>"He became the Party's First Secretary in 1960, officially becoming the main personality in the party after Hồ Chí Minh. After Hồ's death, Lê Duẩn took over the leadership of North Vietnam. When South Vietnam was reunited with North Vietnam in 1976 and the party was restructured, Lê Duẩn became General Secretary of the Party. He endorsed the Vietnamese invasion of Cambodia of December 1978, aiming to overthrow the Chinese-backed Khmer Rouge terror regime. This heavily impacted relations between Vietnam and China, with Vietnam responding with the deportation of ethnic Chinese and China carrying out a heavy-loss punitive expedition against Vietnam in 1979. From then on, Vietnam maintained a closer alliance with the Soviet Union and joined Comecon in 1978. Lê remained General Secretary until his death in 1986. He died in Hanoi; his successor was initially Trường Chinh. Lê Duản was also known as Lê Dung, and was known in public as \"anh Ba\" (third brother).\r\n\r\nThroughout the Vietnam War of 1955 to 1975, Lê Duẩn took an aggressive posture. He saw attack as the key to victory. When the North finally won the war in 1975, Lê Duẩn and his associates were overly optimistic about the future. The Second Five-Year Plan (1976–1980) failed and left the Vietnamese economy in crisis. Vietnam became internationally isolated during Lê Duẩn's rule. In 1979, the country had invaded Kampuchea and ousted Pol Pot, fought a war with China and became dependent on Soviet economic aid. Lê Duẩn died in July 1986 and was succeeded by Trường Chinh.", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f691cd5e418 @tempfile=#<Tempfile:/tmp/RackMultipart20190209-17657-1b8etji.jpg>, @original_filename="10087318-1-white.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"article[image]\"; filename=\"10087318-1-white.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Article"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:32
+  [1m[36mArticle Create (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("name", "description", "content", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "articles 10"], ["description", "He became the Party's First Secretary in 1960, officially becoming the main personality in the party after Hồ Chí Minh. After Hồ's death, Lê Duẩn took over the leadership of North Vietnam. When South Vietnam was reunited with North Vietnam in 1976 and the party was restructured, Lê Duẩn became General Secretary of the Party. He endorsed the Vietnamese invasion of Cambodia of December 1978, aiming to overthrow the Chinese-backed Khmer Rouge terror regime. This heavily impacted relations between Vietnam and China, with Vietnam responding with the deportation of ethnic Chinese and China carrying out a heavy-loss punitive expedition against Vietnam in 1979. From then on, Vietnam maintained a closer alliance with the Soviet Union and joined Comecon in 1978. Lê remained General Secretary until his death in 1986. He died in Hanoi; his successor was initially Trường Chinh. Lê Duản was also known as Lê Dung, and was known in public as \"anh Ba\" (third brother).\r\n\r\nThroughout the Vietnam War of 1955 to 1975, Lê Duẩn took an aggressive posture. He saw attack as the key to victory. When the North finally won the war in 1975, Lê Duẩn and his associates were overly optimistic about the future. The Second Five-Year Plan (1976–1980) failed and left the Vietnamese economy in crisis. Vietnam became internationally isolated during Lê Duẩn's rule. In 1979, the country had invaded Kampuchea and ousted Pol Pot, fought a war with China and became dependent on Soviet economic aid. Lê Duẩn died in July 1986 and was succeeded by Trường Chinh."], ["content", "He became the Party's First Secretary in 1960, officially becoming the main personality in the party after Hồ Chí Minh. After Hồ's death, Lê Duẩn took over the leadership of North Vietnam. When South Vietnam was reunited with North Vietnam in 1976 and the party was restructured, Lê Duẩn became General Secretary of the Party. He endorsed the Vietnamese invasion of Cambodia of December 1978, aiming to overthrow the Chinese-backed Khmer Rouge terror regime. This heavily impacted relations between Vietnam and China, with Vietnam responding with the deportation of ethnic Chinese and China carrying out a heavy-loss punitive expedition against Vietnam in 1979. From then on, Vietnam maintained a closer alliance with the Soviet Union and joined Comecon in 1978. Lê remained General Secretary until his death in 1986. He died in Hanoi; his successor was initially Trường Chinh. Lê Duản was also known as Lê Dung, and was known in public as \"anh Ba\" (third brother).\r\n\r\nThroughout the Vietnam War of 1955 to 1975, Lê Duẩn took an aggressive posture. He saw attack as the key to victory. When the North finally won the war in 1975, Lê Duẩn and his associates were overly optimistic about the future. The Second Five-Year Plan (1976–1980) failed and left the Vietnamese economy in crisis. Vietnam became internationally isolated during Lê Duẩn's rule. In 1979, the country had invaded Kampuchea and ousted Pol Pot, fought a war with China and became dependent on Soviet economic aid. Lê Duẩn died in July 1986 and was succeeded by Trường Chinh."], ["created_at", "2019-02-09 08:01:12.008614"], ["updated_at", "2019-02-09 08:01:12.008614"], ["image", "\"10087318-1-white.jpg\""]]
+  ↳ app/controllers/articles_controller.rb:32
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:32
+Redirected to http://ec2-52-221-217-179.ap-southeast-1.compute.amazonaws.com:4001/articles/10
+Completed 302 Found in 145ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/articles/10" for 116.100.161.105 at 2019-02-09 08:01:12 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:69
+  Rendering articles/show.html.haml within layouts/application
+  Rendered articles/show.html.haml within layouts/application (5.4ms)
+Completed 200 OK in 127ms (Views: 122.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles/new" for 116.100.161.105 at 2019-02-09 08:01:15 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (2.9ms)
+  Rendered articles/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 135ms (Views: 130.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/articles" for 116.100.161.105 at 2019-02-09 08:01:24 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iN4nzmfdDrLTPBsvbcF/YocurUVSUj4YtbOuDAKTg2w8YW8/E4pQrmAcJnAZOCc2nN5NQNcwxJLJ8FQuWu3unw==", "article"=>{"name"=>"articles 11", "description"=>"He became the Party's First Secretary in 1960, officially becoming the main personality in the party after Hồ Chí Minh. After Hồ's death, Lê Duẩn took over the leadership of North Vietnam. When South Vietnam was reunited with North Vietnam in 1976 and the party was restructured, Lê Duẩn became General Secretary of the Party. He endorsed the Vietnamese invasion of Cambodia of December 1978, aiming to overthrow the Chinese-backed Khmer Rouge terror regime. This heavily impacted relations between Vietnam and China, with Vietnam responding with the deportation of ethnic Chinese and China carrying out a heavy-loss punitive expedition against Vietnam in 1979. From then on, Vietnam maintained a closer alliance with the Soviet Union and joined Comecon in 1978. Lê remained General Secretary until his death in 1986. He died in Hanoi; his successor was initially Trường Chinh. Lê Duản was also known as Lê Dung, and was known in public as \"anh Ba\" (third brother).\r\n\r\nThroughout the Vietnam War of 1955 to 1975, Lê Duẩn took an aggressive posture. He saw attack as the key to victory. When the North finally won the war in 1975, Lê Duẩn and his associates were overly optimistic about the future. The Second Five-Year Plan (1976–1980) failed and left the Vietnamese economy in crisis. Vietnam became internationally isolated during Lê Duẩn's rule. In 1979, the country had invaded Kampuchea and ousted Pol Pot, fought a war with China and became dependent on Soviet economic aid. Lê Duẩn died in July 1986 and was succeeded by Trường Chinh.", "content"=>"He became the Party's First Secretary in 1960, officially becoming the main personality in the party after Hồ Chí Minh. After Hồ's death, Lê Duẩn took over the leadership of North Vietnam. When South Vietnam was reunited with North Vietnam in 1976 and the party was restructured, Lê Duẩn became General Secretary of the Party. He endorsed the Vietnamese invasion of Cambodia of December 1978, aiming to overthrow the Chinese-backed Khmer Rouge terror regime. This heavily impacted relations between Vietnam and China, with Vietnam responding with the deportation of ethnic Chinese and China carrying out a heavy-loss punitive expedition against Vietnam in 1979. From then on, Vietnam maintained a closer alliance with the Soviet Union and joined Comecon in 1978. Lê remained General Secretary until his death in 1986. He died in Hanoi; his successor was initially Trường Chinh. Lê Duản was also known as Lê Dung, and was known in public as \"anh Ba\" (third brother).\r\n\r\nThroughout the Vietnam War of 1955 to 1975, Lê Duẩn took an aggressive posture. He saw attack as the key to victory. When the North finally won the war in 1975, Lê Duẩn and his associates were overly optimistic about the future. The Second Five-Year Plan (1976–1980) failed and left the Vietnamese economy in crisis. Vietnam became internationally isolated during Lê Duẩn's rule. In 1979, the country had invaded Kampuchea and ousted Pol Pot, fought a war with China and became dependent on Soviet economic aid. Lê Duẩn died in July 1986 and was succeeded by Trường Chinh.", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f6908cbd450 @tempfile=#<Tempfile:/tmp/RackMultipart20190209-17657-8dbp9m.jpg>, @original_filename="6-grumpy-cat.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"article[image]\"; filename=\"6-grumpy-cat.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Article"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:32
+  [1m[36mArticle Create (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("name", "description", "content", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "articles 11"], ["description", "He became the Party's First Secretary in 1960, officially becoming the main personality in the party after Hồ Chí Minh. After Hồ's death, Lê Duẩn took over the leadership of North Vietnam. When South Vietnam was reunited with North Vietnam in 1976 and the party was restructured, Lê Duẩn became General Secretary of the Party. He endorsed the Vietnamese invasion of Cambodia of December 1978, aiming to overthrow the Chinese-backed Khmer Rouge terror regime. This heavily impacted relations between Vietnam and China, with Vietnam responding with the deportation of ethnic Chinese and China carrying out a heavy-loss punitive expedition against Vietnam in 1979. From then on, Vietnam maintained a closer alliance with the Soviet Union and joined Comecon in 1978. Lê remained General Secretary until his death in 1986. He died in Hanoi; his successor was initially Trường Chinh. Lê Duản was also known as Lê Dung, and was known in public as \"anh Ba\" (third brother).\r\n\r\nThroughout the Vietnam War of 1955 to 1975, Lê Duẩn took an aggressive posture. He saw attack as the key to victory. When the North finally won the war in 1975, Lê Duẩn and his associates were overly optimistic about the future. The Second Five-Year Plan (1976–1980) failed and left the Vietnamese economy in crisis. Vietnam became internationally isolated during Lê Duẩn's rule. In 1979, the country had invaded Kampuchea and ousted Pol Pot, fought a war with China and became dependent on Soviet economic aid. Lê Duẩn died in July 1986 and was succeeded by Trường Chinh."], ["content", "He became the Party's First Secretary in 1960, officially becoming the main personality in the party after Hồ Chí Minh. After Hồ's death, Lê Duẩn took over the leadership of North Vietnam. When South Vietnam was reunited with North Vietnam in 1976 and the party was restructured, Lê Duẩn became General Secretary of the Party. He endorsed the Vietnamese invasion of Cambodia of December 1978, aiming to overthrow the Chinese-backed Khmer Rouge terror regime. This heavily impacted relations between Vietnam and China, with Vietnam responding with the deportation of ethnic Chinese and China carrying out a heavy-loss punitive expedition against Vietnam in 1979. From then on, Vietnam maintained a closer alliance with the Soviet Union and joined Comecon in 1978. Lê remained General Secretary until his death in 1986. He died in Hanoi; his successor was initially Trường Chinh. Lê Duản was also known as Lê Dung, and was known in public as \"anh Ba\" (third brother).\r\n\r\nThroughout the Vietnam War of 1955 to 1975, Lê Duẩn took an aggressive posture. He saw attack as the key to victory. When the North finally won the war in 1975, Lê Duẩn and his associates were overly optimistic about the future. The Second Five-Year Plan (1976–1980) failed and left the Vietnamese economy in crisis. Vietnam became internationally isolated during Lê Duẩn's rule. In 1979, the country had invaded Kampuchea and ousted Pol Pot, fought a war with China and became dependent on Soviet economic aid. Lê Duẩn died in July 1986 and was succeeded by Trường Chinh."], ["created_at", "2019-02-09 08:01:25.099883"], ["updated_at", "2019-02-09 08:01:25.099883"], ["image", "\"6-grumpy-cat.jpg\""]]
+  ↳ app/controllers/articles_controller.rb:32
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:32
+Redirected to http://ec2-52-221-217-179.ap-southeast-1.compute.amazonaws.com:4001/articles/11
+Completed 302 Found in 358ms (ActiveRecord: 7.2ms)
+
+
+Started GET "/articles/11" for 116.100.161.105 at 2019-02-09 08:01:25 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:69
+  Rendering articles/show.html.haml within layouts/application
+  Rendered articles/show.html.haml within layouts/application (5.4ms)
+Completed 200 OK in 127ms (Views: 122.9ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/sign_out" for 116.100.161.105 at 2019-02-09 08:02:15 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Sg1bJ5mkEzCvD6UePO4Vlzsdhg0KW0Q0IrwA4cGLRt7dwWn0poodlY358NXZLiCl0QKaZ0YBeEqkLxGrQJTYkw=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_created_at", nil], ["updated_at", "2019-02-09 08:02:15.740457"], ["id", 2]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://ec2-52-221-217-179.ap-southeast-1.compute.amazonaws.com:4001/
+Completed 302 Found in 30ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/" for 116.100.161.105 at 2019-02-09 08:02:15 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (54.2ms)
+Completed 200 OK in 214ms (Views: 167.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/articles" for 116.100.161.105 at 2019-02-09 08:02:17 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+Completed 500 Internal Server Error in 284ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `page' for #<ArticlesController:0x00007f69087a9630>):
+  
+app/controllers/articles_controller.rb:8:in `index'
+Started GET "/articles" for 116.100.161.105 at 2019-02-09 08:02:25 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering articles/index.html.haml within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/articles/index.html.haml:28
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/articles/index.html.haml:36
+  Rendered articles/index.html.haml within layouts/application (15.9ms)
+Completed 200 OK in 166ms (Views: 153.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/articles" for 116.100.161.105 at 2019-02-09 08:04:34 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering articles/index.html.haml within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/articles/index.html.haml:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.haml:35
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "articles" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/articles/index.html.haml:36
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/articles/index.html.haml:38
+  Rendered articles/index.html.haml within layouts/application (29.1ms)
+Completed 200 OK in 192ms (Views: 187.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/articles?page=2" for 116.100.161.105 at 2019-02-09 08:04:40 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering articles/index.html.haml within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/articles/index.html.haml:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.haml:35
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "articles" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 10]]
+  ↳ app/views/articles/index.html.haml:36
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 10]]
+  ↳ app/views/articles/index.html.haml:38
+  Rendered articles/index.html.haml within layouts/application (27.4ms)
+Completed 200 OK in 177ms (Views: 143.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/home" for 116.100.161.105 at 2019-02-09 08:04:48 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (54.4ms)
+Completed 200 OK in 203ms (Views: 169.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/inventory_item_categories/1" for 116.100.161.105 at 2019-02-09 08:09:32 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemCategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT  "inventory_item_categories".* FROM "inventory_item_categories" WHERE "inventory_item_categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/inventory_item_categories_controller.rb:68
+  Rendering inventory_item_categories/show.html.haml within layouts/application
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."inventory_item_category_id" = ?[0m  [["inventory_item_category_id", 1]]
+  ↳ app/views/inventory_item_categories/show.html.haml:19
+  Rendered inventory_item_categories/show.html.haml within layouts/application (13.3ms)
+Completed 200 OK in 145ms (Views: 140.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles" for 116.100.161.105 at 2019-02-09 08:09:35 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering articles/index.html.haml within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/articles/index.html.haml:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.haml:35
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "articles" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/articles/index.html.haml:36
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/articles/index.html.haml:38
+  Rendered articles/index.html.haml within layouts/application (25.2ms)
+Completed 200 OK in 145ms (Views: 141.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/articles/1" for 116.100.161.105 at 2019-02-09 08:09:37 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:70
+  Rendering articles/show.html.haml within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at desc[0m
+  ↳ app/views/articles/show.html.haml:22
+  Rendered articles/show.html.haml within layouts/application (7.6ms)
+Completed 200 OK in 132ms (Views: 127.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles/1" for 116.100.161.105 at 2019-02-09 08:10:45 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:70
+  Rendering articles/show.html.haml within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/articles/show.html.haml:22
+  Rendered articles/show.html.haml within layouts/application (7.3ms)
+Completed 200 OK in 142ms (Views: 121.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/articles" for 116.100.161.105 at 2019-02-09 08:10:49 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering articles/index.html.haml within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/articles/index.html.haml:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.haml:35
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "articles" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/articles/index.html.haml:36
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/articles/index.html.haml:38
+  Rendered articles/index.html.haml within layouts/application (25.1ms)
+Completed 200 OK in 151ms (Views: 146.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/articles/2" for 116.100.161.105 at 2019-02-09 08:10:52 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:70
+  Rendering articles/show.html.haml within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/articles/show.html.haml:22
+  Rendered articles/show.html.haml within layouts/application (8.1ms)
+Completed 200 OK in 141ms (Views: 137.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles/3" for 116.100.161.105 at 2019-02-09 08:10:56 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:70
+  Rendering articles/show.html.haml within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/articles/show.html.haml:22
+  Rendered articles/show.html.haml within layouts/application (7.2ms)
+Completed 200 OK in 128ms (Views: 124.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/articles/3" for 116.100.161.105 at 2019-02-09 08:11:15 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:70
+  Rendering articles/show.html.haml within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/articles/show.html.haml:22
+  Rendered articles/show.html.haml within layouts/application (7.0ms)
+Completed 200 OK in 144ms (Views: 140.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/categories" for 116.100.161.105 at 2019-02-09 08:11:19 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemCategoriesController#index as HTML
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering inventory_item_categories/index.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.1ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/inventory_item_categories/index.html.haml:24
+  Rendered inventory_item_categories/index.html.haml within layouts/application (13.5ms)
+Completed 200 OK in 133ms (Views: 126.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/articles" for 116.100.161.105 at 2019-02-09 08:11:20 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering articles/index.html.haml within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/articles/index.html.haml:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.haml:35
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "articles" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/articles/index.html.haml:36
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/articles/index.html.haml:38
+  Rendered articles/index.html.haml within layouts/application (25.5ms)
+Completed 200 OK in 146ms (Views: 141.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/articles/11" for 116.100.161.105 at 2019-02-09 08:11:21 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:70
+  Rendering articles/show.html.haml within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/articles/show.html.haml:22
+  Rendered articles/show.html.haml within layouts/application (21.4ms)
+Completed 200 OK in 142ms (Views: 138.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles/10" for 116.100.161.105 at 2019-02-09 08:11:25 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:70
+  Rendering articles/show.html.haml within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/articles/show.html.haml:22
+  Rendered articles/show.html.haml within layouts/application (7.2ms)
+Completed 200 OK in 127ms (Views: 122.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles/9" for 116.100.161.105 at 2019-02-09 08:11:27 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:70
+  Rendering articles/show.html.haml within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/articles/show.html.haml:22
+  Rendered articles/show.html.haml within layouts/application (7.0ms)
+Completed 200 OK in 138ms (Views: 134.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles/8" for 116.100.161.105 at 2019-02-09 08:11:28 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:70
+  Rendering articles/show.html.haml within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/articles/show.html.haml:22
+  Rendered articles/show.html.haml within layouts/application (7.3ms)
+Completed 200 OK in 132ms (Views: 128.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/articles/10" for 116.100.161.105 at 2019-02-09 08:11:31 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:70
+  Rendering articles/show.html.haml within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/articles/show.html.haml:22
+  Rendered articles/show.html.haml within layouts/application (7.0ms)
+Completed 200 OK in 140ms (Views: 135.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles/11" for 116.100.161.105 at 2019-02-09 08:11:34 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:70
+  Rendering articles/show.html.haml within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/articles/show.html.haml:22
+  Rendered articles/show.html.haml within layouts/application (7.0ms)
+Completed 200 OK in 128ms (Views: 123.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/articles/9" for 116.100.161.105 at 2019-02-09 08:11:35 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:70
+  Rendering articles/show.html.haml within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/views/articles/show.html.haml:22
+  Rendered articles/show.html.haml within layouts/application (7.2ms)
+Completed 200 OK in 128ms (Views: 124.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/home" for 116.100.161.105 at 2019-02-09 08:11:37 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.3ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (61.5ms)
+Completed 200 OK in 210ms (Views: 177.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/inventory_items/1" for 116.100.161.105 at 2019-02-09 08:11:39 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/inventory_items_controller.rb:87
+  Rendering inventory_items/show.html.haml within layouts/application
+  Rendered inventory_items/show.html.haml within layouts/application (7.5ms)
+Completed 200 OK in 127ms (Views: 122.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/order_line_items?inventory_item_id=1" for 116.100.161.105 at 2019-02-09 08:11:41 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrderLineItemsController#create as HTML
+  Parameters: {"authenticity_token"=>"K1X2NoEuNiZqfnU/OOceTGeR8xl4JWw9mOo6ACAuUBtRFmgfvw3+R7p+oGKAuuYOIzB3CCBJ3ti9kOyAOQdBKg==", "inventory_item_id"=>"1"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/order_line_items_controller.rb:34
+  [1m[36mOrderLineItem Load (0.2ms)[0m  [1m[34mSELECT  "order_line_items".* FROM "order_line_items" WHERE "order_line_items"."order_id" = ? AND "order_line_items"."inventory_item_id" = ? LIMIT ?[0m  [["order_id", 14], ["inventory_item_id", 1], ["LIMIT", 1]]
+  ↳ app/models/order.rb:7
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/order_line_items_controller.rb:44
+  [1m[36mInventoryItem Update (0.3ms)[0m  [1m[33mUPDATE "inventory_items" SET "quantity" = ?, "updated_at" = ? WHERE "inventory_items"."id" = ?[0m  [["quantity", 4], ["updated_at", "2019-02-09 08:11:41.546876"], ["id", 1]]
+  ↳ app/controllers/order_line_items_controller.rb:44
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/order_line_items_controller.rb:44
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/order_line_items_controller.rb:47
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/order_line_item.rb:18
+  [1m[36mOrderLineItem Update (0.3ms)[0m  [1m[33mUPDATE "order_line_items" SET "order_item_qty" = ?, "total_price" = ?, "updated_at" = ? WHERE "order_line_items"."id" = ?[0m  [["order_item_qty", 2], ["total_price", 1400.0], ["updated_at", "2019-02-09 08:11:41.556823"], ["id", 7]]
+  ↳ app/controllers/order_line_items_controller.rb:47
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/order_line_items_controller.rb:47
+Redirected to http://ec2-52-221-217-179.ap-southeast-1.compute.amazonaws.com:4001/orders/14
+Completed 302 Found in 22ms (ActiveRecord: 10.4ms)
+
+
+Started GET "/orders/14" for 116.100.161.105 at 2019-02-09 08:11:41 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:100
+  Rendering orders/show.html.haml within layouts/application
+  [1m[36mOrderLineItem Load (0.2ms)[0m  [1m[34mSELECT "order_line_items".* FROM "order_line_items" WHERE "order_line_items"."order_id" = ?[0m  [["order_id", 14]]
+  ↳ app/views/orders/show.html.haml:11
+  Rendered orders/_form.html.haml (5.7ms)
+  Rendered orders/show.html.haml within layouts/application (16.9ms)
+Completed 200 OK in 155ms (Views: 151.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/home" for 116.100.161.105 at 2019-02-09 08:11:50 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.1ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (48.5ms)
+Completed 200 OK in 173ms (Views: 167.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/inventory_items" for 116.100.161.105 at 2019-02-09 08:13:23 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering inventory_items/index.html.haml within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/inventory_items/index.html.haml:33
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/views/inventory_items/index.html.haml:34
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/views/inventory_items/index.html.haml:38
+  Rendered inventory_items/index.html.haml within layouts/application (32.9ms)
+Completed 200 OK in 163ms (Views: 159.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/home" for 116.100.161.105 at 2019-02-09 08:13:27 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (51.9ms)
+Completed 200 OK in 180ms (Views: 174.7ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/order_line_items?inventory_item_id=1" for 116.100.161.105 at 2019-02-09 08:19:43 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrderLineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"e4tsgc292EhTqGRpuytlAPG7SYQH6ygG6eb7QlnSSG8ByPKo854QKYOosTQDdp1CtRrNlV+HmuPMnC3CQPtZXg==", "inventory_item_id"=>"1"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/order_line_items_controller.rb:34
+  [1m[36mOrderLineItem Load (0.1ms)[0m  [1m[34mSELECT  "order_line_items".* FROM "order_line_items" WHERE "order_line_items"."order_id" = ? AND "order_line_items"."inventory_item_id" = ? LIMIT ?[0m  [["order_id", 14], ["inventory_item_id", 1], ["LIMIT", 1]]
+  ↳ app/models/order.rb:7
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/order_line_items_controller.rb:44
+  [1m[36mInventoryItem Update (0.3ms)[0m  [1m[33mUPDATE "inventory_items" SET "quantity" = ?, "updated_at" = ? WHERE "inventory_items"."id" = ?[0m  [["quantity", 3], ["updated_at", "2019-02-09 08:19:43.307599"], ["id", 1]]
+  ↳ app/controllers/order_line_items_controller.rb:44
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/order_line_items_controller.rb:44
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/order_line_items_controller.rb:47
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/order_line_item.rb:18
+  [1m[36mOrderLineItem Update (0.2ms)[0m  [1m[33mUPDATE "order_line_items" SET "order_item_qty" = ?, "total_price" = ?, "updated_at" = ? WHERE "order_line_items"."id" = ?[0m  [["order_item_qty", 3], ["total_price", 2100.0], ["updated_at", "2019-02-09 08:19:43.316047"], ["id", 7]]
+  ↳ app/controllers/order_line_items_controller.rb:47
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/order_line_items_controller.rb:47
+  Rendering order_line_items/create.js.erb
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("order_line_items"."order_item_qty") FROM "order_line_items" WHERE "order_line_items"."order_id" = ?[0m  [["order_id", 14]]
+  ↳ app/views/order_line_items/create.js.erb:1
+  Rendered order_line_items/create.js.erb (1.2ms)
+Completed 200 OK in 31ms (Views: 7.5ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/orders/14" for 116.100.161.105 at 2019-02-09 08:19:44 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:100
+  Rendering orders/show.html.haml within layouts/application
+  [1m[36mOrderLineItem Load (0.2ms)[0m  [1m[34mSELECT "order_line_items".* FROM "order_line_items" WHERE "order_line_items"."order_id" = ?[0m  [["order_id", 14]]
+  ↳ app/views/orders/show.html.haml:11
+  Rendered orders/_form.html.haml (4.7ms)
+  Rendered orders/show.html.haml within layouts/application (13.9ms)
+Completed 200 OK in 146ms (Views: 141.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 116.100.161.105 at 2019-02-09 08:19:48 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (50.6ms)
+Completed 200 OK in 189ms (Views: 182.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/orders/14" for 116.100.161.105 at 2019-02-09 08:19:50 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:100
+  Rendering orders/show.html.haml within layouts/application
+  [1m[36mOrderLineItem Load (0.1ms)[0m  [1m[34mSELECT "order_line_items".* FROM "order_line_items" WHERE "order_line_items"."order_id" = ?[0m  [["order_id", 14]]
+  ↳ app/views/orders/show.html.haml:11
+  Rendered orders/_form.html.haml (4.9ms)
+  Rendered orders/show.html.haml within layouts/application (14.3ms)
+Completed 200 OK in 137ms (Views: 133.5ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/orders/14" for 116.100.161.105 at 2019-02-09 08:19:51 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kATDO82XKgA6576C71ze48bHYpf3bfz0DwZ1u4yif5SRl8O//L0MkJug7klPzRZfsgzjAa34mkETqBv2IY7YSQ==", "order"=>{"state"=>"2", "total_amount"=>"2100.0"}, "commit"=>"Checkout", "id"=>"14"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:100
+Completed 401 Unauthorized in 13ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/sign_in" for 116.100.161.105 at 2019-02-09 08:19:51 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering /usr/local/rvm/gems/ruby-2.5.3/gems/devise-4.5.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/local/rvm/gems/ruby-2.5.3/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.5.3/gems/devise-4.5.0/app/views/devise/sessions/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 151ms (Views: 138.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/home" for 116.100.161.105 at 2019-02-09 08:19:55 +0000
+Cannot render console from 116.100.161.105! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 10], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:49
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:50
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:53
+  Rendered static_pages/home.html.haml within layouts/application (52.4ms)
+Completed 200 OK in 174ms (Views: 168.3ms | ActiveRecord: 1.1ms)
+
+

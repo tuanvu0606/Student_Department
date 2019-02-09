@@ -4,14 +4,15 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
-    @articles_in_order = Article.all.order("created_at desc")
+    # @static_pages = InventoryItem.page(params[:page]).per(20)
+    @articles = Article.page(params[:page]).per(10)
+    @articles_in_order = Article.all.order("created_at desc").limit(5)
   end
 
   # GET /articles/1
   # GET /articles/1.json
   def show
-    @articles_in_order = Article.all.order("created_at desc")
+    @articles_in_order = Article.all.order("created_at desc").limit(5)
   end
 
   # GET /articles/new

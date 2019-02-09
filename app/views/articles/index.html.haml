@@ -29,20 +29,26 @@
             %li.list-group-item
               =link_to article.name, article
       .col-lg-9.col-md-12
-        - @articles.each do |article| 
-          .card.text-center(style ="margin-top:10px;")
-            .card-header
-              Featured
-            .card-body
-              %h5.card-title 
-                =article.name
-              %p.card-text 
-                =article.description
-              //%a.btn.btn-primary
-              //  = link_to 'Details', article
-              = link_to 'Details', article, :class => "a btn btn-primary"
-            .card-footer.text-muted
-              Updated at:
-              =article.updated_at
+        .card
+          .card-header
+            Articles    
+            = paginate @articles
+            = page_entries_info @articles   
+          .card-body   
+            - @articles.each do |article| 
+              .card.text-center(style ="margin-top:10px;")
+                .card-header
+                  Article
+                .card-body
+                  %h5.card-title 
+                    =article.name
+                  %p.card-text 
+                    =article.description
+                  //%a.btn.btn-primary
+                  //  = link_to 'Details', article
+                  = link_to 'Details', article, :class => "a btn btn-primary"
+                .card-footer.text-muted
+                  Updated at:
+                  =article.updated_at
 
-    
+        
