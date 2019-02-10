@@ -6,6 +6,8 @@ class StaticPagesController < ApplicationController
     #@inventory_models = InventoryModels.all
     @order_line_item = @order.order_line_items.new
     @best_seller = InventoryItem.find_by(sold_quantity: InventoryItem.maximum(:sold_quantity))    
+    @looked_item = InventoryItem.find(cookies[:looked_items])
+    # binding.pry
   end
 
   def help

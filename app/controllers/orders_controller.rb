@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
   before_action :set_order
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_order 
   before_action :set_order, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:show]  
+  before_action :authenticate_user!, except: [:show, :index]  
   # GET /orders
   # GET /orders.json
   def index

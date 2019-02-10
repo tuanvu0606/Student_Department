@@ -15,13 +15,11 @@
       .carousel-inner
         .carousel-item.active
           %img.d-block.w-100
-            = image_tag 'sport_2.jpg'
-        .carousel-item
-          %img.d-block.w-100
-            = image_tag 'nike-men.jpg'
-        .carousel-item
-          %img.d-block.w-100
-            = image_tag 'sport_2.jpg'
+            = link_to image_tag(@inventory_item_categories[0].image_url(:home_carousel)), @inventory_item_categories[0]          
+        - @inventory_item_categories.each do |inventory_item_category|     
+          .carousel-item
+            %img.d-block.w-100
+              = link_to image_tag(inventory_item_category.image_url(:home_carousel)), inventory_item_category
       %a.carousel-control-prev(data-slide="prev" href="#carouselExampleIndicators" role="button")
         %span.carousel-control-prev-icon(aria-hidden="true")
         %span.sr-only Previous
@@ -42,7 +40,7 @@
               Sold:
               =@best_seller.sold_quantity
             = link_to "Details", @best_seller, :class => "a btn btn-primary"   
-
+/ -binding.pry
 .card(style = "margin: 20px 0px;")
   .card-header
     = link_to 'Featured Products', inventory_items_path
@@ -60,6 +58,29 @@
             %p.card-text
               Unit Price:
               =number_to_currency inventory_item.price
+            %p.card-text#item_qnt
+              Quantity:
+              = inventory_item.quantity
             %p.card-text  
             = button_to 'Add to cart', order_line_items_path(inventory_item_id: inventory_item), remote: true, class: 'btn button btn-primary'
+//= link_to image_tag(instrument.image_url(:thumb)), instrument
+.card(style = "margin: 20px 0px;")
+  .card-header
+    = link_to 'Looked item', @looked_item_path    
+  .card-body
+    .row       
+      .card.text-center.col-lg-4.col-md-6(style = "margin: 5px 0px;")          
+        //- binding.pru
+        = link_to image_tag(@looked_item.image_url(:inventory_item)), @looked_item, :class => "img card-img-top"          
+        .card-body       
+          %h5.card-title 
+            =@looked_item.name
+          %p.card-text
+            Unit Price:
+            =number_to_currency @looked_item.price
+          %p.card-text#item_qnt
+            Quantity:
+            = @looked_item.quantity
+          %p.card-text  
+          = button_to 'Add to cart', order_line_items_path(inventory_item_id: @looked_item), remote: true, class: 'btn button btn-primary'
 //= link_to image_tag(instrument.image_url(:thumb)), instrument

@@ -6,6 +6,8 @@ class InventoryItemsController < ApplicationController
 
   # GET /inventory_items
   # GET /inventory_items.json
+
+
   def index
 
     if params[:inventory_item]
@@ -19,7 +21,8 @@ class InventoryItemsController < ApplicationController
   # GET /inventory_items/1
   # GET /inventory_items/1.json
   def show
-    
+    # binding.pry
+    cookies[:looked_items] = @inventory_item.id
   end
 
   # GET /inventory_items/new
