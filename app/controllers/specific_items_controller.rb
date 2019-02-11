@@ -41,7 +41,7 @@ class SpecificItemsController < ApplicationController
       end      
     end    
     increase_inventory_item(@specific_item)
-    #binding.pry
+    binding.pry
   end
 
   # PATCH/PUT /specific_items/1
