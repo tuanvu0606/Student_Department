@@ -3,7 +3,8 @@ class OrdersController < ApplicationController
   before_action :set_order
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_order 
   before_action :set_order, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:show, :index]  
+  before_action :authenticate_user!, except: [:show, :destroy]  
+  before_action :check_valid_update, only: [:update]
   # GET /orders
   # GET /orders.json
   def index
@@ -13,7 +14,7 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
-  #    binding.pry
+
   end
 
   # GET /orders/new
@@ -48,22 +49,32 @@ class OrdersController < ApplicationController
     @order.cookies = cookies[:visited]
     cookies[:visited] = nil   
     @order.save
-    #binding.pry
+    binding.pry
     respond_to do |format|
       if @order.update(order_params)
         if user_signed_in? && current_user.admin
           format.html { redirect_to @order, notice: 'Order was successfully updated.' }
           format.json { render :show, status: :ok, location: @order }
         else
-          @order.order_line_items.each do |f|                       
-          f.fixed_item_price = f.inventory_item.price
-          f.save
-          @related_item = InventoryItem.find(f.inventory_item_id)
-          @related_item.sold_quantity = @related_item.sold_quantity.to_i + f.order_item_qty.to_i
-          @related_item.save
-          #binding.pry
+          if @order.state == 1
+            binding.pry
+            format.html { redirect_to order_path, notice: 'Updated'}
+
+          elsif @order.state == 2          
+            @order.order_line_items.each do |f|                       
+            f.fixed_item_price = f.inventory_item.price
+            f.save
+            @related_item = InventoryItem.find(f.inventory_item_id)
+            @related_item.sold_quantity = @related_item.sold_quantity.to_i + f.order_item_qty.to_i
+            @related_item.save
+            format.html { redirect_to checkout_path, notice: 'Checkout'}
+            # cookies[:order_id] = ""          
+          end
+          
+          # binding.pry
         end          
-          format.html { redirect_to checkout_path, notice: 'Checkout'}
+          # format.html { redirect_to checkout_path, notice: 'Checkout'}
+        
         end
       else
         format.html { render :edit }
@@ -109,4 +120,8 @@ class OrdersController < ApplicationController
       logger.error "Attempt to access invalid cart #{params[:id]}"
       redirect_to root_path, notice: "That cart doesn't exist"
     end    
+
+    def check_valid_update
+      binding.pry
+    end
 end

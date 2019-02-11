@@ -22,3 +22,4 @@
 %h4.title.is-4
   %span.f5.has-text-grey Total price:
   = number_to_currency(@order.total_price)                      
+  -cookies[:order_id] = ""          

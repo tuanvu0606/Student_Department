@@ -1,0 +1,65 @@
+- if user_signed_in? && current_user.admin
+  %p#notice= notice
+  %p
+    %strong Inv item category:
+    = @inventory_item.inventory_item_category_id
+  %p
+    %strong Model:
+    = @inventory_item.inventory_model_id
+  %p
+    %strong Name:
+    = @inventory_item.name
+  %p
+    %strong Price:
+    = @inventory_item.price
+  %p
+    %strong Description:
+    = @inventory_item.description
+  %p
+    %strong Warehoused on:
+    = @inventory_item.warehoused_on
+  %p
+    %strong image:
+    = @inventory_item.image  
+  = link_to 'Edit', edit_inventory_item_path(@inventory_item)
+  |
+  = link_to 'Back', inventory_items_path
+- else           
+  .container
+    .row
+      .col-lg-4
+        =link_to image_tag(@inventory_item.image_url(:inventory_item)), @inventory_item, :class => "img card-img-top"
+      .col-lg-8
+        %dl
+          %dd
+            %strong Inv item category:
+            = @inventory_item.inventory_item_category_id
+          %dd
+            %strong Model:
+            = @inventory_item.inventory_model_id  
+          %dd
+            %strong Name:
+            = @inventory_item.name      
+          %dd
+            %strong Price:
+            = @inventory_item.price
+          %dd  
+            %strong Description:
+            = @inventory_item.description  
+          %dd
+            .input-group.mb-3
+              .input-group
+                .input-group
+                  = button_to 'Add to cart', order_line_items_path(inventory_item_id: @inventory_item), class: 'btn button btn-primary'        
+  .card.text-center(style ="margin-top:10px;")
+    .card-header.text-center
+      Description
+    .card-body
+      %h5.card-title 
+        =@inventory_item.name
+      %p.card-text 
+        =@inventory_item.description
+      //%a.btn.btn-primary
+      //  = link_to 'Details', article
+      //= link_to 'Details', @article, :class => "a btn btn-primary"
+        

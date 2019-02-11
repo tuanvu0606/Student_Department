@@ -60,7 +60,7 @@
               =number_to_currency inventory_item.price
             %p.card-text
               Quantity:
-              #item_qnt
+              .abc(id="item_qnt-#{inventory_item.id}")
                 = inventory_item.quantity
             %p.card-text  
             = button_to 'Add to cart', order_line_items_path(inventory_item_id: inventory_item), remote: true, class: 'btn button btn-primary'

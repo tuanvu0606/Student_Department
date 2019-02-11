@@ -1,39 +1,68 @@
-.keep-shopping.pv1.mt4.has-text-right
-  = link_to 'Keep Shopping', home_path, class: 'button is-warning'
-%hr/
-%section.section
-  .card(style = "margin: 20px 0px;")
-    .card-header  
-      - @line_items = @order.order_line_items
-      .card-body
-        = form_for @order do |f|    
-          %ul    
-            = f.fields_for :order_line_items do |order_line_item|
-              %li
-                = order_line_item.label :order_item_qty
-                = order_line_item.text_field :order_item_qty
-                = order_line_item.label :total_price 
-                = order_line_item.text_field :total_price 
-          = f.submit "Update order", method: :update,  order: @order, data: {confirm: "Are you sure"}    
-        .row.float-right.mx-auto.h5             
-          Total price:
-          = number_to_currency(@order.total_price)
-  .container        
-    .row
-      .col-4        
-        //-binding.pry
-        = button_to 'Empty Cart', @order, method: :delete, data: { confirm: "Are you sure? " }, class: "btn button btn-primary"
-      .col-4
-    
-      .col-4
-        = render 'form', order: @order
-        //= button_to 'Check out', @order.update(order_params: @order), class: "btn button btn-success "  
-/ - @line_items = @order.order_line_items        
-/ = form_for @order do |f|
-/   Addresses:
-/   %ul
-/     = f.fields_for :order_line_items do |order_line_item|
-/       %li
-/         = order_line_item.label :order_item_qty
-/         = order_line_item.text_field :order_item_qty        
-/     = f.submit "Update order", method: :update,  order: @order, data: {confirm: "Are you sure"}
+/ -binding.pry
+- if @order.state == 2
+  .keep-shopping.pv1.mt4.has-text-right
+    = link_to 'Keep Shopping', home_path, class: 'button is-warning'
+  %section.section
+    .card(style = "margin: 20px 0px;")
+      .card-header  
+        - @line_items = @order.order_line_items
+        .card-body
+          - @line_items.each do |line_item|
+            .row              
+              .card.text-center.col-lg-4.col-md-6(style = "margin: 5px 0px;")          
+                = link_to image_tag(line_item.inventory_item.image_url(:inventory_item)), line_item.inventory_item, :class => "img card-img-top"
+                .cart-body
+                  %h5.card-title 
+                    =line_item.inventory_item.name
+                  %h5
+                    Price:
+                    =number_to_currency line_item.fixed_item_price
+              .float-right.mx-auto    
+                Quantity:
+                =line_item.order_item_qty     
+              .float-right.mx-auto                  
+                Price:
+                =number_to_currency line_item.total_fixed_price
+  %h4.title.is-4
+    %span.f5.has-text-grey Total price:
+    = number_to_currency(@order.total_price)                      
+- else
+  .keep-shopping.pv1.mt4.has-text-right
+    = link_to 'Keep Shopping', home_path, class: 'button is-warning'
+  %hr/
+  %section.section
+    .card(style = "margin: 20px 0px;")
+      .card-header  
+        - @line_items = @order.order_line_items
+        .card-body
+          = form_for @order do |f|    
+            %ul    
+              = f.fields_for :order_line_items do |order_line_item|
+                %li
+                  = order_line_item.label :order_item_qty
+                  = order_line_item.text_field :order_item_qty
+                  = order_line_item.label :total_price 
+                  = order_line_item.text_field :total_price 
+            = f.submit "Update order", method: :update,  order: @order
+          .row.float-right.mx-auto.h5             
+            Total price:
+            = number_to_currency(@order.total_price)
+    .container        
+      .row
+        .col-4        
+          //-binding.pry
+          = button_to 'Empty Cart', @order, method: :delete, data: { confirm: "Are you sure? " }, class: "btn button btn-primary"
+        .col-4
+      
+        .col-4
+          = render 'form', order: @order
+          //= button_to 'Check out', @order.update(order_params: @order), class: "btn button btn-success "  
+  / - @line_items = @order.order_line_items        
+  / = form_for @order do |f|
+  /   Addresses:
+  /   %ul
+  /     = f.fields_for :order_line_items do |order_line_item|
+  /       %li
+  /         = order_line_item.label :order_item_qty
+  /         = order_line_item.text_field :order_item_qty        
+  /     = f.submit "Update order", method: :update,  order: @order, data: {confirm: "Are you sure"}

@@ -1,4 +1,6 @@
 class StaticPagesController < ApplicationController
+  # before_action :authenticate_user!, only: [:checkout]  
+
   def home
   	# @static_pages  = InventoryItem.paginate(page: params[:page], :per_page => 9)
     @static_pages = InventoryItem.page(params[:page]).per(20)

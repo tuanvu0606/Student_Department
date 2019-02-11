@@ -66,13 +66,13 @@
             %h4 Information
             %dl
               %dd
-                %a(href=articles_path)
+                %a
                   %i.fa 
-                    Our Blog
+                  = link_to 'Our Blog', articles_path
               %dd
                 %a(href=orders_path)
                   %i.fa 
-                    Orders                        
+                  = link_to 'Orders', orders_path                    
         .p-2.flex-fill.bd-highlight
           .single_footer
             %h4 My account

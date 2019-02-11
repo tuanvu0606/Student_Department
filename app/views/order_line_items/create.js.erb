@@ -1,3 +1,3 @@
 $('#cart').html("<%= @order.order_line_items.sum(:order_item_qty) %>");
-$('#item_qnt').html("<%= InventoryItem.find(@order_line_item.inventory_item_id).quantity %>");
+$('#item_qnt-<%= @order_line_item.inventory_item_id %>').html("<%= InventoryItem.find(@order_line_item.inventory_item_id).quantity %>");
 

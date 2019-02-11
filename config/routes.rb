@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-
+  namespace :admin_lte do
+    resources :users
+    resources :articles
+    resources :inventory_items
+    get '/home' => 'application#home'
+    # Admin root
+    root to: 'application#index'
+  end
 
 
 
