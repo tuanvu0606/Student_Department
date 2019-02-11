@@ -24508,3 +24508,284 @@ Processing by StaticPagesController#home as HTML
 Completed 200 OK in 187ms (Views: 180.5ms | ActiveRecord: 1.2ms)
 
 
+Started GET "/" for 115.73.216.192 at 2019-02-11 02:53:07 +0000
+Cannot render console from 115.73.216.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#home as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX("inventory_items"."sold_quantity") FROM "inventory_items"[0m
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."sold_quantity" = ? LIMIT ?[0m  [["sold_quantity", 22], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:8
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/static_pages_controller.rb:9
+  Rendering static_pages/home.html.haml within layouts/application
+  [1m[36mInventoryItemCategory Load (0.2ms)[0m  [1m[34mSELECT "inventory_item_categories".* FROM "inventory_item_categories"[0m
+  ↳ app/views/static_pages/home.html.haml:5
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  ↳ app/views/static_pages/home.html.haml:47
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:48
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/static_pages/home.html.haml:51
+  Rendered static_pages/home.html.haml within layouts/application (70.7ms)
+Completed 200 OK in 1057ms (Views: 992.5ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/admin" for 115.73.216.192 at 2019-02-11 02:53:12 +0000
+Cannot render console from 115.73.216.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/sign_in" for 115.73.216.192 at 2019-02-11 02:53:12 +0000
+Cannot render console from 115.73.216.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  Rendering /usr/local/rvm/gems/ruby-2.5.3/gems/devise-4.5.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/local/rvm/gems/ruby-2.5.3/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.5.3/gems/devise-4.5.0/app/views/devise/sessions/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 132ms (Views: 119.4ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users/sign_in" for 115.73.216.192 at 2019-02-11 02:53:21 +0000
+Cannot render console from 115.73.216.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0lvB0bw2nPdDxVppO1gmNroh7B/2tqskKikk8w7GdYq5Qm5hNqrN9G32FyyM6Ww59dcE+81c/W7384bX1efxvQ==", "user"=>{"email"=>"tuan@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tuan@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mAhoy::Visit Load (0.2ms)[0m  [1m[34mSELECT  "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "d32cfa8b-1fe1-465a-a986-628c1c5df1ac"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_created_at", "2019-02-11 02:53:22.169252"], ["updated_at", "2019-02-11 02:53:22.170033"], ["id", 2]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:19
+Redirected to http://ec2-52-221-217-179.ap-southeast-1.compute.amazonaws.com:4001/admin
+Completed 302 Found in 249ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/admin" for 115.73.216.192 at 2019-02-11 02:53:22 +0000
+Cannot render console from 115.73.216.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering /usr/local/rvm/gems/ruby-2.5.3/gems/activeadmin-1.4.3/app/views/active_admin/page/index.html.arb
+  Rendered /usr/local/rvm/gems/ruby-2.5.3/gems/activeadmin-1.4.3/app/views/active_admin/page/index.html.arb (89.0ms)
+Completed 200 OK in 96ms (Views: 91.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/articles" for 115.73.216.192 at 2019-02-11 02:53:24 +0000
+Cannot render console from 115.73.216.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ArticlesController#index as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering /usr/local/rvm/gems/ruby-2.5.3/gems/activeadmin-1.4.3/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "articles" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "articles" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "articles" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY "articles"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendered /usr/local/rvm/gems/ruby-2.5.3/gems/activeadmin-1.4.3/app/views/active_admin/resource/index.html.arb (144.8ms)
+Completed 200 OK in 155ms (Views: 147.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/admin/comments" for 115.73.216.192 at 2019-02-11 02:53:25 +0000
+Cannot render console from 115.73.216.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CommentsController#index as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering /usr/local/rvm/gems/ruby-2.5.3/gems/activeadmin-1.4.3/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = ?[0m  [["namespace", "admin"]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?) subquery_for_count[0m  [["namespace", "admin"], ["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."resource_type" FROM "active_admin_comments" ORDER BY resource_type asc[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."author_type" FROM "active_admin_comments" ORDER BY author_type asc[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendered /usr/local/rvm/gems/ruby-2.5.3/gems/activeadmin-1.4.3/app/views/active_admin/resource/index.html.arb (95.7ms)
+Completed 200 OK in 105ms (Views: 98.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/admin/inventory_item_categories" for 115.73.216.192 at 2019-02-11 02:53:26 +0000
+Cannot render console from 115.73.216.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::InventoryItemCategoriesController#index as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering /usr/local/rvm/gems/ruby-2.5.3/gems/activeadmin-1.4.3/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_item_categories" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_item_categories" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_item_categories"[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "inventory_item_categories" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mInventoryItemCategory Load (0.1ms)[0m  [1m[34mSELECT  "inventory_item_categories".* FROM "inventory_item_categories" ORDER BY "inventory_item_categories"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mInventoryItem Load (0.3ms)[0m  [1m[34mSELECT "inventory_items".* FROM "inventory_items"[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendered /usr/local/rvm/gems/ruby-2.5.3/gems/activeadmin-1.4.3/app/views/active_admin/resource/index.html.arb (116.7ms)
+Completed 200 OK in 125ms (Views: 120.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/admin/orders" for 115.73.216.192 at 2019-02-11 02:53:27 +0000
+Cannot render console from 115.73.216.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::OrdersController#index as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering /usr/local/rvm/gems/ruby-2.5.3/gems/activeadmin-1.4.3/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "orders" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "orders" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "orders" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" ORDER BY "orders"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrderLineItem Load (0.1ms)[0m  [1m[34mSELECT "order_line_items".* FROM "order_line_items"[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendered /usr/local/rvm/gems/ruby-2.5.3/gems/activeadmin-1.4.3/app/views/active_admin/resource/index.html.arb (118.0ms)
+Completed 200 OK in 136ms (Views: 130.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/admin/specific_items" for 115.73.216.192 at 2019-02-11 02:53:28 +0000
+Cannot render console from 115.73.216.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::SpecificItemsController#index as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering /usr/local/rvm/gems/ruby-2.5.3/gems/activeadmin-1.4.3/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "specific_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "specific_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "specific_items"[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "specific_items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpecificItem Load (0.2ms)[0m  [1m[34mSELECT  "specific_items".* FROM "specific_items" ORDER BY "specific_items"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE InventoryItem Load (0.0ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE InventoryItem Load (0.0ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE InventoryItem Load (0.0ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE InventoryItem Load (0.0ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE InventoryItem Load (0.0ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE InventoryItem Load (0.0ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE InventoryItem Load (0.0ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE InventoryItem Load (0.0ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE InventoryItem Load (0.0ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE InventoryItem Load (0.0ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE InventoryItem Load (0.0ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE InventoryItem Load (0.0ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE InventoryItem Load (0.0ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE InventoryItem Load (0.0ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE InventoryItem Load (0.0ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE InventoryItem Load (0.0ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE InventoryItem Load (0.0ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE InventoryItem Load (0.0ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE InventoryItem Load (0.0ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE InventoryItem Load (0.0ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE InventoryItem Load (0.0ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE InventoryItem Load (0.0ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE InventoryItem Load (0.0ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE InventoryItem Load (0.0ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE InventoryItem Load (0.0ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE InventoryItem Load (0.0ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE InventoryItem Load (0.0ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE InventoryItem Load (0.0ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mInventoryItem Load (0.3ms)[0m  [1m[34mSELECT "inventory_items".* FROM "inventory_items"[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendered /usr/local/rvm/gems/ruby-2.5.3/gems/activeadmin-1.4.3/app/views/active_admin/resource/index.html.arb (183.8ms)
+Completed 200 OK in 193ms (Views: 186.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/admin/users" for 115.73.216.192 at 2019-02-11 02:53:29 +0000
+Cannot render console from 115.73.216.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#index as HTML
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/concerns/current_order.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  Rendering /usr/local/rvm/gems/ruby-2.5.3/gems/activeadmin-1.4.3/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "users" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "users" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "users" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT "inventory_items".* FROM "inventory_items"[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ /usr/local/rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendered /usr/local/rvm/gems/ruby-2.5.3/gems/activeadmin-1.4.3/app/views/active_admin/resource/index.html.arb (134.7ms)
+Completed 200 OK in 143ms (Views: 137.8ms | ActiveRecord: 1.2ms)
+
+
