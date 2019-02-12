@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_order 
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:show, :destroy]  
-  before_action :check_valid_update, only: [:update]
+  before_action :update_inventory_item_quantity_when_update_order, only: [:update]
   # GET /orders
   # GET /orders.json
   def index
@@ -49,7 +49,7 @@ class OrdersController < ApplicationController
     @order.cookies = cookies[:visited]
     cookies[:visited] = nil   
     @order.save
-    binding.pry
+    # binding.pry
     respond_to do |format|
       if @order.update(order_params)
         if user_signed_in? && current_user.admin
@@ -57,9 +57,9 @@ class OrdersController < ApplicationController
           format.json { render :show, status: :ok, location: @order }
         else
           if @order.state == 1
-            binding.pry
+            # binding.pry
             format.html { redirect_to order_path, notice: 'Updated'}
-
+            update_inventory_item_quantity_when_update_order
           elsif @order.state == 2          
             @order.order_line_items.each do |f|                       
             f.fixed_item_price = f.inventory_item.price
@@ -121,7 +121,24 @@ class OrdersController < ApplicationController
       redirect_to root_path, notice: "That cart doesn't exist"
     end    
 
-    def check_valid_update
-      binding.pry
+    def update_inventory_item_quantity_when_update_order
+      # binding.pry
+      params = order_params.to_hash
+
+      params["order_line_items_attributes"].each_value do |k|
+        j = k.to_hash
+        left_over = OrderLineItem.find(j["id"]).inventory_item.quantity.to_i - (j["order_item_qty"].to_i - OrderLineItem.find(j["id"]).order_item_qty.to_i)
+        if left_over > 0
+          OrderLineItem.find(j["id"]).inventory_item.update(:quantity => left_over)
+          OrderLineItem.find(j["id"]).inventory_item.save
+          # binding.pry
+        else
+          redirect_to order_path
+          flash[:success] = "Not sufficient number"
+        end
+        # puts left_over
+
+      end
+      
     end
 end

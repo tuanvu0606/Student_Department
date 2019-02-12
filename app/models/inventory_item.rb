@@ -12,6 +12,7 @@ class InventoryItem < ApplicationRecord
   #serialize :image, JSON # If you use SQLite, add this line
 
   validates :name, :description, :price, :inventory_model_id, :inventory_item_category_id, :image, presence: true
+  validates :quantity, :numericality => { :greater_than_or_equal_to => 0 }
   #validates :description, length: { maximum: 1000, too_long: "%{count} characters is the maximum aloud. "}
   #validates :title, length: { maximum: 140, too_long: "%{count} characters is the maximum aloud. "}
   #validates :price, length: { maximum: 7 }

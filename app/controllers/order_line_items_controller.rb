@@ -63,7 +63,7 @@ class OrderLineItemsController < ApplicationController
     #@order = current_order
     #@order_line_item = @order.order_line_items.find(params[:id])
     #@order_line_item.update_attributes(order_item_params)
-
+    # binding.pry
 
     respond_to do |format|
       if @order_line_item.update(order_line_item_params)

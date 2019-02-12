@@ -30,6 +30,8 @@
   .keep-shopping.pv1.mt4.has-text-right
     = link_to 'Keep Shopping', home_path, class: 'button is-warning'
   %hr/
+  - flash.each do |key, value|
+    %div(class="alert alert-#{key}")= value
   %section.section
     .card(style = "margin: 20px 0px;")
       .card-header  
