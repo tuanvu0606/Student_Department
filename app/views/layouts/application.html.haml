@@ -17,8 +17,8 @@
               %span.navbar-toggler-icon
             %div.p-2.flex-fill.bd-highlight.d-flex.justify-content-end
               = link_to '', @order, :class => "button btn btn-outline-primary my-2 my-sm-0 i fa fa-shopping-cart", :style => "height: 38px; padding-top: 10px; margin-right: 10px"
-            .button.btn#cart
-                                     
+            .button.btn.btn-outline-primary#cart(style = "margin-right: 10px;")
+              = @order.order_line_items.sum(:order_item_qty)
             - if user_signed_in?
               %span.navbar-text(style = "padding-right: 10px;")
                 = link_to 'Account', edit_user_registration_path
