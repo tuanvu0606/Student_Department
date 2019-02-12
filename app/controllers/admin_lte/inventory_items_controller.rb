@@ -23,16 +23,18 @@ module AdminLte
     # GET /inventory_items/1.json
     def show
       # binding.pry
-      cookies[:looked_items] = @inventory_item.id
+      cookies[:looked_items] = @inventory_item.id      
     end
 
     # GET /inventory_items/new
     def new
       @inventory_item = InventoryItem.new
+      @url = admin_lte_inventory_items_path
     end
 
     # GET /inventory_items/1/edit
     def edit
+      @url = admin_lte_inventory_item_path(@inventory_item)
     end
 
     # POST /inventory_items

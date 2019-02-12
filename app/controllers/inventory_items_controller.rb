@@ -45,11 +45,6 @@ class InventoryItemsController < ApplicationController
         format.html { redirect_to @inventory_item, notice: 'Inventory item was successfully created.' }
         format.js
         format.json { render :show, status: :created, location: @inventory_item }
-        @related_model = InventoryModel.find_by(inventory_item_params["inventory_model_id"])
-
-        @related_model.increment(:quantity)
-
-        @related_model.save
       else
         format.html { render :new }
         format.json { render json: @inventory_item.errors, status: :unprocessable_entity }
@@ -92,6 +87,6 @@ class InventoryItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def inventory_item_params
-      params.require(:inventory_item).permit(:name, :price, :description, :warehoused_on, :inventory_item_category_id, :inventory_model_id, :image, :search, :inventory_item)
+      params.require(:inventory_item).permit(:name, :price, :description, :warehoused_on, :inventory_item_category_id, :inventory_model_id, :image, :search, :inventory_item, :quantity)
     end
 end

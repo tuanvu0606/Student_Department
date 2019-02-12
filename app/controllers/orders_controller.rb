@@ -125,20 +125,18 @@ class OrdersController < ApplicationController
       # binding.pry
       params = order_params.to_hash
 
-      params["order_line_items_attributes"].each_value do |k|
-        j = k.to_hash
-        left_over = OrderLineItem.find(j["id"]).inventory_item.quantity.to_i - (j["order_item_qty"].to_i - OrderLineItem.find(j["id"]).order_item_qty.to_i)
-        if left_over > 0
-          OrderLineItem.find(j["id"]).inventory_item.update(:quantity => left_over)
-          OrderLineItem.find(j["id"]).inventory_item.save
-          # binding.pry
-        else
-          redirect_to order_path
-          flash[:success] = "Not sufficient number"
+      if params["state"].to_i != 2
+        params["order_line_items_attributes"].each_value do |k|
+          j = k.to_hash
+          left_over = OrderLineItem.find(j["id"]).inventory_item.quantity.to_i - (j["order_item_qty"].to_i - OrderLineItem.find(j["id"]).order_item_qty.to_i)
+          if left_over > 0
+            OrderLineItem.find(j["id"]).inventory_item.update(:quantity => left_over)
+            OrderLineItem.find(j["id"]).inventory_item.save
+          else
+            redirect_to order_path
+            flash[:success] = "Not sufficient number"          
+          end      
         end
-        # puts left_over
-
-      end
-      
+      end 
     end
 end

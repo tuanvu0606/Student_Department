@@ -1,0 +1,52 @@
+- if user_signed_in? && current_user.admin
+  .row
+    .col-xs-12
+      .box
+        .box-header
+          %h3.box-title List of Category
+        .box-body
+          #user_wrapper.dataTables_wrapper.form-inline.dt-bootstrap
+            .row
+              .col-sm-12
+                %table#user_index.table.table-bordered.table-striped.dataTable(role="grid")
+                  %thead
+                    %tr
+                      %th Name
+                      %th Image
+                      %th.col-xs-1 Actions
+                  %tbody
+                    - @inventory_item_categories.each do |inventory_item_category|
+                      %tr
+                        %td
+                          = inventory_item_category.category_name
+                        %td
+                          = inventory_item_category.image
+                        %td
+                          .btn-row
+                            = link_to raw('<i class="fa fa-cogs"></i>'), edit_admin_lte_inventory_item_category_url(inventory_item_category), class: 'btn btn-sm btn-warning'
+                            = link_to raw('<i class="fa fa-trash"></i>'), admin_lte_inventory_item_category_url(inventory_item_category), class: 'btn btn-sm btn-danger', method: :delete, |
+                              data: { confirm: 'Are you sure you want to delete this element?' }                                                 |
+                  %tfoot
+                    %tr(role="row")
+                      %th Name
+                      %th Image
+                      %th.col-xs-1 Actions
+  .row
+    .col-md-2.col-md-offset-10
+      = link_to 'New Category', new_admin_lte_inventory_item_category_path, class: 'btn btn-success pull-right'
+  %br/
+  = link_to 'New Inventory Item Category', new_inventory_item_category_path
+- else
+  .card.container(style = "margin: 20px 0px;")
+    .card-header
+      Featured Products
+    .card-body
+      .row
+        - @inventory_item_categories.each do |inventory_item_category| 
+          .card.text-center.col-lg-4.col-md-6(style = "margin: 5px 0px;")                      
+            = link_to image_tag(inventory_item_category.image_url(:inventory_item)), inventory_item_category, :class => "img card-img-top"          
+            .card-body       
+              %h5.card-title 
+                =inventory_item_category.category_name
+              %p.card-text                            
+                = link_to 'Details', inventory_item_category, class: 'btn button btn-primary'

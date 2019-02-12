@@ -1,4 +1,4 @@
-<%= form_for @user, url: @url, role: :form, html: { multipart: true } do |f| %>
+<%= form_for @inventory_item, url: @url, role: :form, html: { multipart: true } do |f| %>
   <div class="row">
     <div class="col-xs-12">
       <div class="box">
@@ -8,11 +8,11 @@
         </div>
 
         <div class="box-body">
-          <%= render partial: 'admin_lte/users/form', locals: { f: f } %>
+          <%= render partial: 'admin_lte/inventory_items/form', locals: { f: f } %>
         </div>
 
         <div class="box-footer">
-          <%= link_to 'Cancel', admin_lte_users_path, class: 'btn btn-danger' %>
+          <%= link_to 'Cancel', admin_lte_inventory_items_path, class: 'btn btn-danger' %>
           <%= f.submit 'Submit', class: "btn btn-success" %>
         </div>
 

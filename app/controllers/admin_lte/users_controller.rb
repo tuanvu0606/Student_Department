@@ -17,12 +17,12 @@ module AdminLte
     # GET /users/new
     def new
       @user = User.new
-      @url = admin_users_path
+      @url = admin_lte_users_path
     end
 
     # GET /users/1/edit
     def edit
-      @url = admin_user_path(@user)
+      @url = admin_lte_user_path(@user)
     end
 
     # POST /users

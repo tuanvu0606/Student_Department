@@ -1,10 +1,10 @@
 <%= form_for @inventory_item do |form| %>
-  <% if inventory_item.errors.any? %>
+  <% if @inventory_item.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(inventory_item.errors.count, "error") %> prohibited this inventory_item from being saved:</h2>
+      <h2><%= pluralize(@inventory_item.errors.count, "error") %> prohibited this inventory_item from being saved:</h2>
 
       <ul>
-      <% inventory_item.errors.full_messages.each do |message| %>
+      <% @inventory_item.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -39,6 +39,11 @@
   <div class="field">
     <%= form.label :inventory_model_id %>
     <%= form.number_field :inventory_model_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantity %>
+    <%= form.number_field :quantity %>
   </div>
 
   <div class="field">

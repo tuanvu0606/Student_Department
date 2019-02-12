@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     resources :users
     resources :articles
     resources :inventory_items
+    resources :inventory_item_categories
+    resources :inventory_items
     get '/home' => 'application#home'
     # Admin root
     root to: 'application#index'
