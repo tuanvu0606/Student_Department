@@ -25,14 +25,14 @@
   %table
     %thead
       %tr
-        %th User
+        %th User id
         %th Total amount
         %th State
         %th(colspan="3")
     %tbody
       - @orders.each do |order|
         %tr
-          %td= order.user
+          %td= order.user_id
           %td= order.total_amount
           %td= order.state
           %td= link_to 'Show', order

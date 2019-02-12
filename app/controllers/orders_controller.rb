@@ -8,7 +8,8 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    # binding.pry
+    @orders = Order.where("user_id = #{current_user.id}")
   end
 
   # GET /orders/1
