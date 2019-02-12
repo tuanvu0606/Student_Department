@@ -1,7 +1,7 @@
 class SpecificItemsController < ApplicationController
   helper_method :some_method
   before_action :set_specific_item, only: [:show, :edit, :update, :destroy]
-  #after_action :increase_inventory_item
+  # after_action :increase_inventory_item, only: [:create]
   before_action :authenticate_user!
   before_action do 
   redirect_to new_user_session_path unless current_user && current_user.admin?
@@ -30,7 +30,8 @@ class SpecificItemsController < ApplicationController
   # POST /specific_items.json
   def create
     @specific_item = SpecificItem.new(specific_item_params)
-
+    increase_inventory_item(@specific_item)
+    # binding.pry
     respond_to do |format|
       if @specific_item.save
         format.html { redirect_to @specific_item, notice: 'Specific item was successfully created.' }
@@ -39,9 +40,7 @@ class SpecificItemsController < ApplicationController
         format.html { render :new }
         format.json { render json: @specific_item.errors, status: :unprocessable_entity }
       end      
-    end    
-    increase_inventory_item(@specific_item)
-    binding.pry
+    end        
   end
 
   # PATCH/PUT /specific_items/1

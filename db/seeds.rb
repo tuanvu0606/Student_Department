@@ -7,6 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 
+user = User.new(
+  name: "tuan",
+  admin: true,
+  email: "admin@gmail.com",
+  password: "123456",
+  password_confirmation: "123456"
+)
+user.save!
 
 
 InventoryItemCategory.create!([{
@@ -30,7 +38,7 @@ InventoryItem.create!([{
   inventory_item_category_id: "1",
   inventory_model_id: "2",
   image: Rails.root.join("app/assets/images/nike-men.jpg").open,
-  quantity: "0",
+  quantity: "100",
   sold_quantity: "0"
 },
 {
@@ -40,7 +48,7 @@ InventoryItem.create!([{
   inventory_item_category_id: "2",
   inventory_model_id: "2",
   image: Rails.root.join("app/assets/images/nike-men.jpg").open,
-  quantity: "0",
+  quantity: "200",
   sold_quantity: "0"
 },
 {
@@ -50,7 +58,7 @@ InventoryItem.create!([{
   inventory_item_category_id: "2",
   inventory_model_id: "2",
   image: Rails.root.join("app/assets/images/nike-men.jpg").open,
-  quantity: "0",
+  quantity: "123",
   sold_quantity: "0"
 },
 {
@@ -60,7 +68,7 @@ InventoryItem.create!([{
   inventory_item_category_id: "2",
   inventory_model_id: "2",
   image: Rails.root.join("app/assets/images/nike-men.jpg").open,
-  quantity: "0",
+  quantity: "1234",
   sold_quantity: "0"
 },
 {
@@ -70,7 +78,7 @@ InventoryItem.create!([{
   inventory_item_category_id: "2",
   inventory_model_id: "2",
   image: Rails.root.join("app/assets/images/nike-men.jpg").open,
-  quantity: "0",
+  quantity: "232",
   sold_quantity: "0"
 },
 {
@@ -80,7 +88,7 @@ InventoryItem.create!([{
   inventory_item_category_id: "2",
   inventory_model_id: "2",
   image: Rails.root.join("app/assets/images/nike-men.jpg").open,
-  quantity: "0",
+  quantity: "1234",
   sold_quantity: "0"
 },
 {
@@ -135,7 +143,7 @@ InventoryItem.create!([{
 },
 {
   name: "H&M 3",
-  price: "120",  
+  price: "100",  
   description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
   inventory_item_category_id: "3",
   inventory_model_id: "2",
@@ -145,6 +153,166 @@ InventoryItem.create!([{
 },
 {
   name: "H&M 4",
+  price: "120",  
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  inventory_item_category_id: "3",
+  inventory_model_id: "2",
+  image: Rails.root.join("app/assets/images/HM-Shirts-for-Men_01.jpg").open,
+  quantity: "0",
+  sold_quantity: "0"
+},
+{
+  name: "H&M 5",
+  price: "100",  
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  inventory_item_category_id: "3",
+  inventory_model_id: "2",
+  image: Rails.root.join("app/assets/images/HM-Shirts-for-Men_01.jpg").open,
+  quantity: "0",
+  sold_quantity: "0"
+},
+{
+  name: "H&M 6",
+  price: "100",  
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  inventory_item_category_id: "3",
+  inventory_model_id: "2",
+  image: Rails.root.join("app/assets/images/HM-Shirts-for-Men_01.jpg").open,
+  quantity: "0",
+  sold_quantity: "0"
+},
+{
+  name: "H&M 7",
+  price: "100",  
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  inventory_item_category_id: "3",
+  inventory_model_id: "2",
+  image: Rails.root.join("app/assets/images/HM-Shirts-for-Men_01.jpg").open,
+  quantity: "0",
+  sold_quantity: "0"
+},
+{
+  name: "H&M 8",
+  price: "100",  
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  inventory_item_category_id: "3",
+  inventory_model_id: "2",
+  image: Rails.root.join("app/assets/images/HM-Shirts-for-Men_01.jpg").open,
+  quantity: "0",
+  sold_quantity: "0"
+},
+{
+  name: "H&M 9",
+  price: "100",  
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  inventory_item_category_id: "3",
+  inventory_model_id: "2",
+  image: Rails.root.join("app/assets/images/HM-Shirts-for-Men_01.jpg").open,
+  quantity: "0",
+  sold_quantity: "0"
+},
+{
+  name: "H&M 10",
+  price: "100",  
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  inventory_item_category_id: "3",
+  inventory_model_id: "2",
+  image: Rails.root.join("app/assets/images/HM-Shirts-for-Men_01.jpg").open,
+  quantity: "0",
+  sold_quantity: "0"
+},
+{
+  name: "H&M 11",
+  price: "100",  
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  inventory_item_category_id: "3",
+  inventory_model_id: "2",
+  image: Rails.root.join("app/assets/images/HM-Shirts-for-Men_01.jpg").open,
+  quantity: "0",
+  sold_quantity: "0"
+},
+{
+  name: "H&M 12",
+  price: "100",  
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  inventory_item_category_id: "3",
+  inventory_model_id: "2",
+  image: Rails.root.join("app/assets/images/HM-Shirts-for-Men_01.jpg").open,
+  quantity: "0",
+  sold_quantity: "0"
+},
+{
+  name: "H&M 13",
+  price: "100",  
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  inventory_item_category_id: "3",
+  inventory_model_id: "2",
+  image: Rails.root.join("app/assets/images/HM-Shirts-for-Men_01.jpg").open,
+  quantity: "0",
+  sold_quantity: "0"
+},
+{
+  name: "H&M 14",
+  price: "100",  
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  inventory_item_category_id: "3",
+  inventory_model_id: "2",
+  image: Rails.root.join("app/assets/images/HM-Shirts-for-Men_01.jpg").open,
+  quantity: "0",
+  sold_quantity: "0"
+},
+{
+  name: "H&M 15",
+  price: "100",  
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  inventory_item_category_id: "3",
+  inventory_model_id: "2",
+  image: Rails.root.join("app/assets/images/HM-Shirts-for-Men_01.jpg").open,
+  quantity: "0",
+  sold_quantity: "0"
+},
+{
+  name: "H&M 16",
+  price: "100",  
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  inventory_item_category_id: "3",
+  inventory_model_id: "2",
+  image: Rails.root.join("app/assets/images/HM-Shirts-for-Men_01.jpg").open,
+  quantity: "0",
+  sold_quantity: "0"
+},
+{
+  name: "H&M 17",
+  price: "100",  
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  inventory_item_category_id: "3",
+  inventory_model_id: "2",
+  image: Rails.root.join("app/assets/images/HM-Shirts-for-Men_01.jpg").open,
+  quantity: "0",
+  sold_quantity: "0"
+},
+{
+  name: "H&M 18",
+  price: "100",  
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  inventory_item_category_id: "3",
+  inventory_model_id: "2",
+  image: Rails.root.join("app/assets/images/HM-Shirts-for-Men_01.jpg").open,
+  quantity: "0",
+  sold_quantity: "0"
+},
+{
+  name: "H&M 19",
+  price: "100",  
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  inventory_item_category_id: "3",
+  inventory_model_id: "2",
+  image: Rails.root.join("app/assets/images/HM-Shirts-for-Men_01.jpg").open,
+  quantity: "0",
+  sold_quantity: "0"
+},
+{
+  name: "H&M 20",
   price: "400",  
   description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
   inventory_item_category_id: "3",
@@ -158,53 +326,57 @@ InventoryItem.create!([{
 SpecificItem.create!([
 {
   inventory_item_id: "1",
-  serial_number: "a"
+  serial_number: "1"
 },
 {
   inventory_item_id: "1",
-  serial_number: "b"
+  serial_number: "2"
 },
 {
   inventory_item_id: "1",
-  serial_number: "c"
+  serial_number: "3"
 },
 {
   inventory_item_id: "1",
-  serial_number: "d"
+  serial_number: "4"
 },
 {
   inventory_item_id: "1",
-  serial_number: "e"
+  serial_number: "5"
 },
 {
   inventory_item_id: "1",
-  serial_number: "f"
+  serial_number: "6"
 },
 {
   inventory_item_id: "1",
-  serial_number: "g"
+  serial_number: "7"
 },
 {
   inventory_item_id: "1",
-  serial_number: "h"
+  serial_number: "8"
 },
 {
   inventory_item_id: "2",
-  serial_number: "k"
+  serial_number: "9"
 },
 {
   inventory_item_id: "2",
-  serial_number: "q"
+  serial_number: "10"
 },
 {
   inventory_item_id: "2",
-  serial_number: "w"
+  serial_number: "11"
 },
 {
   inventory_item_id: "2",
-  serial_number: "e"
+  serial_number: "12"
 },
 {
   inventory_item_id: "2",
-  serial_number: "r"
+  serial_number: "14"
+},
+{
+  inventory_item_id: "2",
+  serial_number: "15"
 }])
