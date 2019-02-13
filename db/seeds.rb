@@ -380,3 +380,124 @@ SpecificItem.create!([
   inventory_item_id: "2",
   serial_number: "15"
 }])
+
+Article.create!([{
+  name: "Thor",
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  content: "hor is a fictional superhero appearing in American comic books published by Marvel Comics. The character, which is based on the Norse deity of the same name,",
+  image: Rails.root.join("app/assets/images/nike-men.jpg").open
+},
+{
+  name: "Batman",
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  content: "hor is a fictional superhero appearing in American comic books published by Marvel Comics. The character, which is based on the Norse deity of the same name,",
+  image: Rails.root.join("app/assets/images/nike-men.jpg").open
+},
+{
+  name: "ádd",
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  content: "hor is a fictional superhero appearing in American comic books published by Marvel Comics. The character, which is based on the Norse deity of the same name,",
+  image: Rails.root.join("app/assets/images/nike-men.jpg").open
+},
+{
+  name: "Thasdsdor",
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  content: "hor is a fictional superhero appearing in American comic books published by Marvel Comics. The character, which is based on the Norse deity of the same name,",
+  image: Rails.root.join("app/assets/images/nike-men.jpg").open
+},
+{
+  name: "Thdsdor",
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  content: "hor is a fictional superhero appearing in American comic books published by Marvel Comics. The character, which is based on the Norse deity of the same name,",
+  image: Rails.root.join("app/assets/images/nike-men.jpg").open
+},
+{
+  name: "Thosdsdr",
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  content: "hor is a fictional superhero appearing in American comic books published by Marvel Comics. The character, which is based on the Norse deity of the same name,",
+  image: Rails.root.join("app/assets/images/nike-men.jpg").open
+},
+{
+  name: "Thasweor",
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  content: "hor is a fictional superhero appearing in American comic books published by Marvel Comics. The character, which is based on the Norse deity of the same name,",
+  image: Rails.root.join("app/assets/images/nike-men.jpg").open
+},
+{
+  name: "Thasfsor",
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  content: "hor is a fictional superhero appearing in American comic books published by Marvel Comics. The character, which is based on the Norse deity of the same name,",
+  image: Rails.root.join("app/assets/images/nike-men.jpg").open
+},
+{
+  name: "Thzxcxcor",
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  content: "hor is a fictional superhero appearing in American comic books published by Marvel Comics. The character, which is based on the Norse deity of the same name,",
+  image: Rails.root.join("app/assets/images/nike-men.jpg").open
+},
+{
+  name: "Thasqweor",
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  content: "hor is a fictional superhero appearing in American comic books published by Marvel Comics. The character, which is based on the Norse deity of the same name,",
+  image: Rails.root.join("app/assets/images/nike-men.jpg").open
+},
+{
+  name: "Thoasdqr",
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  content: "hor is a fictional superhero appearing in American comic books published by Marvel Comics. The character, which is based on the Norse deity of the same name,",
+  image: Rails.root.join("app/assets/images/nike-men.jpg").open
+},
+{
+  name: "Thoasdfr",
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  content: "hor is a fictional superhero appearing in American comic books published by Marvel Comics. The character, which is based on the Norse deity of the same name,",
+  image: Rails.root.join("app/assets/images/nike-men.jpg").open
+},
+{
+  name: "Thorzczx",
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  content: "hor is a fictional superhero appearing in American comic books published by Marvel Comics. The character, which is based on the Norse deity of the same name,",
+  image: Rails.root.join("app/assets/images/nike-men.jpg").open
+},
+{
+  name: "Thoawqer",
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  content: "hor is a fictional superhero appearing in American comic books published by Marvel Comics. The character, which is based on the Norse deity of the same name,",
+  image: Rails.root.join("app/assets/images/nike-men.jpg").open
+},
+{
+  name: "Thoasfar",
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  content: "hor is a fictional superhero appearing in American comic books published by Marvel Comics. The character, which is based on the Norse deity of the same name,",
+  image: Rails.root.join("app/assets/images/nike-men.jpg").open
+},
+{
+  name: "Thoasdqr",
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  content: "hor is a fictional superhero appearing in American comic books published by Marvel Comics. The character, which is based on the Norse deity of the same name,",
+  image: Rails.root.join("app/assets/images/nike-men.jpg").open
+},
+{
+  name: "Thqweweor",
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  content: "hor is a fictional superhero appearing in American comic books published by Marvel Comics. The character, which is based on the Norse deity of the same name,",
+  image: Rails.root.join("app/assets/images/nike-men.jpg").open
+},
+{
+  name: "Thasdor",
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  content: "hor is a fictional superhero appearing in American comic books published by Marvel Comics. The character, which is based on the Norse deity of the same name,",
+  image: Rails.root.join("app/assets/images/nike-men.jpg").open
+},
+{
+  name: "Superman",
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  content: "hor is a fictional superhero appearing in American comic books published by Marvel Comics. The character, which is based on the Norse deity of the same name,",
+  image: Rails.root.join("app/assets/images/nike-men.jpg").open
+},
+{
+  name: "Spider man",
+  description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+  content: "hor is a fictional superhero appearing in American comic books published by Marvel Comics. The character, which is based on the Norse deity of the same name,",
+  image: Rails.root.join("app/assets/images/nike-men.jpg").open
+}])
