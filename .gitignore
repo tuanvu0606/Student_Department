@@ -1,0 +1,2 @@
+#git ignore /public/uploads
+/public/uploads/*
