@@ -5,18 +5,14 @@ Rails.application.routes.draw do
     resources :inventory_items
     resources :inventory_item_categories
     resources :inventory_items
+    resources :specific_items
     get '/home' => 'application#home'
     # Admin root
     root to: 'application#index'
   end
 
-
-
-  ActiveAdmin.routes(self)
-  resources :specific_items
-  get 'cookies_test/set_cookies'
-  get 'cookies_test/show_cookies'
-  get 'cookies_test/delete_cookies'
+  get '/admin' => 'static_pages#home'
+  
   resources :articles
   resources :orders
   resources :order_line_items
