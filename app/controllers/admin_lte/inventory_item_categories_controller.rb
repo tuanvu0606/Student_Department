@@ -34,10 +34,10 @@ module AdminLte
       respond_to do |format|
         if @inventory_item_category.save
           format.html { redirect_to @inventory_item_category, notice: 'Inventory item category was successfully created.' }
-          format.json { render :show, status: :created, location: @inventory_item_category }
+          # format.json { render :show, status: :created, location: @inventory_item_category }
         else
           format.html { render :new }
-          format.json { render json: @inventory_item_category.errors, status: :unprocessable_entity }
+          # format.json { render json: @inventory_item_category.errors, status: :unprocessable_entity }
         end
       end
     end
@@ -48,10 +48,10 @@ module AdminLte
       respond_to do |format|
         if @inventory_item_category.update(inventory_item_category_params)
           format.html { redirect_to @inventory_item_category, notice: 'Inventory item category was successfully updated.' }
-          format.json { render :show, status: :ok, location: @inventory_item_category }
+          # format.json { render :show, status: :ok, location: @inventory_item_category }
         else
           format.html { render :edit }
-          format.json { render json: @inventory_item_category.errors, status: :unprocessable_entity }
+          # format.json { render json: @inventory_item_category.errors, status: :unprocessable_entity }
         end
       end
     end
@@ -62,7 +62,7 @@ module AdminLte
       @inventory_item_category.destroy
       respond_to do |format|
         format.html { redirect_to inventory_item_categories_url, notice: 'Inventory item category was successfully destroyed.' }
-        format.json { head :no_content }
+        # format.json { head :no_content }
       end
     end
 

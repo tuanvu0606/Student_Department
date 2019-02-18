@@ -45,7 +45,7 @@ gem 'haml'
 
 gem "font-awesome-rails"
 
-# gem 'activeadmin'
+gem 'activeadmin'
 
 # Plus integrations with:
 gem 'devise'
