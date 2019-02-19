@@ -1,58 +1,28 @@
-<%= form_for @inventory_item do |form| %>
-  <% if @inventory_item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@inventory_item.errors.count, "error") %> prohibited this inventory_item from being saved:</h2>
-
-      <ul>
-      <% @inventory_item.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :warehoused_on %>
-    <%= form.date_select :warehoused_on %>
-  </div>
-
-  <div class="field">
-    <%= form.label :inventory_item_category_id %>
-    <%= form.number_field :inventory_item_category_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :inventory_model_id %>
-    <%= form.number_field :inventory_model_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :quantity %>
-    <%= form.number_field :quantity %>
-  </div>
-
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field  :image %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
-
+<div class="form-group">
+  <%= f.label :price %>
+  <%= f.text_field :price %>
+</div>
+<div class="form-group">
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+</div>
+<div class="form-group">
+  <%= f.label :warehoused_on %>
+  <%= f.date_select :warehoused_on %>
+</div>
+<div class="form-group">
+  <%= f.label :inventory_item_category_id %>
+  <%= f.number_field :inventory_item_category_id %>
+</div>
+<div class="form-group">
+  <%= f.label :inventory_model_id %>
+  <%= f.number_field :inventory_model_id %>
+</div>
+<div class="form-group">
+  <%= f.label :quantity %>
+  <%= f.number_field :quantity %>
+</div>
+<div class="form-group">
+  <%= f.label :image %>
+  <%= f.file_field  :image %>
+</div>

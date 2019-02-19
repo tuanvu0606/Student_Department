@@ -18,12 +18,12 @@ module AdminLte
     # GET /articles/new
     def new
       @article = Article.new
-      @url = admin_articles_path
+      @url = admin_lte_articles_path
     end
 
     # GET /articles/1/edit
     def edit
-      @url = admin_user_path(@article)
+      @url = admin_lte_article_path(@article)
     end
 
     # POST /articles
@@ -33,7 +33,7 @@ module AdminLte
 
       respond_to do |format|
         if @article.save
-          format.html { redirect_to @article, notice: 'Article was successfully created.' }
+          format.html { redirect_to admin_lte_articles_path, notice: 'Article was successfully created.' }
           # format.json { render :show, status: :created, location: @article }
         else
           format.html { render :new }
@@ -47,7 +47,7 @@ module AdminLte
     def update
       respond_to do |format|
         if @article.update(article_params)
-          format.html { redirect_to @article, notice: 'Article was successfully updated.' }
+          format.html { redirect_to admin_lte_article_path(@article), notice: 'Article was successfully updated.' }
           # format.json { render :show, status: :ok, location: @article }
         else
           format.html { render :edit }

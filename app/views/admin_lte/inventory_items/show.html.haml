@@ -21,9 +21,9 @@
   %p
     %strong image:
     = @inventory_item.image  
-  = link_to 'Edit', edit_inventory_item_path(@inventory_item)
+  = link_to 'Edit', edit_admin_lte_inventory_item_path(@inventory_item)
   |
-  = link_to 'Back', inventory_items_path
+  = link_to 'Back', admin_lte_inventory_items_path
 - else           
   .container
     .row

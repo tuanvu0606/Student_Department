@@ -1,6 +1,22 @@
-<h1>Editing Inventory Item</h1>
+<%= form_for @inventory_item, url: @url, role: :form, html: { multipart: true } do |f| %>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box">
 
-<%= render 'form', inventory_item: @inventory_item %>
+        <div class="box-header">
+          <h3 class="box-title">Edit inventory_item</h3>
+        </div>
 
-<%= link_to 'Show', @inventory_item %> |
-<%= link_to 'Back', inventory_items_path %>
+        <div class="box-body">
+          <%= render partial: 'admin_lte/inventory_items/form', locals: { f: f } %>
+        </div>
+
+        <div class="box-footer">
+          <%= link_to 'Cancel', admin_lte_inventory_items_path, class: 'btn btn-danger' %>
+          <%= f.submit 'Submit', class: "btn btn-success" %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<% end %>

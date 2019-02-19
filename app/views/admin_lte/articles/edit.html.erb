@@ -1,6 +1,22 @@
-<h1>Editing Article</h1>
+<%= form_for @article, url: @url, role: :form, html: { multipart: true } do |f| %>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box">
 
-<%= render 'form', article: @article %>
+        <div class="box-header">
+          <h3 class="box-title">Edit article</h3>
+        </div>
 
-<%= link_to 'Show', @article %> |
-<%= link_to 'Back', articles_path %>
+        <div class="box-body">
+          <%= render partial: 'admin_lte/articles/form', locals: { f: f } %>
+        </div>
+
+        <div class="box-footer">
+          <%= link_to 'Cancel', admin_lte_articles_path, class: 'btn btn-danger' %>
+          <%= f.submit 'Submit', class: "btn btn-success" %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -3,9 +3,9 @@
   %p
     %strong Category name:
     = @inventory_item_category.category_name
-  = link_to 'Edit', edit_inventory_item_category_path(@inventory_item_category)
+  = link_to 'Edit', edit_admin_lte_inventory_item_category_path(@inventory_item_category)
   |
-  = link_to 'Back', inventory_item_categories_path
+  = link_to 'Back', admin_lte_inventory_item_categories_path
 - else
   .card(style = "margin: 20px 0px;")
     .card-header

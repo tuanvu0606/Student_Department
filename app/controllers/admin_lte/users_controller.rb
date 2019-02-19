@@ -28,15 +28,15 @@ module AdminLte
     # POST /users
     # POST /users.json
     def create
-      binding.pry
+      # binding.pry
       @user = User.new(user_params)
 
       if @user.save
         flash[:notice] = t('admin.users.create.success')
-        respond_with :edit, :admin, @user
+        respond_with :edit, :admin_lte, @user
       else
         flash[:warning] = @user.errors.full_messages.uniq.join(', ')
-        respond_with :new, :admin, :user
+        respond_with :new, :admin_lte, :user
       end
     end
 
@@ -45,10 +45,10 @@ module AdminLte
     def update
       if @user.update(user_params)
         flash[:notice] = t('admin.users.update.success')
-        respond_with :edit, :admin, @user
+        respond_with :edit, :admin_lte, @user
       else
         flash[:warning] = @user.errors.full_messages.uniq.join(', ')
-        respond_with :edit, :admin, :user
+        respond_with :edit, :admin_lte, :user
       end
     end
 

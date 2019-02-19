@@ -23,7 +23,7 @@ module AdminLte
 
     # GET /inventory_item_categories/1/edit
     def edit
-      @url = admin_lte_inventory_item_categories_path(@inventory_item_category)
+      @url = admin_lte_inventory_item_category_path(@inventory_item_category)
     end
 
     # POST /inventory_item_categories
@@ -33,7 +33,7 @@ module AdminLte
 
       respond_to do |format|
         if @inventory_item_category.save
-          format.html { redirect_to @inventory_item_category, notice: 'Inventory item category was successfully created.' }
+          format.html { redirect_to admin_lte_inventory_item_categories_path(@inventory_item_category), notice: 'Inventory item category was successfully created.' }
           # format.json { render :show, status: :created, location: @inventory_item_category }
         else
           format.html { render :new }
@@ -47,7 +47,8 @@ module AdminLte
     def update
       respond_to do |format|
         if @inventory_item_category.update(inventory_item_category_params)
-          format.html { redirect_to @inventory_item_category, notice: 'Inventory item category was successfully updated.' }
+          format.html { redirect_to admin_lte_inventory_item_category_path(@inventory_item_category), notice: 'Inventory item category was successfully updated.' }
+          # format.html { redirect_to admin_lte_article_path(@article), notice: 'Article was successfully updated.' }
           # format.json { render :show, status: :ok, location: @inventory_item_category }
         else
           format.html { render :edit }

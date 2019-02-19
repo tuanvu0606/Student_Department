@@ -44,7 +44,7 @@ module AdminLte
       
       respond_to do |format|
         if @inventory_item.save
-          format.html { redirect_to @inventory_item, notice: 'Inventory item was successfully created.' }
+          format.html { redirect_to admin_lte_inventory_item_path(@inventory_item), notice: 'Inventory item was successfully created.' }
           format.js
           # format.json { render :show, status: :created, location: @inventory_item }
           @related_model = InventoryModel.find_by(inventory_item_params["inventory_model_id"])
@@ -67,7 +67,7 @@ module AdminLte
     def update
       respond_to do |format|
         if @inventory_item.update(inventory_item_params)
-          format.html { redirect_to @inventory_item, notice: 'Inventory item was successfully updated.' }
+          format.html { redirect_to admin_lte_inventory_item_path(@inventory_item), notice: 'Inventory item was successfully updated.' }
           # format.json { render :show, status: :ok, location: @inventory_item }
         else
           format.html { render :edit }
@@ -81,7 +81,7 @@ module AdminLte
     def destroy
       @inventory_item.destroy
       respond_to do |format|
-        format.html { redirect_to inventory_items_url, notice: 'Inventory item was successfully destroyed.' }
+        format.html { redirect_to admin_lte_inventory_items_url, notice: 'Inventory item was successfully destroyed.' }
         # format.json { head :no_content }
       end
     end

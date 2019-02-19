@@ -1,31 +1,45 @@
 - if user_signed_in? && current_user.admin
-  %p#notice= notice
-  %h1 Inventory Items
-  %table
-    %thead
-      %tr
-        %th Inv item category
-        %th Model
-        %th Name
-        %th Price
-        %th Description
-        %th Warehoused on
-        %th(colspan="3")
-    %tbody
-      / - binding.pry
-      - @inventory_items.each do |inventory_item|
-        %tr
-          %td= inventory_item.inventory_item_category_id
-          %td= inventory_item.inventory_model_id
-          %td= inventory_item.name
-          %td= inventory_item.price
-          %td= inventory_item.description
-          %td= inventory_item.warehoused_on
-          %td= link_to 'Show', inventory_item
-          %td= link_to 'Edit', edit_inventory_item_path(inventory_item)
-          %td= link_to 'Destroy', inventory_item, method: :delete, data: { confirm: 'Are you sure?' }
-  %br/
-  = link_to 'New Inventory Item', new_admin_lte_inventory_item_path
+  .row
+    .col-xs-12
+      .box
+        .box-header
+          %h3.box-title List of Users
+        .box-body
+          #user_wrapper.dataTables_wrapper.form-inline.dt-bootstrap
+            .row
+              .col-sm-12
+                %table#user_index.table.table-bordered.table-striped.dataTable(role="grid")
+                  %thead
+                    %tr
+                      %th inventory_item_category_id
+                      %th Name
+                      %th Price
+                      %th Description
+                      %th.col-xs-1 Actions
+                  %tbody
+                    - @inventory_items.each do |inventory_items|
+                      %tr
+                        %td
+                          = inventory_items.inventory_item_category_id
+                        %td
+                          = inventory_items.name
+                        %td
+                          = inventory_items.price
+                        %td
+                          = inventory_items.description    
+                        %td
+                          .btn-row
+                            = link_to raw('<i class="fa fa-cogs"></i>'), edit_admin_lte_inventory_item_url(inventory_items), class: 'btn btn-sm btn-warning'
+                            = link_to raw('<i class="fa fa-trash"></i>'), admin_lte_inventory_item_url(inventory_items), class: 'btn btn-sm btn-danger', method: :delete, |
+                              data: { confirm: 'Are you sure you want to delete this element?' }                                                     |
+                  %tfoot
+                    %tr(role="row")
+                      %th Name
+                      %th Email
+                      %th.col-xs-1 Actions
+  .row
+    .col-md-2.col-md-offset-10
+      = link_to 'New User', new_admin_lte_user_path, class: 'btn btn-success pull-right'
 - else
   .card(style = "margin: 20px 0px;")
     .card-header

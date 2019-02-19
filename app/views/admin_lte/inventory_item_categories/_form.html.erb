@@ -1,27 +1,11 @@
-<%= form_with(model: @inventory_item_category, local: true) do |form| %>
-  <% if @inventory_item_category.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@inventory_item_category.errors.count, "error") %> prohibited this inventory_item_category from being saved:</h2>
+<div class="form-group">
+  <%= f.label :category_name %>
+  <%= f.text_field :category_name%>
+  <span class="help-block"><i>* This field is required (leave blank if you are editing and don't want to change the password)</i><span>
+</div>
 
-      <ul>
-      <% @inventory_item_category.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :category_name %>
-    <%= form.text_field :category_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field  :image %>
-  </div>
-  
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+<div class="form-group">
+  <%= f.label :image %>
+  <%= f.file_field :image%>
+  <span class="help-block"><i>* This field is required (leave blank if you are editing and don't want to change the password)</i><span>
+</div>
