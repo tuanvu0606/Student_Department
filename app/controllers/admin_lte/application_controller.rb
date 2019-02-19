@@ -4,7 +4,6 @@ module AdminLte
     # before_action :configure_permitted_parameters, if: :devise_controller?
     before_action :authenticate_user! 
     before_action :check_admin_user
-
     layout :layout_by_resource
 
     # def index
@@ -12,11 +11,7 @@ module AdminLte
     #     redirect_to home_path
     #   end
     # end
-
-
-
     private 
-
       def check_admin_user
         if !current_user.admin?
           redirect_to home_path

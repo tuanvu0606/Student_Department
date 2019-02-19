@@ -1,3 +1,4 @@
 #git ignore /public/uploads
 /public/uploads/*
 /tmp/cache/*
+/log/*
