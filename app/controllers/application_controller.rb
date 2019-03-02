@@ -1,11 +1,10 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+  # protect_from_forgery with: :exception, prepend: true
   include CurrentOrder
   before_action :set_order
   before_action :record_user_cookies
   #before_action :authenticate_user!, except: [:home, :articles]  
   #helper_method :current_order
-
   #def current_order
   #  if !session[:order_id].nil?
   #    Order.find(session[:order_id])

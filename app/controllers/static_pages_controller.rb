@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
-  # before_action :authenticate_user!, only: [:checkout]  
+  # before_action :authenticate_user!, only: [:checkout] 
+  skip_before_action :verify_authenticity_token 
 
   def home
   	# @static_pages  = InventoryItem.paginate(page: params[:page], :per_page => 9)
@@ -15,6 +16,22 @@ class StaticPagesController < ApplicationController
   end
 
   def help
+
+  # params.permit(:tada, :format  )  
+
+    respond_to do |format|
+    # msg = { :status => "ok", :message => "Success!", :html => "lalala" }
+    # format.json  { render :json => msg } # don't do msg.to_json
+
+      format.json do
+        render json: {
+          status: "ok", 
+          message: "Success!"    
+        }.to_json
+      end
+    end
+    puts params
+    # binding.pry
   end
 
   def about_us
