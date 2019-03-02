@@ -15,29 +15,13 @@
             %a.navbar-brand#HomeTopPhone(href="#") Phone
             %button.navbar-toggler(aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" data-target="#navbarText" data-toggle="collapse" type="button")
               %span.navbar-toggler-icon
-            %div.p-2.flex-fill.bd-highlight.d-flex.justify-content-end
-              = link_to '', @order, :class => "button btn btn-outline-primary my-2 my-sm-0 i fa fa-shopping-cart", :style => "height: 38px; padding-top: 10px; margin-right: 10px"
-            .button.btn.btn-outline-primary#cart(style = "margin-right: 10px;")
-              = @order.order_line_items.sum(:order_item_qty)
-            - if user_signed_in?
-              %span.navbar-text(style = "padding-right: 10px;")
-                = link_to 'Account', edit_user_registration_path
-              %span.navbar-text(style = "padding-right: 10px;")
-                = link_to "Log Out", destroy_user_session_path, method: :delete
-            - else                
-              %span.navbar-text(style = "padding-right: 10px;")
-                = link_to "Log in", new_user_session_path               
-              %span.navbar-text
-                = link_to "Sign Up", new_user_registration_path          
+       
       .container
         %nav.navbar.navbar-expand-lg.navbar-light.d-flex.bd-highlight(style = "background-color: white; padding: 6px;")
           %a.navbar-brand.p-2.flex-fill.bd-highlight#checkid(href="#") App
       .container
         %nav.navbar.navbar-expand-lg.navbar-light.d-flex.bd-highlight(style = "background-color: white; padding: 6px;")
           %a.navbar-brand.p-2.flex-fill.bd-highlight#checkid(href="#") App
-          = form_tag(inventory_items_path, method: :get, class: "form form-inline my-lg-0 p-2 flex-fill bd-highlight d-flex justify-content-center") do
-            = text_field_tag(:inventory_item, params[:inventory_item], class: "input form-control mr-sm-2")
-            = submit_tag ("Search"), class: "btn btn-default btn-primary", name: nil
 
       .container
         %nav.navbar.navbar-expand-lg.navbar-light.d-flex.bd-highlight.justify-content-begin(style = "background-color: white;")
@@ -71,11 +55,9 @@
               %dd
                 %a
                   %i.fa 
-                  = link_to 'Our Blog', articles_path
-              %dd
-                %a(href=orders_path)
-                  %i.fa 
-                  = link_to 'Orders', orders_path                    
+                  
+              %dd   
+                  
         .p-2.flex-fill.bd-highlight
           .single_footer
             %h4 My account

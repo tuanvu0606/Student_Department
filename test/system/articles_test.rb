@@ -14,8 +14,11 @@ class ArticlesTest < ApplicationSystemTestCase
     visit articles_url
     click_on "New Article"
 
+    fill_in "Comment", with: @article.comment
     fill_in "Content", with: @article.content
-    fill_in "Description", with: @article.description
+    fill_in "Descrition", with: @article.descrition
+    fill_in "Final comment date", with: @article.final_comment_date
+    fill_in "Final date", with: @article.final_date
     fill_in "Name", with: @article.name
     click_on "Create Article"
 
@@ -27,8 +30,11 @@ class ArticlesTest < ApplicationSystemTestCase
     visit articles_url
     click_on "Edit", match: :first
 
+    fill_in "Comment", with: @article.comment
     fill_in "Content", with: @article.content
-    fill_in "Description", with: @article.description
+    fill_in "Descrition", with: @article.descrition
+    fill_in "Final comment date", with: @article.final_comment_date
+    fill_in "Final date", with: @article.final_date
     fill_in "Name", with: @article.name
     click_on "Update Article"
 

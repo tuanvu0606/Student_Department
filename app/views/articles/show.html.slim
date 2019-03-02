@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @article.name
+p
+  strong Descrition:
+  = @article.descrition
+p
+  strong Content:
+  = @article.content
+p
+  strong Final date:
+  = @article.final_date
+p
+  strong Comment:
+  = @article.comment
+p
+  strong Final comment date:
+  = @article.final_comment_date
+
+=> link_to 'Edit', edit_article_path(@article)
+'|
+=< link_to 'Back', articles_path

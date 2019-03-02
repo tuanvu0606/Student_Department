@@ -1,0 +1,14 @@
+= simple_form_for(@article) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs
+    = f.input :name
+    = f.input :descrition
+    = f.input :content
+    = f.input :final_date
+    = f.input :comment
+    = f.input :final_comment_date
+
+  .form-actions
+    = f.button :submit

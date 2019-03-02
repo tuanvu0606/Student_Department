@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  resources :students
+  resources :articles
   namespace :admin_lte do
     resources :users
-    resources :articles
-    resources :inventory_items
+      resources :inventory_items
     resources :inventory_item_categories
     resources :inventory_items
     resources :specific_items
@@ -13,7 +14,6 @@ Rails.application.routes.draw do
 
   get '/admin' => 'static_pages#home'
   
-  resources :articles
   resources :orders
   resources :order_line_items
   devise_for :users
@@ -34,5 +34,5 @@ Rails.application.routes.draw do
   get '/checkout' => 'static_pages#checkout'
   #get '/articles' => 'static_pages#articles'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'static_pages#home'
+  root 'articles#index'
 end

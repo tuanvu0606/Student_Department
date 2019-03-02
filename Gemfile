@@ -66,7 +66,7 @@ gem 'mini_magick'
 
 gem 'simple_form'
 
-gem 'ahoy_matey'
+# gem 'cd'
 
 gem 'datagrid', '~> 1.4', '>= 1.4.4'
 

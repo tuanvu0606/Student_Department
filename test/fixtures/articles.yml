@@ -2,10 +2,16 @@
 
 one:
   name: MyString
-  description: MyText
+  descrition: MyText
   content: MyText
+  final_date: 2019-03-02
+  comment: MyText
+  final_comment_date: 2019-03-02
 
 two:
   name: MyString
-  description: MyText
+  descrition: MyText
   content: MyText
+  final_date: 2019-03-02
+  comment: MyText
+  final_comment_date: 2019-03-02

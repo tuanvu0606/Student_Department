@@ -5,7 +5,7 @@ class InventoryItem < ApplicationRecord
   belongs_to :inventory_models, required: false
   has_many :order_line_items
   has_many :specific_item
-  mount_uploader :image, ImageUploader  # carrierwave support for our image column
+  mount_uploader :image, ArticleUploader  # carrierwave support for our image column
   serialize :image, JSON # If you use SQLite, add this line.  
 
   #mount_uploader :image, ImageUploader
