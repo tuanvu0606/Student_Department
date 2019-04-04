@@ -7,13 +7,13 @@ class ArticlesController < InheritedResources::Base
 
   def index
 	  # @static_pages = InventoryItem.page(params[:page]).per(20)
-	  @articles = Article.all
+	  @articles = current_user.student.article.all
   end
 
   # POST /inventory_item_categories
   # POST /inventory_item_categories.json
   def create
-  	binding.pry
+  	# binding.pry
     @article = Article.new(article_params)
     @article.student_id = current_user.student.id
     respond_to do |format|

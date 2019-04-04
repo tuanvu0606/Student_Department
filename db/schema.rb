@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_03_07_155932) do
     t.text "comment"
     t.date "final_comment_date"
     t.string "student_id"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

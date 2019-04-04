@@ -8,6 +8,7 @@ class CreateArticles < ActiveRecord::Migration[5.2]
       t.text :comment
       t.date :final_comment_date
       t.string :student_id
+      t.string :image
 
       t.timestamps
     end

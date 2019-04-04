@@ -7,13 +7,13 @@ class StaticPagesController < ApplicationController
     # binding.pry
     @articles = current_user.student.article.page(params[:page]).per(20)
   	# @inventory_item_categories = InventoryItemCategory.all
-   #  #@inventory_models = InventoryModels.all
-   #  @order_line_item = @order.order_line_items.new
-   #  @best_seller = InventoryItem.find_by(sold_quantity: InventoryItem.maximum(:sold_quantity))    
-   #  @looked_item = InventoryItem.find(cookies[:looked_items])
-   #    rescue ActiveRecord::RecordNotFound
-   #      @looked_item = InventoryItem.find("1")        
-   #  # binding.pry
+    #  #@inventory_models = InventoryModels.all
+    #  @order_line_item = @order.order_line_items.new
+    #  @best_seller = InventoryItem.find_by(sold_quantity: InventoryItem.maximum(:sold_quantity))    
+    #  @looked_item = InventoryItem.find(cookies[:looked_items])
+    #    rescue ActiveRecord::RecordNotFound
+    #      @looked_item = InventoryItem.find("1")        
+    #  # binding.pry
   end
 
   def help
