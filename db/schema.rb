@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_07_155932) do
+ActiveRecord::Schema.define(version: 2019_04_09_151114) do
 
   create_table "articles", force: :cascade do |t|
     t.string "name"
@@ -23,6 +23,27 @@ ActiveRecord::Schema.define(version: 2019_03_07_155932) do
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "file"
+  end
+
+  create_table "faculties", force: :cascade do |t|
+    t.string "name"
+    t.date "closure_date"
+    t.date "final_closure_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "marketing_coordinators", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.integer "user_id"
+    t.integer "faculty_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "manager"
+    t.index ["faculty_id"], name: "index_marketing_coordinators_on_faculty_id"
+    t.index ["user_id"], name: "index_marketing_coordinators_on_user_id"
   end
 
   create_table "students", force: :cascade do |t|
@@ -32,6 +53,8 @@ ActiveRecord::Schema.define(version: 2019_03_07_155932) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "faculty_id"
+    t.index ["faculty_id"], name: "index_students_on_faculty_id"
   end
 
   create_table "users", force: :cascade do |t|

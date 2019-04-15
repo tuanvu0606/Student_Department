@@ -1,0 +1,22 @@
+<%= simple_form_for @marketing_coordinator, url: @url, role: :form, html: { multipart: true } do |f| %>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box">
+
+        <div class="box-header">
+          <h3 class="box-title">New marketing_coordinators</h3>
+        </div>
+
+        <div class="box-body">
+          <%= render partial: 'admin_lte/marketing_coordinators/form', locals: { f: f } %>
+        </div>
+
+        <div class="box-footer">
+          <%= link_to 'Cancel', admin_lte_marketing_coordinators_path, class: 'btn btn-danger' %>
+          <%= f.submit 'Submit', class: "btn btn-success" %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<% end %>

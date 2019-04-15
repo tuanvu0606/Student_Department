@@ -57,7 +57,7 @@ module AdminLte
     def destroy
       @user.destroy
       respond_to do |format|
-        format.html { redirect_to admin_users_path, notice: t('admin.users.destroy.success') }
+        format.html { redirect_to admin_lte_users_path, notice: t('admin.users.destroy.success') }
         # format.json { head :no_content }
       end
     end

@@ -13,7 +13,11 @@ module AdminLte
     # end
     private 
       def check_admin_user
-        if !current_user.admin?
+        begin
+          if !current_user.marketing_coordinator.id?
+            redirect_to home_path
+          end
+        rescue
           redirect_to home_path
         end
       end

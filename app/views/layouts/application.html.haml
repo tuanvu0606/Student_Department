@@ -12,7 +12,9 @@
       .container 
         %nav.navbar.navbar-expand-lg.navbar-light.fixed-top(style = "background-color: white  ;")
           .container
-            %a.navbar-brand#HomeTopPhone(href="#") Phone
+            %a.navbar-brand#HomeTopPhone(href=home_path) Home
+            %a.navbar-brand(href=articles_path) Articles
+            %a.navbar-brand(href=admin_lte_users_path) Admin Page  
             %button.navbar-toggler(aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" data-target="#navbarText" data-toggle="collapse" type="button")
               %span.navbar-toggler-icon
             %div.p-2.flex-fill.bd-highlight.d-flex.justify-content-end
@@ -29,58 +31,15 @@
        
       .container
         %nav.navbar.navbar-expand-lg.navbar-light.d-flex.bd-highlight(style = "background-color: white; padding: 6px;")
-          %a.navbar-brand.p-2.flex-fill.bd-highlight#checkid(href="#") App
+          %a.navbar-brand.p-2.flex-fill.bd-highlight#checkid(href="#") 
       .container
         %nav.navbar.navbar-expand-lg.navbar-light.d-flex.bd-highlight(style = "background-color: white; padding: 6px;")
-          %a.navbar-brand.p-2.flex-fill.bd-highlight#checkid(href="#") App
-
-      .container
-        %nav.navbar.navbar-expand-lg.navbar-light.d-flex.bd-highlight.justify-content-begin(style = "background-color: white;")
-          %a.navbar-brand(href=home_path) Home            
-          %a.navbar-brand(href=articles_path) Articles
+          %a.navbar-brand.p-2.flex-fill.bd-highlight#checkid(href="#") 
 
     .container
       = yield
 
-    %footer(style = "margin-top: 50px;")
-      .container.d-flex.bd-highlight
-        .p-2.flex-fill.bd-highlight
-          .single_footer.author_information
-            %h4 My Information
-            %dl
-              %dd
-                %i.fa.fa-home
-                
-              %dd
-                %i.fa.fa-phone
-                (+1)111-111-111
-              %dd 
-                %a(href="#")
-                  %i.fa.fa-envelope-square
-                  
-        .p-2.flex-fill.bd-highlight
-          .single_footer
-            %h4 Information
-            %dl
-              %dd
-                %a
-                  %i.fa 
-                  
-              %dd   
-                  
-        .p-2.flex-fill.bd-highlight
-          .single_footer
-            %h4 My account
-            %dl
-              %dd
-                %a(href="#")
-                  %i.fa
-                  
-        .p-2.flex-fill.bd-highlight
-          .single_footer
-            %h4 
-            .instagram_img
-              #instafeed
+    %footer(style = "margin-top: 50px;")   
       .container
         .row
           .col-lg-6.col-md-6.col-sm-6

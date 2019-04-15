@@ -34,7 +34,7 @@ class ArticlesController < InheritedResources::Base
     end
 
     def article_params
-      params.require(:article).permit(:name, :descrition, :content, :final_date, :comment, :final_comment_date, :student_id)
+      params.require(:article).permit(:name, :descrition, :content, :final_date, :comment, :final_comment_date, :student_id, :image, :file)
     end
 end
 
