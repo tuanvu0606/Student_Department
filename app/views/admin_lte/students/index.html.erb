@@ -30,7 +30,7 @@
                         <td> <%= student.age %> </td>
                         <td> <%= student.user.email %> </td>
                         <td> <%= student.address %> </td>
-                        <td> <%= student.faculty %> </td>
+                        <td> <%= student.faculty.id %> </td>
                         <td>
                           <div class="btn-row">
                             <%= link_to raw('<i class="fa fa-cogs"></i>'), edit_admin_lte_student_url(student), class: 'btn btn-sm btn-warning' %>

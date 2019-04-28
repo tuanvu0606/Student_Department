@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :specific_items
     resources :marketing_coordinators
     resources :students
+    resources :articles
     get '/home' => 'application#home'
     # Admin root
     root to: 'application#index'

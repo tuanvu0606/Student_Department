@@ -1,25 +1,28 @@
 <div class="form-group">
-  <%= f.label :name %>
-  <%= f.text_field :name, class: "form-control", placeholder: "Enter name", required: true %>
-  <span class="help-block"><i>* This field is required</i><span>
-</div>
-
-<div class="form-group">
-  <%= f.label :description %>
-  <%= f.text_field :description, class: "form-control", placeholder: "Enter description", required: (@article.new_record? ? true : false) %>
+  <%= f.label :comment %>
+  <%= f.text_field :comment, class: "form-control", placeholder: "Enter content", required: (@article.new_record? ? true : false) %>
   <span class="help-block"><i>* This field is required (leave blank if you are editing and don't want to change the password)</i><span>
 </div>
 
 <div class="form-group">
-  <%= f.label :content %>
-  <%= f.text_field :content, class: "form-control", placeholder: "Enter content", required: (@article.new_record? ? true : false) %>
-  <span class="help-block"><i>* This field is required (leave blank if you are editing and don't want to change the password)</i><span>
+  <%= f.label :comment %>
+  <%
+=begin%>
+ <%= f.text_field :comment, class: "form-control", placeholder: "Enter content", required: (@article.new_record? ? true : false) %> 
+<%
+=end%>
+  <span class="help-block"><i>* ignore this</i><span>
 </div>
 
 <div class="form-group">
-  <%= f.label :image %>
-  <%= f.file_field :image, required: false %>
-  <span class="help-block"><i>* This field is required</i><span>
+  <%= f.label :comment %>
+  <%
+=begin%>
+ <%= f.text_field :comment, class: "form-control", placeholder: "Enter content", required: (@article.new_record? ? true : false) %> 
+<%
+=end%>
+  <span class="help-block"><i>* ignore this</i><span>
 </div>
+
 
 

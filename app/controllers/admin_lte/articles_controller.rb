@@ -1,5 +1,6 @@
 module AdminLte
   class ArticlesController < AdminLte::ApplicationController
+    respond_to :json, :html    
     before_action :set_article, only: [:show, :edit, :update, :destroy]
     
     # GET /articles
@@ -61,7 +62,7 @@ module AdminLte
     def destroy
       @article.destroy
       respond_to do |format|
-        format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
+        format.html { redirect_to admin_lte_articles_url, notice: 'Article was successfully destroyed.' }
         format.json { head :no_content }
       end
     end
@@ -69,12 +70,13 @@ module AdminLte
     private
       # Use callbacks to share common setup or constraints between actions.
       def set_article
+        # binding.pry
         @article = Article.find(params[:id])
       end
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def article_params
-        params.require(:article).permit(:name, :description, :content, :image)
+        params.require(:article).permit(:name, :descrition, :content, :final_date, :comment, :final_comment_date, :student_id, :image, :file, :checked_rule)
       end
   end
 end

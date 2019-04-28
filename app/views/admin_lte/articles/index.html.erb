@@ -24,7 +24,7 @@
                     <% @articles.each do |article| %>
                       <tr>
                         <td> <%= article.name %> </td>
-                        <td> <%= article.description %> </td>
+                        <td> <%= article.descrition %> </td>
                         <td>
                           <div class="btn-row">
                             <%= link_to raw('<i class="fa fa-cogs"></i>'), edit_admin_lte_article_url(article), class: 'btn btn-sm btn-warning' %>

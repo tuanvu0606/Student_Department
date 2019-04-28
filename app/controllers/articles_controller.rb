@@ -27,14 +27,27 @@ class ArticlesController < InheritedResources::Base
     end
   end
 
+  def update
+    respond_to do |format|
+      if @article.update(article_params)
+        format.html { redirect_to @article, notice: 'article was successfully updated.' }
+        format.json { render :show, status: :ok, location: @article }
+      else
+        format.html { render :edit }
+        format.json { render json: @article.errors, status: :unprocessable_entity }
+      end
+    end
+  end  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article
+      # binding.pry
       @article = Article.find(params[:id])
     end
 
     def article_params
-      params.require(:article).permit(:name, :descrition, :content, :final_date, :comment, :final_comment_date, :student_id, :image, :file)
+      params.require(:article).permit(:name, :descrition, :content, :final_date, :comment, :final_comment_date, :student_id, :image, :file, :checked_rule)
     end
 end
 
