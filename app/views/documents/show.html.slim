@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Header:
+  = @document.header
+p
+  strong Content:
+  = @document.content
+p
+  strong User:
+  = @document.user_id
+
+=> link_to 'Edit', edit_document_path(@document)
+'|
+=< link_to 'Back', documents_path

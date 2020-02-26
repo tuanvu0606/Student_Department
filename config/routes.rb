@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :authorizedstaffs
+  resources :messages
+  resources :meetings
+  resources :documents
+  resources :comments
   resources :marketing_coordinators
   resources :faculties
   devise_for :users

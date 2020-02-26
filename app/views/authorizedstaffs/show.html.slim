@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @authorizedstaff.name
+p
+  strong User:
+  = @authorizedstaff.user
+
+=> link_to 'Edit', edit_authorizedstaff_path(@authorizedstaff)
+'|
+=< link_to 'Back', authorizedstaffs_path

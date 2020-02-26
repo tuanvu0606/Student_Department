@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_28_100422) do
+ActiveRecord::Schema.define(version: 2020_02_26_164854) do
 
   create_table "articles", force: :cascade do |t|
     t.string "name"
@@ -25,6 +25,31 @@ ActiveRecord::Schema.define(version: 2019_04_28_100422) do
     t.datetime "updated_at", null: false
     t.string "file"
     t.boolean "checked_rule"
+  end
+
+  create_table "authorizedstaffs", force: :cascade do |t|
+    t.string "name"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_authorizedstaffs_on_user_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text "content"
+    t.integer "user_id_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id_id"], name: "index_comments_on_user_id_id"
+  end
+
+  create_table "documents", force: :cascade do |t|
+    t.text "header"
+    t.text "content"
+    t.integer "user_id_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id_id"], name: "index_documents_on_user_id_id"
   end
 
   create_table "faculties", force: :cascade do |t|
@@ -45,6 +70,23 @@ ActiveRecord::Schema.define(version: 2019_04_28_100422) do
     t.boolean "manager"
     t.index ["faculty_id"], name: "index_marketing_coordinators_on_faculty_id"
     t.index ["user_id"], name: "index_marketing_coordinators_on_user_id"
+  end
+
+  create_table "meetings", force: :cascade do |t|
+    t.datetime "time"
+    t.text "content"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_meetings_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "students", force: :cascade do |t|

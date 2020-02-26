@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Time:
+  = @meeting.time
+p
+  strong Content:
+  = @meeting.content
+p
+  strong User:
+  = @meeting.user
+
+=> link_to 'Edit', edit_meeting_path(@meeting)
+'|
+=< link_to 'Back', meetings_path
