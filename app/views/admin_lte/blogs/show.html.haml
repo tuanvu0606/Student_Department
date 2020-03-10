@@ -1,0 +1,43 @@
+- if user_signed_in? && current_user.admin
+  %p#notice= notice
+  %p
+    %strong Name:
+    = @blog.name
+  %p
+    %strong Description:
+    = @blog.descrition
+  %p
+    %strong Content:
+    = @blog.content
+  = link_to 'Edit', edit_admin_lte_blog_url(@blog)
+  |
+  = link_to 'Back', admin_lte_blogs_path
+  %br
+  = link_to 'New blog', new_admin_lte_blog_path
+- else       
+  .container
+    .row
+      %ul.list-group.col-lg-2
+        %li.list-group-item Recent blogs
+        - @blogs_in_order.each do |blog|
+          %li.list-group-item
+            =link_to blog.name, blog
+      .card.text-center.col-lg-10
+        .card-header
+          Featured
+        = link_to image_tag(@blog.image_url(:blogs)), @blog, :class => "img card-img-top"          
+        .card-body          
+          %h5.card-title 
+            =@blog.name
+          %p.card-text 
+            =@blog.descrition
+          %p.card-text 
+            =@blog.content  
+          //%a.btn.btn-primary
+          //  = link_to 'Details', blog
+          //= link_to 'Details', @blog, :class => "a btn btn-primary"
+        .card-footer.text-muted
+          Updated at:
+          =@blog.updated_at
+  
+    

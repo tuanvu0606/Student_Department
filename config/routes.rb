@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :tutors
+  resources :blogs
   resources :authorizedstaffs
   resources :messages
   resources :meetings
@@ -8,7 +10,7 @@ Rails.application.routes.draw do
   resources :faculties
   devise_for :users
   resources :students
-  resources :articles
+  resources :blogs
   namespace :admin_lte do
     resources :faculties
     resources :users
@@ -18,7 +20,8 @@ Rails.application.routes.draw do
     resources :specific_items
     resources :marketing_coordinators
     resources :students
-    resources :articles
+    resources :tutors
+    resources :blogs
     get '/home' => 'application#home'
     # Admin root
     root to: 'application#index'
@@ -43,9 +46,9 @@ Rails.application.routes.draw do
   get '/shopping_cart' => 'static_pages#shopping_cart'
   get '/categories' => 'inventory_item_categories#index'
   get '/checkout' => 'static_pages#checkout'
-  #get '/articles' => 'static_pages#articles'
+  #get '/blogs' => 'static_pages#blogs'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'static_pages#student_articles'
+  root 'static_pages#student_blogs'
   # root 'application#index'
   # admin_lte_scope :user do
   #   root to: "devise/sessions#new"

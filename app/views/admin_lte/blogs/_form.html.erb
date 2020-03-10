@@ -1,0 +1,28 @@
+<div class="form-group">
+  <%= f.label :comment %>
+  <%= f.text_field :comment, class: "form-control", placeholder: "Enter content", required: (@blog.new_record? ? true : false) %>
+  <span class="help-block"><i>* This field is required (leave blank if you are editing and don't want to change the password)</i><span>
+</div>
+
+<div class="form-group">
+  <%= f.label :comment %>
+  <%
+=begin%>
+ <%= f.text_field :comment, class: "form-control", placeholder: "Enter content", required: (@blog.new_record? ? true : false) %> 
+<%
+=end%>
+  <span class="help-block"><i>* ignore this</i><span>
+</div>
+
+<div class="form-group">
+  <%= f.label :comment %>
+  <%
+=begin%>
+ <%= f.text_field :comment, class: "form-control", placeholder: "Enter content", required: (@blog.new_record? ? true : false) %> 
+<%
+=end%>
+  <span class="help-block"><i>* ignore this</i><span>
+</div>
+
+
+

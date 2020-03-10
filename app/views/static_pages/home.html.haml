@@ -1,27 +1,27 @@
 / -binding.pry
 .card(style = "margin: 20px 0px;")
   .card-header
-    = link_to 'Articles', articles_path
-    = paginate @articles
-    = page_entries_info @articles
+    = link_to 'blogs', blogs_path
+    = paginate @blogs
+    = page_entries_info @blogs
   .card-body
     .row
-      - @articles.each do |article| 
+      - @blogs.each do |blog| 
         .card.text-center.col-lg-4.col-md-6(style = "margin: 5px 0px;")          
           //- binding.pru
-          = link_to image_tag(article.image.articles.url), article, :class => "img card-img-top"          
-          -# = link_to image_tag('images.jpg'), article, :class => "img card-img-top"
+          = link_to image_tag(blog.image.blogs.url), blog, :class => "img card-img-top"          
+          -# = link_to image_tag('images.jpg'), blog, :class => "img card-img-top"
           
           -# = image_url('images.jpg')
           .card-body       
             %h5.card-title 
-              =article.name
+              =blog.name
             %p.card-text
               Description:
-              =article.descrition
+              =blog.descrition
             %p.card-text
-              =article.content              
-              = link_to article.file.path
+              =blog.content              
+              = link_to blog.file.path
             %p.card-text
               Comment:              
-              =article.comment
+              =blog.comment

@@ -5,7 +5,7 @@ class StaticPagesController < ApplicationController
   def home
   	# @static_pages  = InventoryItem.paginate(page: params[:page], :per_page => 9)
     # binding.pry
-    @articles = current_user.student.article.page(params[:page]).per(20)
+    @blogs = current_user.student.blog.page(params[:page]).per(20)
   	# @inventory_item_categories = InventoryItemCategory.all
     #  #@inventory_models = InventoryModels.all
     #  @order_line_item = @order.order_line_items.new
@@ -45,7 +45,7 @@ class StaticPagesController < ApplicationController
     @inventory_item_categories = InventoryItemCategory.all
   end
 
-  def student_articles
+  def student_blogs
     
   end
 

@@ -1,0 +1,31 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @blog.name
+p
+  strong Descrition:
+  = @blog.descrition
+p
+  strong Content:
+  = @blog.content
+p
+  strong Final date:
+  = @blog.final_date
+p
+  strong Comment:
+  = @blog.comment
+p
+  strong Final comment date:
+  = @blog.final_comment_date
+p
+  strong file:
+  = link_to @blog.file
+
+p
+  strong checked_rules:
+  = @blog.checked_rule
+
+=> link_to 'Edit', edit_blog_path(@blog)
+'|
+=< link_to 'Back', blogs_path

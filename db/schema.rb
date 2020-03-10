@@ -10,9 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_26_164854) do
+ActiveRecord::Schema.define(version: 2020_02_27_155524) do
 
-  create_table "articles", force: :cascade do |t|
+  create_table "authorizedstaffs", force: :cascade do |t|
+    t.string "name"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_authorizedstaffs_on_user_id"
+  end
+
+  create_table "blogs", force: :cascade do |t|
     t.string "name"
     t.text "descrition"
     t.text "content"
@@ -23,16 +31,6 @@ ActiveRecord::Schema.define(version: 2020_02_26_164854) do
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "file"
-    t.boolean "checked_rule"
-  end
-
-  create_table "authorizedstaffs", force: :cascade do |t|
-    t.string "name"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_authorizedstaffs_on_user_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -97,7 +95,17 @@ ActiveRecord::Schema.define(version: 2020_02_26_164854) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "faculty_id"
+    t.integer "tutor_id"
     t.index ["faculty_id"], name: "index_students_on_faculty_id"
+    t.index ["tutor_id"], name: "index_students_on_tutor_id"
+  end
+
+  create_table "tutors", force: :cascade do |t|
+    t.string "name"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_tutors_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -110,6 +118,9 @@ ActiveRecord::Schema.define(version: 2020_02_26_164854) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.boolean "is_student"
+    t.boolean "is_tutor"
+    t.boolean "is_authorized_staff"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

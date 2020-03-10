@@ -381,7 +381,7 @@ user.save!
 #   serial_number: "15"
 # }])
 
-# Article.create!([{
+# blog.create!([{
 #   name: "Thor",
 #   description: "Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna.",
 #   content: "hor is a fictional superhero appearing in American comic books published by Marvel Comics. The character, which is based on the Norse deity of the same name,",

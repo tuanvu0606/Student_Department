@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   include CurrentOrder
   # before_action :set_order
   # before_action :record_user_cookies
-  #before_action :authenticate_user!, except: [:home, :articles]  
+  #before_action :authenticate_user!, except: [:home, :blogs]  
   #helper_method :current_order
   #def current_order
   #  if !session[:order_id].nil?

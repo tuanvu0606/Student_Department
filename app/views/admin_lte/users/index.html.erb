@@ -16,6 +16,10 @@
                     <tr>
                       <th>Name</th>
                       <th>Email</th>
+                      <th>Admin</th>
+                      <th>Student</th>
+                      <th>Tutor</th>
+                      <th>Authorized-staff</th>
                       <th class="col-xs-1">Actions</th>
                     </tr>
                   </thead>
@@ -25,6 +29,10 @@
                       <tr>
                         <td> <%= user.name %> </td>
                         <td> <%= user.email %> </td>
+                        <td> <%= user.admin %> </td>
+                        <td> <%= user.is_student %> </td>
+                        <td> <%= user.is_tutor %> </td>
+                        <td> <%= user.is_authorized_staff %> </td>
                         <td>
                           <div class="btn-row">
                             <%= link_to raw('<i class="fa fa-cogs"></i>'), edit_admin_lte_user_url(user), class: 'btn btn-sm btn-warning' %>

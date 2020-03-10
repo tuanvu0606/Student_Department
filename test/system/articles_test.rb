@@ -1,53 +1,53 @@
 require "application_system_test_case"
 
-class ArticlesTest < ApplicationSystemTestCase
+class blogsTest < ApplicationSystemTestCase
   setup do
-    @article = articles(:one)
+    @blog = blogs(:one)
   end
 
   test "visiting the index" do
-    visit articles_url
-    assert_selector "h1", text: "Articles"
+    visit blogs_url
+    assert_selector "h1", text: "blogs"
   end
 
-  test "creating a Article" do
-    visit articles_url
-    click_on "New Article"
+  test "creating a blog" do
+    visit blogs_url
+    click_on "New blog"
 
-    fill_in "Comment", with: @article.comment
-    fill_in "Content", with: @article.content
-    fill_in "Descrition", with: @article.descrition
-    fill_in "Final comment date", with: @article.final_comment_date
-    fill_in "Final date", with: @article.final_date
-    fill_in "Name", with: @article.name
-    click_on "Create Article"
+    fill_in "Comment", with: @blog.comment
+    fill_in "Content", with: @blog.content
+    fill_in "Descrition", with: @blog.descrition
+    fill_in "Final comment date", with: @blog.final_comment_date
+    fill_in "Final date", with: @blog.final_date
+    fill_in "Name", with: @blog.name
+    click_on "Create blog"
 
-    assert_text "Article was successfully created"
+    assert_text "blog was successfully created"
     click_on "Back"
   end
 
-  test "updating a Article" do
-    visit articles_url
+  test "updating a blog" do
+    visit blogs_url
     click_on "Edit", match: :first
 
-    fill_in "Comment", with: @article.comment
-    fill_in "Content", with: @article.content
-    fill_in "Descrition", with: @article.descrition
-    fill_in "Final comment date", with: @article.final_comment_date
-    fill_in "Final date", with: @article.final_date
-    fill_in "Name", with: @article.name
-    click_on "Update Article"
+    fill_in "Comment", with: @blog.comment
+    fill_in "Content", with: @blog.content
+    fill_in "Descrition", with: @blog.descrition
+    fill_in "Final comment date", with: @blog.final_comment_date
+    fill_in "Final date", with: @blog.final_date
+    fill_in "Name", with: @blog.name
+    click_on "Update blog"
 
-    assert_text "Article was successfully updated"
+    assert_text "blog was successfully updated"
     click_on "Back"
   end
 
-  test "destroying a Article" do
-    visit articles_url
+  test "destroying a blog" do
+    visit blogs_url
     page.accept_confirm do
       click_on "Destroy", match: :first
     end
 
-    assert_text "Article was successfully destroyed"
+    assert_text "blog was successfully destroyed"
   end
 end

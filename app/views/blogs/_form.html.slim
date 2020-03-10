@@ -1,0 +1,31 @@
+- if current_user.marketing_coordinator != nil
+  = simple_form_for(@blog) do |f|
+    = f.error_notification
+    = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+    .form-inputs
+      = f.input :comment
+    .form-actions
+      = f.button :submit
+- else
+  = simple_form_for(@blog) do |f|
+    = f.error_notification
+    = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+    .form-inputs
+      = f.input :name
+      = f.input :descrition
+      = f.input :content 
+      = f.input :final_date, :as => :hidden, :input_html => { :value => current_user.student.faculty.closure_date }
+      / = f.input :comment
+      / = f.input :final_comment_date, :as => :hidden, :input_html => { :value => current_user.student.faculty.closure_date + 14}    
+      = f.input :image
+      = f.input :file
+      h2 This is the rule, click agree
+      / = f.input :checked_rule, as: :check_boxes,
+      /   collection: ["true"], 
+      /   checked: ["true"]      
+      / = f.input :checked_rule, :as => :boolean, :input_html => { :checked => "checked" }  
+    .form-actions
+      = f.button :submit
+
+    

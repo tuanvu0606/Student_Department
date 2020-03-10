@@ -24,7 +24,7 @@ module AdminLte
     # GET /students/1/edit
     def edit
       @url = admin_lte_student_path(@student)
-      @articles = @student.article.page(params[:page]).per(20)
+      @blogs = @student.blog.page(params[:page]).per(20)
     end
 
     # POST /students
@@ -71,7 +71,7 @@ module AdminLte
     end
 
     def student_params
-      params.require(:student).permit(:name, :age, :address, :faculty_id, :user_id)
+      params.require(:student).permit(:name, :age, :address, :faculty_id, :user_id, :tutor_id)
     end
   end
 end

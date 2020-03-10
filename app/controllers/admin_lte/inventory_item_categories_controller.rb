@@ -48,7 +48,7 @@ module AdminLte
       respond_to do |format|
         if @inventory_item_category.update(inventory_item_category_params)
           format.html { redirect_to admin_lte_inventory_item_category_path(@inventory_item_category), notice: 'Inventory item category was successfully updated.' }
-          # format.html { redirect_to admin_lte_article_path(@article), notice: 'Article was successfully updated.' }
+          # format.html { redirect_to admin_lte_blog_path(@blog), notice: 'blog was successfully updated.' }
           # format.json { render :show, status: :ok, location: @inventory_item_category }
         else
           format.html { render :edit }

@@ -23,37 +23,37 @@
 
 <div class="card" style = "margin: 20px 0px;">
   <div class="card-header">
-    <%= link_to 'Articles', articles_path %>
-    <%= paginate @articles %>
-    <%= page_entries_info @articles %>
+    <%= link_to 'blogs', blogs_path %>
+    <%= paginate @blogs %>
+    <%= page_entries_info @blogs %>
   </div>
   <div class="card-body">
     <div class="row">
-      <% @articles.each do |article|  %>
+      <% @blogs.each do |blog|  %>
         <div class="card text-center col-lg-4 col-md-6"style = "margin: 5px 0px;">          
           <!--/- binding.pru
           -->
-          <%= link_to image_tag(article.image.articles.url), article, :class => "img card-img-top"%>
+          <%= link_to image_tag(blog.image.blogs.url), blog, :class => "img card-img-top"%>
           <%
 =begin%>
- <%= link_to image_tag(article.image.articles.url), article, :class => "img card-img-top"           %> 
+ <%= link_to image_tag(blog.image.blogs.url), blog, :class => "img card-img-top"           %> 
 <%
 =end%>
           <div class="card-body">
             <h5 class="card-title">
-              <%= article.name %>
+              <%= blog.name %>
             </h5>
             <p class="card-text">
               Description:
-              <%= article.descrition %>
+              <%= blog.descrition %>
             </p>
             <p class="card-text">
-              <%= article.content %>
-              <%= link_to article.file.path %>
+              <%= blog.content %>
+              <%= link_to blog.file.path %>
             </p>
             <p class="card-text">
               <h1>Comment:</h1>
-              <%= article.comment %>
+              <%= blog.comment %>
             </p>
           </div>
         </div>
