@@ -6,7 +6,8 @@ ruby '2.5.3'
 group :rmagick do
   gem "rmagick", "~> 4.0.0"
 end
-
+gem 'redis'
+gem 'gravatarify', '~> 3.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 gem 'pry-rails'

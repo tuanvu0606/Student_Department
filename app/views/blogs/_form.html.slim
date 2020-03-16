@@ -20,7 +20,7 @@
       / = f.input :final_comment_date, :as => :hidden, :input_html => { :value => current_user.student.faculty.closure_date + 14}    
       = f.input :image
       = f.input :file
-      h2 This is the rule, click agree
+      / h2 This is the rule, click agree  
       / = f.input :checked_rule, as: :check_boxes,
       /   collection: ["true"], 
       /   checked: ["true"]      

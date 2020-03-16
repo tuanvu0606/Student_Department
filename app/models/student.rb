@@ -5,4 +5,6 @@ class Student < ActiveRecord::Base
   belongs_to :faculty
   belongs_to :tutor
   # validates :tutor, :allow_nil => true
+  validates :tutor, presence: true
+  validates :user, uniqueness: true
 end

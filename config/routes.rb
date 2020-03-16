@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :tutors
   resources :blogs
   resources :authorizedstaffs
@@ -11,7 +12,12 @@ Rails.application.routes.draw do
   devise_for :users
   resources :students
   resources :blogs
+  resources :room_messages
+  resources :rooms
   namespace :admin_lte do
+    resources :room_messages
+    resources :rooms
+    resources :authorizedstaffs
     resources :faculties
     resources :users
     resources :inventory_items

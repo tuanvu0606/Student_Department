@@ -13,6 +13,15 @@ class ApplicationController < ActionController::Base
   #  end
   #  binding.pry
   #end
+  before_action :authenticate_user!
+
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :username])
+  end
   private
   def record_user_cookies
     if user_signed_in?
