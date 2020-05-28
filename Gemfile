@@ -61,7 +61,7 @@ gem 'pundit'
 # gem 'will_paginate',           '3.1.6'
 # gem 'will_paginate-bootstrap4'
 
-gem 'kaminari', '~> 1.1.1'
+gem 'kaminari', '~> 1.2.1'
 
 gem 'slim-rails'
 
